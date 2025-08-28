@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">MEDAN TOBA SUMATERA TOUR & TRAVEL | Wisata Halal Medan - Danau Toba</title>
+  <meta name="description" content="Paket wisata Danau Toba dari Medan dengan supir Muslim, mobil bersih, harga transparan. Booking via WhatsApp!" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0ea5e9',
+            secondary: '#10b981',
+            accent: '#8b5cf6',
+            'bg-dark': '#0f172a',
+            'card-dark': '#1e293b'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .hero-bg {
+      background-image: url('hero-danau-toba.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 30, 60, 0.7) 100%);
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    .btn-whatsapp {
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white;
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4);
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white;
+      padding: 16px;
+      border-radius: 50%;
+      font-size: 24px;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .package-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .package-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .gallery-video {
+      position: relative;
+    }
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 12px;
+      border-radius: 50%;
+      font-size: 24px;
+    }
+    .social-button {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: white;
+      font-size: 18px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .social-button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-inter transition-colors duration-300">
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6281397606622?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR%20%26%20TRAVEL!" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Header -->
+  <header class="fixed w-full bg-white/90 dark:bg-gray-900/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo PNG -->
+      <div class="flex items-center space-x-3">
+        <img src="logo.png" alt="Logo MEDAN TOBA SUMATERA" class="w-10 h-10 object-contain">
+        <div>
+          <h3 class="text-lg font-bold">MEDAN TOBA SUMATERA</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Tour & Travel</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#home" class="text-sm font-medium text-green-600 border-b-2 border-green-600" data-i18n="nav-home">Beranda</a>
+        <a href="#packages" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-packages">Paket Wisata</a>
+        <a href="#gallery" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-gallery">Galeri</a>
+        <a href="#about" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-about">Tentang Kami</a>
+        <a href="#contact" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-contact">Kontak</a>
+      </nav>
+
+      <!-- Social Media & Theme/Lang -->
+      <div class="flex items-center space-x-4">
+        <a href="https://facebook.com/medantobasumatera" target="_blank" class="social-button bg-blue-600 hover:shadow-lg" title="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/medantobasumatera" target="_blank" class="social-button bg-gradient-to-r from-purple-500 to-pink-500 hover:shadow-lg" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com/@medantobasumatera" target="_blank" class="social-button bg-red-600 hover:shadow-lg" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <button id="theme-toggle" class="text-gray-700 dark:text-gray-300" title="Toggle Dark Mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="lang-toggle" class="text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="lang-toggle">EN</button>
+        <button id="menu-toggle" class="md:hidden text-gray-700 dark:text-gray-300">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700">
+      <div class="px-6 py-4 space-y-3 text-gray-800 dark:text-gray-200">
+        <a href="#home" class="block py-2.5" data-i18n="nav-home">Beranda</a>
+        <a href="#packages" class="block py-2.5" data-i18n="nav-packages">Paket Wisata</a>
+        <a href="#gallery" class="block py-2.5" data-i18n="nav-gallery">Galeri</a>
+        <a href="#about" class="block py-2.5" data-i18n="nav-about">Tentang Kami</a>
+        <a href="#contact" class="block py-2.5" data-i18n="nav-contact">Kontak</a>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://facebook.com/medantobasumatera" target="_blank" class="social-button bg-blue-600" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com/medantobasumatera" target="_blank" class="social-button bg-gradient-to-r from-purple-500 to-pink-500" title="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@medantobasumatera" target="_blank" class="social-button bg-red-600" title="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <button id="theme-toggle-mobile" class="text-gray-700 dark:text-gray-300">
+            <i class="fas fa-moon"></i> <span data-i18n="theme-toggle">Mode Gelap</span>
+          </button>
+          <button id="lang-toggle-mobile" class="text-gray-700 dark:text-gray-300" data-i18n="lang-toggle">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="pt-28 pb-16 hero-bg hero-content text-white">
+    <div class="hero-overlay"></div>
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center text-center lg:text-left">
+      <div class="space-y-6 fade-in">
+        <h1 class="text-4xl md:text-5xl font-bold" data-i18n="hero-title">
+          Wisata Nyaman & Halal<br>
+          <span class="text-green-400">Medan – Danau Toba</span>
+        </h1>
+        <p class="text-lg" data-i18n="hero-desc">
+          Dengan supir Muslim lokal, mobil bersih, dan itinerary yang fleksibel. Pengalaman tak terlupakan dimulai dari sini.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 mt-6 justify-center lg:justify-start">
+          <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20ingin%20booking%20paket%20wisata." target="_blank" class="btn-whatsapp text-center px-8 py-4 rounded-lg font-semibold flex items-center justify-center">
+            <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-book">Pesan via WhatsApp</span>
+          </a>
+          <a href="#packages" class="border-2 border-green-400 text-green-400 text-center px-8 py-4 rounded-lg font-semibold hover:bg-green-900/30">
+            <span data-i18n="btn-see-packages">Lihat Paket</span>
+          </a>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-12 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
+      <div class="fade-in">
+        <p class="text-3xl font-bold text-green-600">500+</p>
+        <p class="text-gray-600 dark:text-gray-300" data-i18n="stat-customers">Pelanggan Puas</p>
+      </div>
+      <div class="fade-in">
+        <p class="text-3xl font-bold text-green-600">6 Tahun</p>
+        <p class="text-gray-600 dark:text-gray-300" data-i18n="stat-experience">Pengalaman</p>
+      </div>
+      <div class="fade-in">
+        <p class="text-3xl font-bold text-green-600">100%</p>
+        <p class="text-gray-600 dark:text-gray-300" data-i18n="stat-halal">Muslim Friendly</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paket Wisata -->
+  <section id="packages" class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold" data-i18n="packages-title">Paket Wisata Populer</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mt-4" data-i18n="packages-desc">Pilih paket yang sesuai dengan waktu dan anggaran Anda.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Paket 1 Hari -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
+          <div class="p-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="package-1-title">Paket 1 Hari</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4" data-i18n="package-1-price">Rp 750rb/orang</p>
+            <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-driver">Supir Muslim</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-bbm">BBM & Parkir</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-lunch">Makan Siang</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-guide">Guide Lokal</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20paket%201%20hari." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-book-now">Booking Sekarang</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Paket 2 Hari 1 Malam -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
+          <div class="p-6 text-center">
+            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block" data-i18n="badge-best">BEST SELLER</span>
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="package-2-title">Paket 2 Hari 1 Malam</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4" data-i18n="package-2-price">Mulai Rp 1.5jt/orang</p>
+            <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-hotel">Hotel Bintang 2</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-meals">3x Makan</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-ticket">Tiket Wisata</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-water">Air Mineral</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20paket%202%20hari." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-book-now">Booking Sekarang</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Paket 3 Hari 2 Malam -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
+          <div class="p-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="package-3-title">Paket 3 Hari 2 Malam</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4" data-i18n="package-3-price">Mulai Rp 2.8jt/orang</p>
+            <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-hotel">2 Malam Hotel</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-meals">6x Makan</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-ticket">Wisata Lengkap</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-guide">Supir + Guide</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20paket%203%20hari." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-book-now">Booking Sekarang</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Paket Custom -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in md:col-span-3">
+          <div class="p-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="custom-title">Custom Trip</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4" data-i18n="custom-price">Harga Negosiasi</p>
+            <ul class="flex flex-wrap justify-center gap-4 mb-6 text-sm text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-1"><i class="fas fa-check text-green-500"></i> <span data-i18n="custom-flex">Itinerary Fleksibel</span></li>
+              <li class="flex items-center space-x-1"><i class="fas fa-check text-green-500"></i> <span data-i18n="custom-hotel">Pilihan Hotel</span></li>
+              <li class="flex items-center space-x-1"><i class="fas fa-check text-green-500"></i> <span data-i18n="custom-car">Semua Jenis Mobil</span></li>
+              <li class="flex items-center space-x-1"><i class="fas fa-check text-green-500"></i> <span data-i18n="custom-consult">Konsultasi Gratis</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20ingin%20paket%20kustom." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-consult">Konsultasi Gratis</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section id="gallery" class="py-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold" data-i18n="gallery-title">Galeri Perjalanan Kami</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 mt-4" data-i18n="gallery-desc">Momen indah pelanggan kami di Danau Toba.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="foto1.jpg" alt="Wisata 1" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
+        <img src="foto2.jpg" alt="Wisata 2" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
+        <img src="foto3.jpg" alt="Wisata 3" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
+        <img src="foto4.jpg" alt="Wisata 4" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
+        <div class="gallery-video relative fade-in">
+          <img src="video1-thumb.jpg" alt="Video 1" class="rounded-lg shadow-md object-cover h-48 w-full">
+          <div class="play-icon">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="gallery-video relative fade-in">
+          <img src="video2-thumb.jpg" alt="Video 2" class="rounded-lg shadow-md object-cover h-48 w-full">
+          <div class="play-icon">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="gallery-video relative fade-in">
+          <img src="video3-thumb.jpg" alt="Video 3" class="rounded-lg shadow-md object-cover h-48 w-full">
+          <div class="play-icon">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="gallery-video relative fade-in">
+          <img src="video4-thumb.jpg" alt="Video 4" class="rounded-lg shadow-md object-cover h-48 w-full">
+          <div class="play-icon">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section id="about" class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div class="fade-in">
+        <img src="supir.jpg" alt="Supir Lokal" class="rounded-3xl shadow-2xl w-full object-cover" style="height: 420px;">
+      </div>
+      <div class="space-y-6 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold" data-i18n="about-title">Tentang Kami</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed" data-i18n="about-desc">
+          MEDAN TOBA SUMATERA TOUR & TRAVEL adalah tim lokal yang berdedikasi melayani wisatawan dari Medan ke Danau Toba sejak 2018.
+        </p>
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3"><i class="fas fa-check-circle text-green-600"></i> <span data-i18n="feat-driver">Supir Muslim & Amanah</span></div>
+          <div class="flex items-center space-x-3"><i class="fas fa-check-circle text-green-600"></i> <span data-i18n="feat-guide">Panduan Lokal</span></div>
+          <div class="flex items-center space-x-3"><i class="fas fa-check-circle text-green-600"></i> <span data-i18n="feat-halal">Wisata Halal</span></div>
+        </div>
+        <a href="#contact" class="inline-block mt-4 text-green-600 dark:text-green-400 font-semibold hover:underline" data-i18n="about-contact">Hubungi Kami →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="py-20 bg-green-600 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="space-y-6 fade-in">
+          <h2 class="text-3xl font-bold" data-i18n="contact-title">Hubungi Kami</h2>
+          <p data-i18n="contact-desc">Pesan sekarang atau konsultasikan rencana perjalananmu.</p>
+          <div class="space-y-4">
+            <div class="flex items-center space-x-3">
+              <i class="fas fa-map-marker-alt"></i>
+              <span data-i18n="contact-pickup">Lokasi Jemput</span>: Medan & Bandara Kualanamu
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="fab fa-whatsapp"></i>
+              <span>+62 813-9760-6622</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <i class="far fa-envelope"></i>
+              <span>info@tobatravel.com</span>
+            </div>
+          </div>
+        </div>
+        <form action="https://wa.me/6281397606622" target="_blank" class="space-y-4 fade-in">
+          <div>
+            <label class="block text-sm font-medium mb-1" data-i18n="form-name">Nama Lengkap</label>
+            <input type="text" placeholder="Contoh: Budi Santoso" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" data-i18n="form-date">Tanggal Perjalanan</label>
+            <input type="date" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" data-i18n="form-people">Jumlah Orang</label>
+            <input type="number" placeholder="2" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" data-i18n="form-pickup">Lokasi Jemput</label>
+            <input type="text" placeholder="Hotel, Bandara, dll" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+          </div>
+          <button type="submit" class="w-full bg-white text-green-600 font-semibold py-3 rounded-lg hover:bg-gray-100" data-i18n="form-submit">
+            Kirim ke WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 dark:bg-black text-white py-14 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-5">
+            <img src="logo.png" alt="Logo" class="w-12 h-12 object-contain">
+            <div>
+              <h3 class="text-2xl font-bold">MEDAN TOBA SUMATERA</h3>
+              <p class="text-blue-200">Tour & Travel</p>
+            </div>
+          </div>
+          <p class="text-gray-400" data-i18n="footer-desc">Travel lokal terpercaya dengan supir Muslim. Kami menghadirkan pengalaman wisata Danau Toba yang nyaman, halal, dan berkesan.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4" data-i18n="footer-services">Layanan</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#packages" class="hover:text-white" data-i18n="package-1-title">Paket 1 Hari</a></li>
+            <li><a href="#packages" class="hover:text-white" data-i18n="package-2-title">Paket 2 Hari</a></li>
+            <li><a href="#packages" class="hover:text-white" data-i18n="package-3-title">Paket 3 Hari</a></li>
+            <li><a href="#packages" class="hover:text-white" data-i18n="custom-title">Custom Trip</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4" data-i18n="footer-contact">Kontak</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>📱 +62 813-9760-6622</li>
+            <li>📧 info@tobatravel.com</li>
+            <li>📍 Medan, Sumatera Utara</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-10 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 MEDAN TOBA SUMATERA TOUR & TRAVEL. Dibuat dengan ❤️ untuk wisatawan Indonesia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const translations = {
+      id: {
+        "title": "MEDAN TOBA SUMATERA TOUR & TRAVEL | Wisata Halal Medan - Danau Toba",
+        "nav-home": "Beranda",
+        "nav-packages": "Paket Wisata",
+        "nav-gallery": "Galeri",
+        "nav-about": "Tentang Kami",
+        "nav-contact": "Kontak",
+        "lang-toggle": "EN",
+        "theme-toggle": "Mode Gelap",
+        "hero-title": "Wisata Nyaman & Halal\nMedan – Danau Toba",
+        "hero-desc": "Dengan supir Muslim lokal, mobil bersih, dan itinerary yang fleksibel. Pengalaman tak terlupakan dimulai dari sini.",
+        "btn-book": "Pesan via WhatsApp",
+        "btn-see-packages": "Lihat Paket",
+        "btn-book-now": "Booking Sekarang",
+        "btn-consult": "Konsultasi Gratis",
+        "packages-title": "Paket Wisata Populer",
+        "packages-desc": "Pilih paket yang sesuai dengan waktu dan anggaran Anda.",
+        "package-1-title": "Paket 1 Hari",
+        "package-1-price": "Rp 750rb/orang",
+        "package-2-title": "Paket 2 Hari 1 Malam",
+        "package-2-price": "Mulai Rp 1.5jt/orang",
+        "package-3-title": "Paket 3 Hari 2 Malam",
+        "package-3-price": "Mulai Rp 2.8jt/orang",
+        "badge-best": "BEST SELLER",
+        "custom-title": "Custom Trip",
+        "custom-price": "Harga Negosiasi",
+        "custom-flex": "Itinerary Fleksibel",
+        "custom-hotel": "Pilihan Hotel",
+        "custom-car": "Semua Jenis Mobil",
+        "custom-consult": "Konsultasi Gratis",
+        "feat-driver": "Supir Muslim",
+        "feat-bbm": "BBM & Parkir",
+        "feat-lunch": "Makan Siang",
+        "feat-guide": "Guide Lokal",
+        "feat-hotel": "Hotel Bintang 2",
+        "feat-meals": "3x Makan",
+        "feat-ticket": "Tiket Wisata",
+        "feat-water": "Air Mineral",
+        "gallery-title": "Galeri Perjalanan Kami",
+        "gallery-desc": "Momen indah pelanggan kami di Danau Toba.",
+        "about-title": "Tentang Kami",
+        "about-desc": "MEDAN TOBA SUMATERA TOUR & TRAVEL adalah tim lokal yang berdedikasi melayani wisatawan dari Medan ke Danau Toba sejak 2018.",
+        "about-contact": "Hubungi Kami",
+        "contact-title": "Hubungi Kami",
+        "contact-desc": "Pesan sekarang atau konsultasikan rencana perjalananmu.",
+        "contact-pickup": "Lokasi Jemput",
+        "form-name": "Nama Lengkap",
+        "form-date": "Tanggal Perjalanan",
+        "form-people": "Jumlah Orang",
+        "form-pickup": "Lokasi Jemput",
+        "form-submit": "Kirim ke WhatsApp",
+        "footer-desc": "Travel lokal terpercaya dengan supir Muslim. Kami menghadirkan pengalaman wisata Danau Toba yang nyaman, halal, dan berkesan.",
+        "footer-services": "Layanan",
+        "footer-contact": "Kontak",
+        "stat-customers": "Pelanggan Puas",
+        "stat-experience": "Pengalaman",
+        "stat-halal": "Muslim Friendly"
+      },
+      en: {
+        "title": "MEDAN TOBA SUMATERA TOUR & TRAVEL | Halal Travel Medan - Lake Toba",
+        "nav-home": "Home",
+        "nav-packages": "Tour Packages",
+        "nav-gallery": "Gallery",
+        "nav-about": "About Us",
+        "nav-contact": "Contact",
+        "lang-toggle": "ID",
+        "theme-toggle": "Light Mode",
+        "hero-title": "Comfortable & Halal Travel\nMedan – Lake Toba",
+        "hero-desc": "With local Muslim drivers, clean cars, and flexible itineraries. Unforgettable experience starts here.",
+        "btn-book": "Book via WhatsApp",
+        "btn-see-packages": "View Packages",
+        "btn-book-now": "Book Now",
+        "btn-consult": "Free Consultation",
+        "packages-title": "Popular Tour Packages",
+        "packages-desc": "Choose a package that suits your time and budget.",
+        "package-1-title": "1-Day Package",
+        "package-1-price": "IDR 750k/person",
+        "package-2-title": "2 Days 1 Night",
+        "package-2-price": "From IDR 1.5M/person",
+        "package-3-title": "3 Days 2 Nights",
+        "package-3-price": "From IDR 2.8M/person",
+        "badge-best": "BEST SELLER",
+        "custom-title": "Custom Trip",
+        "custom-price": "Negotiable Price",
+        "custom-flex": "Flexible Itinerary",
+        "custom-hotel": "Hotel Options",
+        "custom-car": "All Car Types",
+        "custom-consult": "Free Consultation",
+        "feat-driver": "Muslim Driver",
+        "feat-bbm": "Fuel & Parking",
+        "feat-lunch": "Lunch",
+        "feat-guide": "Local Guide",
+        "feat-hotel": "2-Star Hotel",
+        "feat-meals": "3 Meals",
+        "feat-ticket": "Entrance Tickets",
+        "feat-water": "Mineral Water",
+        "gallery-title": "Our Travel Gallery",
+        "gallery-desc": "Beautiful moments from our customers at Lake Toba.",
+        "about-title": "About Us",
+        "about-desc": "MEDAN TOBA SUMATERA TOUR & TRAVEL is a local team dedicated to serving travelers from Medan to Lake Toba since 2018.",
+        "about-contact": "Contact Us",
+        "contact-title": "Contact Us",
+        "contact-desc": "Book now or consult your travel plan.",
+        "contact-pickup": "Pickup Location",
+        "form-name": "Full Name",
+        "form-date": "Travel Date",
+        "form-people": "Number of People",
+        "form-pickup": "Pickup Location",
+        "form-submit": "Send to WhatsApp",
+        "footer-desc": "Trusted local travel with Muslim drivers. We bring you a comfortable, halal, and memorable Lake Toba experience.",
+        "footer-services": "Services",
+        "footer-contact": "Contact",
+        "stat-customers": "Satisfied Customers",
+        "stat-experience": "Years of Experience",
+        "stat-halal": "100% Halal"
+      }
+    };
+
+    let currentLang = localStorage.getItem('toba-lang') || 'id';
+    let currentTheme = localStorage.getItem('toba-theme') || 'light';
+
+    function applyLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+      document.documentElement.lang = lang;
+      document.title = translations[lang].title;
+    }
+
+    function applyTheme(theme) {
+      const html = document.documentElement;
+      if (theme === 'dark') {
+        html.classList.add('dark');
+        document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+        document.getElementById('theme-toggle-mobile').innerHTML = '<i class="fas fa-sun"></i> <span data-i18n="theme-toggle">Mode Terang</span>';
+      } else {
+        html.classList.remove('dark');
+        document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-moon"></i>';
+        document.getElementById('theme-toggle-mobile').innerHTML = '<i class="fas fa-moon"></i> <span data-i18n="theme-toggle">Mode Gelap</span>';
+      }
+      applyLanguage(currentLang);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      applyLanguage(currentLang);
+      applyTheme(currentTheme);
+      document.getElementById('lang-toggle').textContent = currentLang === 'id' ? 'EN' : 'ID';
+      document.getElementById('lang-toggle-mobile').textContent = currentLang === 'id' ? 'EN' : 'ID';
+    });
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      applyLanguage(currentLang);
+      localStorage.setItem('toba-lang', currentLang);
+      document.getElementById('lang-toggle').textContent = currentLang === 'id' ? 'EN' : 'ID';
+      document.getElementById('lang-toggle-mobile').textContent = currentLang === 'id' ? 'EN' : 'ID';
+    });
+
+    document.getElementById('lang-toggle-mobile').addEventListener('click', () => {
+      currentLang = currentLang === 'id' ? 'en' : 'id';
+      applyLanguage(currentLang);
+      localStorage.setItem('toba-lang', currentLang);
+      document.getElementById('lang-toggle').textContent = currentLang === 'id' ? 'EN' : 'ID';
+      document.getElementById('lang-toggle-mobile').textContent = currentLang === 'id' ? 'EN' : 'ID';
+    });
+
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('toba-theme', currentTheme);
+      applyTheme(currentTheme);
+    });
+
+    document.getElementById('theme-toggle-mobile').addEventListener('click', () => {
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('toba-theme', currentTheme);
+      applyTheme(currentTheme);
+    });
+
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOnScroll = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('active');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
