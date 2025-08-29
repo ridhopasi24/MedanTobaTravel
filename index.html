@@ -147,7 +147,7 @@
         <a href="#contact" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-contact">Kontak</a>
       </nav>
 
-      <!-- Social Media & Theme/Lang -->
+      <!-- Social Media & Language/Toggle -->
       <div class="flex items-center space-x-4">
         <a href="https://facebook.com/medantobasumatera" target="_blank" class="social-button bg-blue-600 hover:shadow-lg" title="Facebook">
           <i class="fab fa-facebook-f"></i>
@@ -177,13 +177,13 @@
         <a href="#about" class="block py-2.5" data-i18n="nav-about">Tentang Kami</a>
         <a href="#contact" class="block py-2.5" data-i18n="nav-contact">Kontak</a>
         <div class="flex space-x-4 mt-4">
-          <a href="https://facebook.com/medantobasumatera" target="_blank" class="social-button bg-blue-600" title="Facebook">
+          <a href="https://facebook.com/medantobasumatera" target="_blank" class="social-button bg-blue-600">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="https://instagram.com/medantobasumatera" target="_blank" class="social-button bg-gradient-to-r from-purple-500 to-pink-500" title="Instagram">
+          <a href="https://instagram.com/medantobasumatera" target="_blank" class="social-button bg-gradient-to-r from-purple-500 to-pink-500">
             <i class="fab fa-instagram"></i>
           </a>
-          <a href="https://youtube.com/@medantobasumatera" target="_blank" class="social-button bg-red-600" title="YouTube">
+          <a href="https://youtube.com/@medantobasumatera" target="_blank" class="social-button bg-red-600">
             <i class="fab fa-youtube"></i>
           </a>
           <button id="theme-toggle-mobile" class="text-gray-700 dark:text-gray-300">
@@ -238,7 +238,7 @@
     </div>
   </section>
 
-  <!-- Paket Wisata -->
+  <!-- Paket Wisata (9 Template + 1 Custom) -->
   <section id="packages" class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16 fade-in">
@@ -247,54 +247,156 @@
       </div>
       <div class="grid md:grid-cols-3 gap-8">
 
-        <!-- Paket 1 Hari -->
+        <!-- Template 1 -->
         <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
           <div class="p-6 text-center">
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="package-1-title">Paket 1 Hari</h3>
-            <p class="text-3xl font-extrabold text-green-600 mb-4" data-i18n="package-1-price">Rp 750rb/orang</p>
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Paket 1 Hari</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4">Rp 750rb/orang</p>
             <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-driver">Supir Muslim</span></li>
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-bbm">BBM & Parkir</span></li>
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-lunch">Makan Siang</span></li>
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-guide">Guide Lokal</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Supir Muslim</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>BBM & Parkir</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Makan Siang</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Guide Lokal</span></li>
             </ul>
-            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20paket%201%20hari." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
-              <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-book-now">Booking Sekarang</span>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20paket%201." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> Booking Sekarang
             </a>
           </div>
         </div>
 
-        <!-- Paket 2 Hari 1 Malam -->
+        <!-- Template 2 -->
         <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
           <div class="p-6 text-center">
-            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block" data-i18n="badge-best">BEST SELLER</span>
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="package-2-title">Paket 2 Hari 1 Malam</h3>
-            <p class="text-3xl font-extrabold text-green-600 mb-4" data-i18n="package-2-price">Mulai Rp 1.5jt/orang</p>
+            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 inline-block">BEST SELLER</span>
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Paket 2 Hari 1 Malam</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4">Mulai Rp 1.5jt/orang</p>
             <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-hotel">Hotel Bintang 2</span></li>
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-meals">3x Makan</span></li>
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-ticket">Tiket Wisata</span></li>
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-water">Air Mineral</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Hotel Bintang 2</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>3x Makan</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Tiket Wisata</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Air Mineral</span></li>
             </ul>
-            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20paket%202%20hari." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
-              <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-book-now">Booking Sekarang</span>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20paket%202." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> Booking Sekarang
             </a>
           </div>
         </div>
 
-        <!-- Paket 3 Hari 2 Malam -->
+        <!-- Template 3 -->
         <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
           <div class="p-6 text-center">
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="package-3-title">Paket 3 Hari 2 Malam</h3>
-            <p class="text-3xl font-extrabold text-green-600 mb-4" data-i18n="package-3-price">Mulai Rp 2.8jt/orang</p>
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Paket 3 Hari 2 Malam</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4">Mulai Rp 2.8jt/orang</p>
             <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-hotel">2 Malam Hotel</span></li>
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-meals">6x Makan</span></li>
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-ticket">Wisata Lengkap</span></li>
-              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span data-i18n="feat-guide">Supir + Guide</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>2 Malam Hotel</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>6x Makan</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Wisata Lengkap</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Supir + Guide</span></li>
             </ul>
-            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20paket%203%20hari." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
-              <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-book-now">Booking Sekarang</span>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20paket%203." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> Booking Sekarang
+            </a>
+          </div>
+        </div>
+
+        <!-- Template 4 -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
+          <div class="p-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">One Day Trip</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4">Rp 650rb/orang</p>
+            <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Medan - Toba PP</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Guide Lokal</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Makan Siang</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Photo Stop</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20One%20Day%20Trip." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> Booking Sekarang
+            </a>
+          </div>
+        </div>
+
+        <!-- Template 5 -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
+          <div class="p-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Family Trip 4 Hari</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4">Mulai Rp 3.2jt/orang</p>
+            <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>3 Malam Hotel</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>8x Makan</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Wisata Anak</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Kursi Bayi</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20Family%20Trip." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> Booking Sekarang
+            </a>
+          </div>
+        </div>
+
+        <!-- Template 6 -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
+          <div class="p-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Paket Honeymoon</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4">Mulai Rp 4jt/orang</p>
+            <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Hotel Premium</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Dinner Romantis</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Private Tour</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Photo Session</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20Honeymoon%20Package." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> Booking Sekarang
+            </a>
+          </div>
+        </div>
+
+        <!-- Template 7 -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
+          <div class="p-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Ziarah & Wisata</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4">Mulai Rp 2.5jt/orang</p>
+            <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Masjid Tua Toba</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Hotel Syariah</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Guide Muslim</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Makan Halal</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20Ziarah%20&%20Wisata." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> Booking Sekarang
+            </a>
+          </div>
+        </div>
+
+        <!-- Template 8 -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
+          <div class="p-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Adventure Tour</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4">Mulai Rp 3.5jt/orang</p>
+            <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Trekking</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Camping</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Guide Profesional</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Peralatan Lengkap</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20Adventure%20Tour." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> Booking Sekarang
+            </a>
+          </div>
+        </div>
+
+        <!-- Template 9 -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in">
+          <div class="p-6 text-center">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-white">Tour Medan City</h3>
+            <p class="text-3xl font-extrabold text-green-600 mb-4">Rp 500rb/orang</p>
+            <ul class="text-left space-y-2 mb-6 text-gray-700 dark:text-gray-300">
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>City Tour Medan</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Masjid Raya</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Belanja Oleh-oleh</span></li>
+              <li class="flex items-center space-x-2"><i class="fas fa-check text-green-500"></i> <span>Makan Siang</span></li>
+            </ul>
+            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20minat%20City%20Tour%20Medan." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
+              <i class="fab fa-whatsapp mr-2"></i> Booking Sekarang
             </a>
           </div>
         </div>
@@ -320,7 +422,7 @@
     </div>
   </section>
 
-  <!-- Galeri -->
+  <!-- Galeri (Foto & Video) -->
   <section id="gallery" class="py-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16 fade-in">
@@ -328,30 +430,34 @@
         <p class="text-xl text-gray-600 dark:text-gray-300 mt-4" data-i18n="gallery-desc">Momen indah pelanggan kami di Danau Toba.</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="foto1.jpg" alt="Wisata 1" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
-        <img src="foto2.jpg" alt="Wisata 2" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
-        <img src="foto3.jpg" alt="Wisata 3" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
-        <img src="foto4.jpg" alt="Wisata 4" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
+
+        <!-- Foto -->
+        <img src="https://picsum.photos/id/433/300/300" alt="Wisata 1" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
+        <img src="https://picsum.photos/id/1040/300/300" alt="Wisata 2" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
+        <img src="https://picsum.photos/id/1074/300/300" alt="Wisata 3" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
+        <img src="https://picsum.photos/id/180/300/300" alt="Wisata 4" class="rounded-lg shadow-md object-cover h-48 w-full fade-in">
+
+        <!-- Video -->
         <div class="gallery-video relative fade-in">
-          <img src="video1-thumb.jpg" alt="Video 1" class="rounded-lg shadow-md object-cover h-48 w-full">
+          <img src="https://picsum.photos/id/1040/300/300" alt="Video 1" class="rounded-lg shadow-md object-cover h-48 w-full">
           <div class="play-icon">
             <i class="fas fa-play"></i>
           </div>
         </div>
         <div class="gallery-video relative fade-in">
-          <img src="video2-thumb.jpg" alt="Video 2" class="rounded-lg shadow-md object-cover h-48 w-full">
+          <img src="https://picsum.photos/id/433/300/300" alt="Video 2" class="rounded-lg shadow-md object-cover h-48 w-full">
           <div class="play-icon">
             <i class="fas fa-play"></i>
           </div>
         </div>
         <div class="gallery-video relative fade-in">
-          <img src="video3-thumb.jpg" alt="Video 3" class="rounded-lg shadow-md object-cover h-48 w-full">
+          <img src="https://picsum.photos/id/1074/300/300" alt="Video 3" class="rounded-lg shadow-md object-cover h-48 w-full">
           <div class="play-icon">
             <i class="fas fa-play"></i>
           </div>
         </div>
         <div class="gallery-video relative fade-in">
-          <img src="video4-thumb.jpg" alt="Video 4" class="rounded-lg shadow-md object-cover h-48 w-full">
+          <img src="https://picsum.photos/id/180/300/300" alt="Video 4" class="rounded-lg shadow-md object-cover h-48 w-full">
           <div class="play-icon">
             <i class="fas fa-play"></i>
           </div>
@@ -364,7 +470,7 @@
   <section id="about" class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
     <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
       <div class="fade-in">
-        <img src="supir.jpg" alt="Supir Lokal" class="rounded-3xl shadow-2xl w-full object-cover" style="height: 420px;">
+        <img src="https://picsum.photos/id/1074/800/600" alt="Supir Lokal" class="rounded-3xl shadow-2xl w-full object-cover" style="height: 420px;">
       </div>
       <div class="space-y-6 fade-in">
         <h2 class="text-3xl md:text-4xl font-bold" data-i18n="about-title">Tentang Kami</h2>
