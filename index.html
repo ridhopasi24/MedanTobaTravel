@@ -2,7 +2,7 @@
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title data-i18n="title">MEDAN TOBA SUMATERA TOUR & TRAVEL | Wisata Halal Medan - Danau Toba</title>
   <meta name="description" content="Paket wisata Danau Toba dari Medan dengan supir Muslim, mobil bersih, harga transparan. Booking via WhatsApp!" />
 
@@ -32,6 +32,9 @@
   </script>
 
   <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
     .hero-bg {
       background-image: url('hero-danau-toba.jpg');
       background-size: cover;
@@ -118,6 +121,12 @@
     .accordion-content.expanded {
       max-height: 200px;
       transition: max-height 0.5s ease-in;
+    }
+    @media (max-width: 640px) {
+      .text-4xl { font-size: 1.8rem; }
+      .text-3xl { font-size: 1.5rem; }
+      .px-8 { padding-left: 1rem; padding-right: 1rem; }
+      .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
     }
   </style>
 </head>
@@ -603,27 +612,44 @@
             </div>
           </div>
         </div>
-        <form action="https://wa.me/6281397606622" target="_blank" class="space-y-4 fade-in">
+
+        <!-- Formulir dengan Dropdown Pilih Paket -->
+        <div class="space-y-4 fade-in">
           <div>
             <label class="block text-sm font-medium mb-1" data-i18n="form-name">Nama Lengkap</label>
-            <input type="text" placeholder="Contoh: Budi Santoso" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+            <input type="text" id="form-name-input" placeholder="Contoh: Budi Santoso" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
           </div>
           <div>
             <label class="block text-sm font-medium mb-1" data-i18n="form-date">Tanggal Perjalanan</label>
-            <input type="date" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+            <input type="date" id="form-date-input" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
           </div>
           <div>
             <label class="block text-sm font-medium mb-1" data-i18n="form-people">Jumlah Orang</label>
-            <input type="number" placeholder="2" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+            <input type="number" id="form-people-input" placeholder="2" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
           </div>
           <div>
             <label class="block text-sm font-medium mb-1" data-i18n="form-pickup">Lokasi Jemput</label>
-            <input type="text" placeholder="Hotel, Bandara, dll" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
+            <input type="text" id="form-pickup-input" placeholder="Hotel, Bandara, dll" class="w-full px-4 py-2 rounded-lg text-gray-800" required>
           </div>
-          <button type="submit" class="w-full bg-white text-green-600 font-semibold py-3 rounded-lg hover:bg-gray-100" data-i18n="form-submit">
+          <div>
+            <label class="block text-sm font-medium mb-1" data-i18n="form-package">Pilih Paket</label>
+            <select id="form-package-input" class="w-full px-4 py-2 rounded-lg text-gray-800">
+              <option value="Paket 1 Hari">Paket 1 Hari</option>
+              <option value="Paket 2 Hari 1 Malam">Paket 2 Hari 1 Malam</option>
+              <option value="Paket 3 Hari 2 Malam">Paket 3 Hari 2 Malam</option>
+              <option value="One Day Trip">One Day Trip</option>
+              <option value="Family Trip 4 Hari">Family Trip 4 Hari</option>
+              <option value="Paket Honeymoon">Paket Honeymoon</option>
+              <option value="Ziarah & Wisata">Ziarah & Wisata</option>
+              <option value="Adventure Tour">Adventure Tour</option>
+              <option value="Tour Medan City">Tour Medan City</option>
+              <option value="Custom Trip">Custom Trip</option>
+            </select>
+          </div>
+          <button type="button" id="whatsapp-submit-btn" class="w-full bg-white text-green-600 font-semibold py-3 rounded-lg hover:bg-gray-100" data-i18n="form-submit">
             Kirim ke WhatsApp
           </button>
-        </form>
+        </div>
       </div>
     </div>
   </section>
@@ -762,6 +788,7 @@
         "form-date": "Tanggal Perjalanan",
         "form-people": "Jumlah Orang",
         "form-pickup": "Lokasi Jemput",
+        "form-package": "Pilih Paket",
         "form-submit": "Kirim ke WhatsApp",
         "footer-desc": "Travel lokal terpercaya dengan supir Muslim. Kami menghadirkan pengalaman wisata Danau Toba yang nyaman, halal, dan berkesan.",
         "footer-services": "Layanan",
@@ -844,6 +871,7 @@
         "form-date": "Travel Date",
         "form-people": "Number of People",
         "form-pickup": "Pickup Location",
+        "form-package": "Select Package",
         "form-submit": "Send to WhatsApp",
         "footer-desc": "Trusted local travel with Muslim drivers. We bring you a comfortable, halal, and memorable Lake Toba experience.",
         "footer-services": "Services",
@@ -893,6 +921,31 @@
         if (icon) icon.style.transform = 'rotate(180deg)';
       }
     }
+
+    // Kirim ke WhatsApp dengan data form
+    document.getElementById('whatsapp-submit-btn').addEventListener('click', function () {
+      const name = document.getElementById('form-name-input').value.trim();
+      const date = document.getElementById('form-date-input').value;
+      const people = document.getElementById('form-people-input').value;
+      const pickup = document.getElementById('form-pickup-input').value.trim();
+      const pkg = document.getElementById('form-package-input').value;
+
+      if (!name || !date || !people || !pickup) {
+        alert('Mohon lengkapi semua data!');
+        return;
+      }
+
+      const formattedDate = new Date(date).toLocaleDateString('id-ID', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+      });
+
+      const message = `Halo MEDAN TOBA SUMATERA!%0A%0ASaya ingin booking:%0A%0A*Paket:* ${pkg}%0A*Nama:* ${name}%0A*Tanggal:* ${formattedDate}%0A*Jumlah Orang:* ${people}%0A*Lokasi Jemput:* ${pickup}%0A%0AMohon info lebih lanjut. Terima kasih!`;
+
+      const whatsappUrl = `https://wa.me/6281397606622?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+    });
 
     document.addEventListener("DOMContentLoaded", () => {
       applyLanguage(currentLang);
