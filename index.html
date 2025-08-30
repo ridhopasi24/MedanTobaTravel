@@ -260,50 +260,50 @@
     </div>
   </section>
 
-  <!-- Galeri (Foto & Video) -->
-  <section id="gallery" class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold" data-i18n="gallery-title">Galeri Perjalanan Kami</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 mt-4" data-i18n="gallery-desc">Momen indah pelanggan kami di Danau Toba.</p>
+ <!-- Galeri (Foto & Video) -->
+<section id="gallery" class="py-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16 fade-in">
+      <h2 class="text-3xl md:text-4xl font-bold" data-i18n="gallery-title">Galeri Perjalanan Kami</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 mt-4" data-i18n="gallery-desc">Momen indah pelanggan kami di Danau Toba.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+      <!-- Foto -->
+      <img src="foto1.jpg" alt="Wisata 1" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(0)">
+      <img src="foto2.jpg" alt="Wisata 2" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(1)">
+      <img src="foto3.jpg" alt="Wisata 3" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(2)">
+      <img src="foto4.jpg" alt="Wisata 4" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(3)">
+
+      <!-- Video -->
+      <div class="gallery-video relative fade-in" onclick="openLightbox(4)">
+        <img src="video1-thumbnail.jpg" alt="Video 1" class="rounded-lg shadow-md object-cover h-48 w-full">
+        <div class="play-icon">
+          <i class="fas fa-play"></i>
+        </div>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-
-        <!-- Foto -->
-        <img src="foto1.jpg" alt="Wisata 1" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(0)">
-        <img src="foto2.jpg" alt="Wisata 2" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(1)">
-        <img src="foto3.jpg" alt="Wisata 3" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(2)">
-        <img src="foto4.jpg" alt="Wisata 4" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(3)">
-
-        <!-- Video -->
-        <div class="gallery-video relative fade-in" onclick="openLightbox(4)">
-          <img src="https://picsum.photos/id/1040/300/300" alt="Video 1" class="rounded-lg shadow-md object-cover h-48 w-full">
-          <div class="play-icon">
-            <i class="fas fa-play"></i>
-          </div>
+      <div class="gallery-video relative fade-in" onclick="openLightbox(5)">
+        <img src="video2-thumbnail.jpg" alt="Video 2" class="rounded-lg shadow-md object-cover h-48 w-full">
+        <div class="play-icon">
+          <i class="fas fa-play"></i>
         </div>
-        <div class="gallery-video relative fade-in" onclick="openLightbox(5)">
-          <img src="https://picsum.photos/id/433/300/300" alt="Video 2" class="rounded-lg shadow-md object-cover h-48 w-full">
-          <div class="play-icon">
-            <i class="fas fa-play"></i>
-          </div>
+      </div>
+      <div class="gallery-video relative fade-in" onclick="openLightbox(6)">
+        <img src="video3-thumbnail.jpg" alt="Video 3" class="rounded-lg shadow-md object-cover h-48 w-full">
+        <div class="play-icon">
+          <i class="fas fa-play"></i>
         </div>
-        <div class="gallery-video relative fade-in" onclick="openLightbox(6)">
-          <img src="https://picsum.photos/id/1074/300/300" alt="Video 3" class="rounded-lg shadow-md object-cover h-48 w-full">
-          <div class="play-icon">
-            <i class="fas fa-play"></i>
-          </div>
-        </div>
-        <div class="gallery-video relative fade-in" onclick="openLightbox(7)">
-          <img src="https://picsum.photos/id/180/300/300" alt="Video 4" class="rounded-lg shadow-md object-cover h-48 w-full">
-          <div class="play-icon">
-            <i class="fas fa-play"></i>
-          </div>
+      </div>
+      <div class="gallery-video relative fade-in" onclick="openLightbox(7)">
+        <img src="video4-thumbnail.jpg" alt="Video 4" class="rounded-lg shadow-md object-cover h-48 w-full">
+        <div class="play-icon">
+          <i class="fas fa-play"></i>
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
+  
   <!-- Lightbox Modal -->
   <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
     <button id="lightbox-close" class="absolute top-4 right-4 text-white text-4xl z-10 hover:text-gray-300">&times;</button>
