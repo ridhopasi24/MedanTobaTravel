@@ -36,7 +36,7 @@
       -webkit-tap-highlight-color: transparent;
     }
     .hero-bg {
-      background-image: url('https://i.pinimg.com/736x/92/38/5e/92385e5c5d326551c2f66c1a682490b4.jpg');
+      background-image: url('hero.jpg');
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -59,6 +59,10 @@
     .btn-whatsapp:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4);
+    }
+    .btn-doc {
+      background: linear-gradient(45deg, #6366F1, #8B5CF6);
+      color: white;
     }
     .whatsapp-float {
       position: fixed;
@@ -84,21 +88,6 @@
     .fade-in.active {
       opacity: 1;
       transform: translateY(0);
-    }
-    .gallery-video {
-      position: relative;
-      cursor: pointer;
-    }
-    .play-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.6);
-      color: white;
-      padding: 12px;
-      border-radius: 50%;
-      font-size: 24px;
     }
     .social-button {
       width: 40px;
@@ -128,7 +117,7 @@
     #lightbox {
       z-index: 1000;
     }
-    #lightbox img, #lightbox iframe {
+    #lightbox img {
       transition: opacity 0.3s ease;
     }
     @media (max-width: 640px) {
@@ -159,12 +148,12 @@
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-8">
         <a href="#home" class="text-sm font-medium text-green-600 border-b-2 border-green-600" data-i18n="nav-home">Beranda</a>
-        <a href="packages.html" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-packages">Paket Wisata</a>
+        <a href="#packages" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-packages">Paket Wisata</a>
         <a href="gallery.html" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-gallery">Galeri</a>
         <a href="#testimonials" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-testimonials">Testimoni</a>
         <a href="#faq" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-faq">FAQ</a>
-        <a href="about.html" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-about">Tentang Kami</a>
-        <a href="contact.html" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-contact">Kontak</a>
+        <a href="#about" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-about">Tentang Kami</a>
+        <a href="#contact" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-contact">Kontak</a>
       </nav>
 
       <!-- Social Media & Language Toggle -->
@@ -192,12 +181,12 @@
     <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700">
       <div class="px-6 py-4 space-y-3 text-gray-800 dark:text-gray-200">
         <a href="#home" class="block py-2.5" data-i18n="nav-home">Beranda</a>
-        <a href="packages.html" class="block py-2.5" data-i18n="nav-packages">Paket Wisata</a>
+        <a href="#packages" class="block py-2.5" data-i18n="nav-packages">Paket Wisata</a>
         <a href="gallery.html" class="block py-2.5" data-i18n="nav-gallery">Galeri</a>
         <a href="#testimonials" class="block py-2.5" data-i18n="nav-testimonials">Testimoni</a>
         <a href="#faq" class="block py-2.5" data-i18n="nav-faq">FAQ</a>
-        <a href="about.html" class="block py-2.5" data-i18n="nav-about">Tentang Kami</a>
-        <a href="contact.html" class="block py-2.5" data-i18n="nav-contact">Kontak</a>
+        <a href="#about" class="block py-2.5" data-i18n="nav-about">Tentang Kami</a>
+        <a href="#contact" class="block py-2.5" data-i18n="nav-contact">Kontak</a>
         <div class="flex space-x-4 mt-4">
           <a href="https://facebook.com/medantobasumatera" target="_blank" class="social-button bg-blue-600">
             <i class="fab fa-facebook-f"></i>
@@ -260,59 +249,38 @@
     </div>
   </section>
 
- <!-- Galeri (Foto & Video) -->
-<section id="gallery" class="py-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16 fade-in">
-      <h2 class="text-3xl md:text-4xl font-bold" data-i18n="gallery-title">Galeri Perjalanan Kami</h2>
-      <p class="text-xl text-gray-600 dark:text-gray-300 mt-4" data-i18n="gallery-desc">Momen indah pelanggan kami di Danau Toba.</p>
-    </div>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+  <!-- Galeri (Foto Saja) -->
+  <section id="gallery" class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold" data-i18n="gallery-title">Galeri Perjalanan Kami</h2>
+          <p class="text-xl text-gray-600 dark:text-gray-300 mt-4" data-i18n="gallery-desc">Momen indah pelanggan kami di Danau Toba.</p>
+        </div>
+        <a href="#dokumentasi" class="btn-doc px-6 py-3 rounded-lg font-semibold mt-4 md:mt-0" data-i18n="btn-doc">Lihat Dokumentasi Lengkap</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-      <!-- Foto -->
-      <img src="foto1.jpg" alt="Wisata 1" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(0)">
-      <img src="foto2.jpg" alt="Wisata 2" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(1)">
-      <img src="foto3.jpg" alt="Wisata 3" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(2)">
-      <img src="foto4.jpg" alt="Wisata 4" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(3)">
+        <!-- Foto -->
+        <img src="foto1.jpg" alt="Wisata 1" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(0)">
+        <img src="foto2.jpg" alt="Wisata 2" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(1)">
+        <img src="foto3.jpg" alt="Wisata 3" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(2)">
+        <img src="foto4.jpg" alt="Wisata 4" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(3)">
+        <img src="foto5.jpg" alt="Wisata 5" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(4)">
+        <img src="foto6.jpg" alt="Wisata 6" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(5)">
+        <img src="foto7.jpg" alt="Wisata 7" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(6)">
+        <img src="foto8.jpg" alt="Wisata 8" class="rounded-lg shadow-md object-cover h-48 w-full fade-in cursor-pointer" onclick="openLightbox(7)">
 
-      <!-- Video -->
-      <div class="gallery-video relative fade-in" onclick="openLightbox(4)">
-        <img src="video1-thumbnail.jpg" alt="Video 1" class="rounded-lg shadow-md object-cover h-48 w-full">
-        <div class="play-icon">
-          <i class="fas fa-play"></i>
-        </div>
-      </div>
-      <div class="gallery-video relative fade-in" onclick="openLightbox(5)">
-        <img src="video2-thumbnail.jpg" alt="Video 2" class="rounded-lg shadow-md object-cover h-48 w-full">
-        <div class="play-icon">
-          <i class="fas fa-play"></i>
-        </div>
-      </div>
-      <div class="gallery-video relative fade-in" onclick="openLightbox(6)">
-        <img src="video3-thumbnail.jpg" alt="Video 3" class="rounded-lg shadow-md object-cover h-48 w-full">
-        <div class="play-icon">
-          <i class="fas fa-play"></i>
-        </div>
-      </div>
-      <div class="gallery-video relative fade-in" onclick="openLightbox(7)">
-        <img src="video4-thumbnail.jpg" alt="Video 4" class="rounded-lg shadow-md object-cover h-48 w-full">
-        <div class="play-icon">
-          <i class="fas fa-play"></i>
-        </div>
       </div>
     </div>
-  </div>
-</section>
-  
+  </section>
+
   <!-- Lightbox Modal -->
   <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center p-4">
     <button id="lightbox-close" class="absolute top-4 right-4 text-white text-4xl z-10 hover:text-gray-300">&times;</button>
     <button id="lightbox-prev" class="absolute left-4 text-white text-3xl z-10 hover:text-gray-300 hidden md:block"><</button>
     <button id="lightbox-next" class="absolute right-12 text-white text-3xl z-10 hover:text-gray-300 hidden md:block">></button>
     <img id="lightbox-img" class="max-h-full max-w-full object-contain opacity-0" src="" alt="">
-    <div id="lightbox-video-container" class="hidden">
-      <iframe id="lightbox-video" class="max-h-full max-w-full" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
   </div>
 
   <!-- Daftar Paket Wisata -->
@@ -753,48 +721,28 @@
     // === LIGHTBOX GALLERY ===
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxVideo = document.getElementById('lightbox-video');
-    const lightboxVideoContainer = document.getElementById('lightbox-video-container');
     const lightboxClose = document.getElementById('lightbox-close');
     const lightboxPrev = document.getElementById('lightbox-prev');
     const lightboxNext = document.getElementById('lightbox-next');
 
     const galleryItems = [
-      { img: 'foto1.jpg' },
-      { img: 'foto2.jpg' },
-      { img: 'foto3.jpg' },
-      { img: 'foto4.jpg' },
-      { img: 'https://picsum.photos/id/1040/1200/800', video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1' },
-      { img: 'https://picsum.photos/id/433/1200/800', video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1' },
-      { img: 'https://picsum.photos/id/1074/1200/800', video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1' },
-      { img: 'https://picsum.photos/id/180/1200/800', video: 'https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1' }
+      'foto1.jpg', 'foto2.jpg', 'foto3.jpg', 'foto4.jpg',
+      'foto5.jpg', 'foto6.jpg', 'foto7.jpg', 'foto8.jpg'
     ];
 
     let currentIndex = 0;
 
     function openLightbox(index) {
       currentIndex = index;
-      const item = galleryItems[currentIndex];
       lightboxImg.classList.add('opacity-0');
-      lightboxVideoContainer.classList.add('hidden');
-      lightboxImg.src = '';
-      lightboxVideo.src = '';
-
-      if (item.video) {
-        lightboxVideo.src = item.video;
-        lightboxVideoContainer.classList.remove('hidden');
-        setTimeout(() => lightbox.classList.remove('hidden'), 100);
-      } else {
-        lightboxImg.src = item.img;
-        lightboxImg.onload = () => lightboxImg.classList.remove('opacity-0');
-        lightbox.classList.remove('hidden');
-      }
+      lightboxImg.src = galleryItems[currentIndex];
+      lightboxImg.onload = () => lightboxImg.classList.remove('opacity-0');
+      lightbox.classList.remove('hidden');
     }
 
     function closeLightbox() {
       lightbox.classList.add('hidden');
       lightboxImg.classList.add('opacity-0');
-      lightboxVideo.src = '';
     }
 
     function showImage(index) {
@@ -900,7 +848,8 @@
         "footer-follow": "Ikuti Kami",
         "stat-customers": "Pelanggan Puas",
         "stat-experience": "Pengalaman",
-        "stat-halal": "Muslim Friendly"
+        "stat-halal": "Muslim Friendly",
+        "btn-doc": "Lihat Dokumentasi Lengkap"
       },
       en: {
         "title": "MEDAN TOBA SUMATERA TOUR & TRAVEL | Halal Travel Medan - Lake Toba",
@@ -983,7 +932,8 @@
         "footer-follow": "Follow Us",
         "stat-customers": "Satisfied Customers",
         "stat-experience": "Years of Experience",
-        "stat-halal": "100% Halal"
+        "stat-halal": "100% Halal",
+        "btn-doc": "View Complete Documentation"
       }
     };
 
