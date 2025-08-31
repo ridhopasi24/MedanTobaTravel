@@ -103,6 +103,20 @@
     .social-button:hover {
       transform: scale(1.1);
     }
+    .itinerary-day {
+      border-left: 3px solid #10b981;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .accordion-content.expanded {
+      max-height: 200px;
+      transition: max-height 0.5s ease-in;
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-inter transition-colors duration-300">
@@ -294,32 +308,32 @@
 
         <!-- Fasilitas Paket (Semua Paket) -->
         <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-lg p-8 fade-in">
-          <h3 class="text-2xl font-bold mb-6 text-center">💡 Fasilitas Paket (Semua Paket)</h3>
+          <h3 class="text-2xl font-bold mb-6 text-center" data-i18n="facilities-title">💡 Fasilitas Paket (Semua Paket)</h3>
           <div class="space-y-6 text-sm">
             <div>
-              <p class="font-semibold text-green-600">✅ Termasuk:</p>
+              <p class="font-semibold text-green-600" data-i18n="included">✅ Termasuk:</p>
               <ul class="space-y-1 text-gray-700 dark:text-gray-300">
-                <li>• Driver Profesional</li>
-                <li>• Mobil AC Nyaman</li>
-                <li>• BBM & Tol</li>
-                <li>• Tiket Masuk & Ferry</li>
-                <li>• Air Mineral</li>
-                <li>• Makan Driver</li>
-                <li>• Penginapan Driver</li>
+                <li><span data-i18n="driver">• Driver Profesional</span></li>
+                <li><span data-i18n="car">• Mobil AC Nyaman</span></li>
+                <li><span data-i18n="fuel">• BBM & Tol</span></li>
+                <li><span data-i18n="tickets">• Tiket Masuk & Ferry</span></li>
+                <li><span data-i18n="water">• Air Mineral</span></li>
+                <li><span data-i18n="driver-meal">• Makan Driver</span></li>
+                <li><span data-i18n="driver-accom">• Penginapan Driver</span></li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold text-red-500">❌ Tidak Termasuk:</p>
+              <p class="font-semibold text-red-500" data-i18n="excluded">❌ Tidak Termasuk:</p>
               <ul class="space-y-1 text-gray-700 dark:text-gray-300">
-                <li>• Hotel Penginapan</li>
-                <li>• Makan Siang & Malam</li>
-                <li>• Guide Hiking Sibayak</li>
+                <li><span data-i18n="hotel">• Hotel Penginapan</span></li>
+                <li><span data-i18n="meals">• Makan Siang & Malam</span></li>
+                <li><span data-i18n="guide">• Guide Hiking Sibayak</span></li>
               </ul>
             </div>
             <div>
-              <p class="font-semibold text-blue-500">📌 Catatan:</p>
+              <p class="font-semibold text-blue-500" data-i18n="note">📌 Catatan:</p>
               <p class="text-gray-700 dark:text-gray-300 text-sm">
-                Kami juga menyediakan paket <strong>termasuk hotel</strong>. Harga berbeda, bisa dibahas via chat pribadi.
+                <span data-i18n="note-text">Kami juga menyediakan paket termasuk hotel. Harga berbeda, bisa dibahas via chat pribadi.</span>
               </p>
             </div>
           </div>
@@ -328,23 +342,16 @@
       </div>
     </div>
   </section>
-        <!-- Paket Custom -->
-        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden package-card fade-in md:col-span-3">
-          <div class="p-6 text-center">
-            <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="custom-title">Custom Trip</h3>
-            <p class="text-3xl font-extrabold text-green-600 mb-4" data-i18n="custom-price">Harga Negosiasi</p>
-            <ul class="flex flex-wrap justify-center gap-4 mb-6 text-sm text-gray-700 dark:text-gray-300">
-              <li class="flex items-center space-x-1"><i class="fas fa-check text-green-500"></i> <span data-i18n="custom-flex">Itinerary Fleksibel</span></li>
-              <li class="flex items-center space-x-1"><i class="fas fa-check text-green-500"></i> <span data-i18n="custom-hotel">Pilihan Hotel</span></li>
-              <li class="flex items-center space-x-1"><i class="fas fa-check text-green-500"></i> <span data-i18n="custom-car">Semua Jenis Mobil</span></li>
-              <li class="flex items-center space-x-1"><i class="fas fa-check text-green-500"></i> <span data-i18n="custom-consult">Konsultasi Gratis</span></li>
-            </ul>
-            <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20ingin%20paket%20kustom." target="_blank" class="btn-whatsapp w-full py-3 rounded-xl flex items-center justify-center font-semibold">
-              <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-consult">Konsultasi Gratis</span>
-            </a>
-          </div>
-        </div>
 
+  <!-- Paket Custom -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-8 text-center fade-in">
+        <h3 class="text-2xl font-bold text-gray-800 dark:text-white" data-i18n="custom-title">🎯 Butuh Paket Khusus?</h3>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-6" data-i18n="custom-desc">Ingin itinerary sendiri, tambah hotel, atau rombongan besar?</p>
+        <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20ingin%20konsultasi%20paket%20kustom." target="_blank" class="btn-whatsapp inline-block px-10 py-4 rounded-xl font-bold hover:bg-green-700">
+          <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-consult">KONSULTASI GRATIS</span>
+        </a>
       </div>
     </div>
   </section>
@@ -355,7 +362,7 @@
       <h2 class="text-3xl font-bold mb-4" data-i18n="packages-cta-title">Siap untuk Petualangan Anda?</h2>
       <p class="text-xl mb-8" data-i18n="packages-cta-desc">Gabung bersama ratusan pelanggan puas kami.</p>
       <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20ingin%20booking%20paket%20wisata." target="_blank" class="btn-whatsapp inline-block px-8 py-4 rounded-lg font-semibold">
-        <i class="fab fa-whatsapp mr-2"></i> Pesan Sekarang
+        <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-book">Pesan Sekarang</span>
       </a>
     </div>
   </section>
@@ -377,17 +384,17 @@
         <div>
           <h4 class="font-semibold mb-4" data-i18n="footer-services">Layanan</h4>
           <ul class="space-y-2 text-gray-400">
-            <li><a href="#packages" class="hover:text-white" data-i18n="package-1-title">Paket 1 Hari</a></li>
-            <li><a href="#packages" class="hover:text-white" data-i18n="package-2-title">Paket 2 Hari</a></li>
-            <li><a href="#packages" class="hover:text-white" data-i18n="package-3-title">Paket 3 Hari</a></li>
-            <li><a href="#packages" class="hover:text-white" data-i18n="custom-title">Custom Trip</a></li>
+            <li><a href="#packages" class="hover:text-white" data-i18n="package-3-title">Paket 3 Hari 2 Malam</a></li>
+            <li><a href="#packages" class="hover:text-white" data-i18n="package-4-title">Paket 4 Hari 3 Malam</a></li>
+            <li><a href="#packages" class="hover:text-white" data-i18n="package-5-title-1">Paket 5 Hari 4 Malam</a></li>
+            <li><a href="#packages" class="hover:text-white" data-i18n="package-6-title">Paket 6 Hari 5 Malam</a></li>
           </ul>
         </div>
         <div>
           <h4 class="font-semibold mb-4" data-i18n="footer-contact">Kontak</h4>
           <ul class="space-y-2 text-gray-400">
             <li>📱 +62 813-9760-6622</li>
-            <li>📧 info@tobatravel.com</li>
+            <li>📧 info@tobasumatera.com</li>
             <li>📍 Medan, Sumatera Utara</li>
           </ul>
         </div>
@@ -400,36 +407,61 @@
 
   <!-- JavaScript -->
   <script>
-    // === Terjemahan ===
+    // === SET NILAI TUKAR DI SINI ===
+    const exchangeRate = 3500; // 1 RM = 3500 IDR
+
+    // Fungsi format angka ke Rupiah
+    function formatRupiah(amount) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      }).format(amount);
+    }
+
+    // Update harga di semua paket
+    document.getElementById('price-3h2m').textContent = `≈ ${formatRupiah(1200 * exchangeRate)} untuk 2 orang`;
+    document.getElementById('price-4h3m').textContent = `≈ ${formatRupiah(1600 * exchangeRate)} untuk 3 orang`;
+    document.getElementById('price-5h4m1').textContent = `≈ ${formatRupiah(1800 * exchangeRate)} untuk 2 orang`;
+    document.getElementById('price-5h4m2').textContent = `≈ ${formatRupiah(1800 * exchangeRate)} untuk 2 orang`;
+    document.getElementById('price-6h5m').textContent = `≈ ${formatRupiah(2200 * exchangeRate)} untuk 2 orang`;
+
+    // === TERJEMAHAN LENGKAP ===
     const translations = {
       id: {
         "packages-title": "Paket Wisata Populer",
         "packages-desc": "Pilih paket yang sesuai dengan waktu dan anggaran Anda.",
-        "package-1-title": "Paket 1 Hari",
-        "package-1-price": "Rp 750rb/orang",
-        "package-2-title": "Paket 2 Hari 1 Malam",
-        "package-2-price": "Mulai Rp 1.5jt/orang",
         "package-3-title": "Paket 3 Hari 2 Malam",
-        "package-3-price": "Mulai Rp 2.8jt/orang",
-        "badge-best": "BEST SELLER",
-        "custom-title": "Custom Trip",
-        "custom-price": "Harga Negosiasi",
-        "custom-flex": "Itinerary Fleksibel",
-        "custom-hotel": "Pilihan Hotel",
-        "custom-car": "Semua Jenis Mobil",
-        "custom-consult": "Konsultasi Gratis",
-        "feat-driver": "Supir Muslim",
-        "feat-bbm": "BBM & Parkir",
-        "feat-lunch": "Makan Siang",
-        "feat-guide": "Guide Lokal",
-        "feat-hotel": "Hotel Bintang 2",
-        "feat-meals": "3x Makan",
-        "feat-ticket": "Tiket Wisata",
-        "feat-water": "Air Mineral",
-        "packages-cta-title": "Siap untuk Petualangan Anda?",
-        "packages-cta-desc": "Gabung bersama ratusan pelanggan puas kami.",
+        "package-4-title": "Paket 4 Hari 3 Malam",
+        "package-5-title-1": "Paket 5 Hari 4 Malam – Paket 1",
+        "package-5-title-2": "Paket 5 Hari 4 Malam – Paket 2",
+        "package-6-title": "Paket 6 Hari 5 Malam",
+        "hiking-note": "* Hiking Sibayak: RM 100/pax (cash)",
+        "hiking-note-2": "* Hiking Sibayak: RM 100 untuk 2 orang",
+        "hiking-note-3": "* Hiking Sibayak: RM 75/orang",
         "btn-book-now": "Booking Sekarang",
         "btn-consult": "Konsultasi Gratis",
+        "facilities-title": "Fasilitas Paket (Semua Paket)",
+        "included": "✅ Termasuk:",
+        "excluded": "❌ Tidak Termasuk:",
+        "note": "📌 Catatan:",
+        "note-text": "Kami juga menyediakan paket termasuk hotel. Harga berbeda, bisa dibahas via chat pribadi.",
+        "driver": "Driver Profesional",
+        "car": "Mobil AC Nyaman",
+        "fuel": "BBM & Tol",
+        "tickets": "Tiket Masuk & Ferry",
+        "water": "Air Mineral",
+        "driver-meal": "Makan Driver",
+        "driver-accom": "Penginapan Driver",
+        "hotel": "Hotel Penginapan",
+        "meals": "Makan Siang & Malam",
+        "guide": "Guide Hiking Sibayak",
+        "custom-title": "Butuh Paket Khusus?",
+        "custom-desc": "Ingin itinerary sendiri, tambah hotel, atau rombongan besar?",
+        "packages-cta-title": "Siap untuk Petualangan Anda?",
+        "packages-cta-desc": "Gabung bersama ratusan pelanggan puas kami.",
+        "btn-book": "Pesan Sekarang",
         "footer-desc": "Travel lokal terpercaya dengan supir Muslim. Kami menghadirkan pengalaman wisata Danau Toba yang nyaman, halal, dan berkesan.",
         "footer-services": "Layanan",
         "footer-contact": "Kontak",
@@ -444,32 +476,37 @@
       en: {
         "packages-title": "Popular Tour Packages",
         "packages-desc": "Choose a package that suits your time and budget.",
-        "package-1-title": "1-Day Package",
-        "package-1-price": "IDR 750k/person",
-        "package-2-title": "2 Days 1 Night",
-        "package-2-price": "From IDR 1.5M/person",
-        "package-3-title": "3 Days 2 Nights",
-        "package-3-price": "From IDR 2.8M/person",
-        "badge-best": "BEST SELLER",
-        "custom-title": "Custom Trip",
-        "custom-price": "Negotiable Price",
-        "custom-flex": "Flexible Itinerary",
-        "custom-hotel": "Hotel Options",
-        "custom-car": "All Car Types",
-        "custom-consult": "Free Consultation",
-        "feat-driver": "Muslim Driver",
-        "feat-bbm": "Fuel & Parking",
-        "feat-lunch": "Lunch",
-        "feat-guide": "Local Guide",
-        "feat-hotel": "2-Star Hotel",
-        "feat-meals": "3 Meals",
-        "feat-ticket": "Entrance Tickets",
-        "feat-water": "Mineral Water",
-        "packages-cta-title": "Ready for Your Adventure?",
-        "packages-cta-desc": "Join hundreds of satisfied customers.",
+        "package-3-title": "3 Days 2 Nights Package",
+        "package-4-title": "4 Days 3 Nights Package",
+        "package-5-title-1": "5 Days 4 Nights Package – Package 1",
+        "package-5-title-2": "5 Days 4 Nights Package – Package 2",
+        "package-6-title": "6 Days 5 Nights Package",
+        "hiking-note": "* Sibayak Hiking: RM 100/pax (cash)",
+        "hiking-note-2": "* Sibayak Hiking: RM 100 for 2 people",
+        "hiking-note-3": "* Sibayak Hiking: RM 75/person",
         "btn-book-now": "Book Now",
         "btn-consult": "Free Consultation",
-        "footer-desc": "Trusted local travel with Muslim drivers. We bring you a comfortable, halal, and memorable Lake Toba experience.",
+        "facilities-title": "Facilities (All Packages)",
+        "included": "✅ Included:",
+        "excluded": "❌ Not Included:",
+        "note": "📌 Note:",
+        "note-text": "We also provide packages that include hotels. Different prices, can be discussed via private chat.",
+        "driver": "Professional Driver",
+        "car": "Comfortable AC Car",
+        "fuel": "Fuel & Toll",
+        "tickets": "Entrance & Ferry Tickets",
+        "water": "Mineral Water",
+        "driver-meal": "Driver's Meals",
+        "driver-accom": "Driver's Accommodation",
+        "hotel": "Accommodation",
+        "meals": "Lunch & Dinner",
+        "guide": "Sibayak Hiking Guide",
+        "custom-title": "Need a Custom Package?",
+        "custom-desc": "Want your own itinerary, add hotel, or large group?",
+        "packages-cta-title": "Ready for Your Adventure?",
+        "packages-cta-desc": "Join hundreds of satisfied customers.",
+        "btn-book": "Book Now",
+        "footer-desc": "Trusted local travel with Muslim drivers. We provide a comfortable, halal, and memorable Lake Toba experience.",
         "footer-services": "Services",
         "footer-contact": "Contact",
         "nav-home": "Home",
@@ -514,6 +551,7 @@
         document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-moon"></i>';
         document.getElementById('theme-toggle-mobile').innerHTML = '<i class="fas fa-moon"></i> <span data-i18n="theme-toggle">Mode Gelap</span>';
       }
+      // Terjemahkan ulang setelah ganti tema
       applyLanguage(currentLang);
     }
 
@@ -522,38 +560,29 @@
       applyLanguage(currentLang);
       applyTheme(currentTheme);
 
+      // Set teks tombol bahasa
       document.getElementById('lang-toggle').textContent = currentLang === 'id' ? 'EN' : 'ID';
       document.getElementById('lang-toggle-mobile').textContent = currentLang === 'id' ? 'EN' : 'ID';
     });
 
     // === Ganti Bahasa ===
-    document.getElementById('lang-toggle')?.addEventListener('click', () => {
-      currentLang = currentLang === 'id' ? 'en' : 'id';
-      applyLanguage(currentLang);
-      localStorage.setItem('toba-lang', currentLang);
-      document.getElementById('lang-toggle').textContent = currentLang === 'id' ? 'EN' : 'ID';
-      document.getElementById('lang-toggle-mobile').textContent = currentLang === 'id' ? 'EN' : 'ID';
-    });
-
-    document.getElementById('lang-toggle-mobile')?.addEventListener('click', () => {
-      currentLang = currentLang === 'id' ? 'en' : 'id';
-      applyLanguage(currentLang);
-      localStorage.setItem('toba-lang', currentLang);
-      document.getElementById('lang-toggle').textContent = currentLang === 'id' ? 'EN' : 'ID';
-      document.getElementById('lang-toggle-mobile').textContent = currentLang === 'id' ? 'EN' : 'ID';
+    ['lang-toggle', 'lang-toggle-mobile'].forEach(id => {
+      document.getElementById(id)?.addEventListener('click', () => {
+        currentLang = currentLang === 'id' ? 'en' : 'id';
+        applyLanguage(currentLang);
+        localStorage.setItem('toba-lang', currentLang);
+        document.getElementById('lang-toggle').textContent = currentLang === 'id' ? 'EN' : 'ID';
+        document.getElementById('lang-toggle-mobile').textContent = currentLang === 'id' ? 'EN' : 'ID';
+      });
     });
 
     // === Ganti Tema ===
-    document.getElementById('theme-toggle')?.addEventListener('click', () => {
-      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-      localStorage.setItem('toba-theme', currentTheme);
-      applyTheme(currentTheme);
-    });
-
-    document.getElementById('theme-toggle-mobile')?.addEventListener('click', () => {
-      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-      localStorage.setItem('toba-theme', currentTheme);
-      applyTheme(currentTheme);
+    ['theme-toggle', 'theme-toggle-mobile'].forEach(id => {
+      document.getElementById(id)?.addEventListener('click', () => {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        localStorage.setItem('toba-theme', currentTheme);
+        applyTheme(currentTheme);
+      });
     });
 
     // === Fade-in saat scroll ===
