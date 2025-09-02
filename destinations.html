@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Destinasi Wisata | MEDAN TOBA SUMATERA</title>
+  <meta name="description" content="Lihat semua destinasi wisata di Danau Toba, Samosir, Berastagi, dan Sibayak yang termasuk dalam paket kami.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0ea5e9',
+            secondary: '#10b981',
+            accent: '#8b5cf6',
+            'bg-dark': '#0f172a',
+            'card-dark': '#1e293b'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .hero-bg {
+      background-image: url('https://picsum.photos/id/445/1600/900');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 30, 60, 0.7) 100%);
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    .btn-whatsapp {
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white;
+    }
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(37, 211, 102, 0.4);
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #25D366, #128C7E);
+      color: white;
+      padding: 16px;
+      border-radius: 50%;
+      font-size: 24px;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .dest-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .dest-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .category-badge {
+      background: linear-gradient(45deg, #10b981, #059669);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 font-inter transition-colors duration-300">
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/6281397606622?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR%20%26%20TRAVEL!" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Header -->
+  <header class="fixed w-full bg-white/90 dark:bg-gray-900/95 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="logo.png" alt="Logo MEDAN TOBA SUMATERA" class="w-10 h-10 object-contain">
+        <div>
+          <h3 class="text-lg font-bold">MEDAN TOBA SUMATERA</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Tour & Travel</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="index.html" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-home">Beranda</a>
+        <a href="packages.html" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-packages">Paket Wisata</a>
+        <a href="destinations.html" class="text-sm font-medium text-green-600 border-b-2 border-green-600" data-i18n="nav-destinations">Destinasi</a>
+        <a href="gallery.html" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-gallery">Galeri</a>
+        <a href="about.html" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-about">Tentang Kami</a>
+        <a href="contact.html" class="text-sm font-medium text-gray-700 hover:text-green-600" data-i18n="nav-contact">Kontak</a>
+      </nav>
+
+      <!-- Social Media & Language/Toggle -->
+      <div class="flex items-center space-x-4">
+        <a href="https://facebook.com/medantobasumatera" target="_blank" class="social-button bg-blue-600 hover:shadow-lg" title="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/medantobasumatera" target="_blank" class="social-button bg-gradient-to-r from-purple-500 to-pink-500 hover:shadow-lg" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://youtube.com/@medantobasumatera" target="_blank" class="social-button bg-red-600 hover:shadow-lg" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <button id="theme-toggle" class="text-gray-700 dark:text-gray-300"><i class="fas fa-moon"></i></button>
+        <button id="lang-toggle" class="text-sm font-medium text-gray-700 dark:text-gray-300" data-i18n="lang-toggle">EN</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t dark:border-gray-700">
+      <div class="px-6 py-4 space-y-3 text-gray-800 dark:text-gray-200">
+        <a href="index.html" class="block py-2.5" data-i18n="nav-home">Beranda</a>
+        <a href="packages.html" class="block py-2.5" data-i18n="nav-packages">Paket Wisata</a>
+        <a href="destinations.html" class="block py-2.5" data-i18n="nav-destinations">Destinasi</a>
+        <a href="gallery.html" class="block py-2.5" data-i18n="nav-gallery">Galeri</a>
+        <a href="about.html" class="block py-2.5" data-i18n="nav-about">Tentang Kami</a>
+        <a href="contact.html" class="block py-2.5" data-i18n="nav-contact">Kontak</a>
+        <div class="flex space-x-4 mt-4">
+          <a href="https://facebook.com/medantobasumatera" target="_blank" class="social-button bg-blue-600">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://instagram.com/medantobasumatera" target="_blank" class="social-button bg-gradient-to-r from-purple-500 to-pink-500">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com/@medantobasumatera" target="_blank" class="social-button bg-red-600">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <button id="theme-toggle-mobile" class="text-gray-700 dark:text-gray-300">
+            <i class="fas fa-moon"></i> <span data-i18n="theme-toggle">Mode Gelap</span>
+          </button>
+          <button id="lang-toggle-mobile" class="text-gray-700 dark:text-gray-300" data-i18n="lang-toggle">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-28 pb-16 hero-bg hero-content text-white">
+    <div class="hero-overlay"></div>
+    <div class="max-w-4xl mx-auto px-6 text-center fade-in">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4" data-i18n="destinations-title">Destinasi Wisata Kami</h1>
+      <p class="text-lg" data-i18n="destinations-desc">Nikmati keindahan alam, budaya Batak, dan pemandangan spektakuler di Medan, Danau Toba, Berastagi & Sibayak.</p>
+    </div>
+  </section>
+
+  <!-- Filter & Search -->
+  <section class="py-8 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-wrap justify-center gap-4 mb-6">
+        <button class="category-badge" data-filter="all" data-i18n="filter-all">Semua</button>
+        <button class="category-badge" data-filter="danau-toba" data-i18n="filter-lake">Danau Toba</button>
+        <button class="category-badge" data-filter="berastagi-sibayak" data-i18n="filter-mountains">Berastagi & Sibayak</button>
+        <button class="category-badge" data-filter="medan" data-i18n="filter-city">Medan</button>
+        <button class="category-badge" data-filter="rute" data-i18n="filter-route">Rute Utama</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Daftar Destinasi -->
+  <section class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Danau Toba & Samosir -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-batu-hoda.jpg" alt="Pantai Batu Hoda" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Pantai Batu Hoda</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Pantai indah di Pulau Samosir dengan pasir hitam dan pemandangan danau yang tenang.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di semua paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-batu-siallagan.jpg" alt="Batu Siallagan" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Batu Siallagan</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Batu besar ikonik dengan pemandangan spektakuler dan udara sejuk dari ketinggian.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 3H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-bukit-burung.jpg" alt="Bukit Burung View" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bukit Burung View</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Spot foto dengan pemandangan Danau Toba dari ketinggian, sangat populer di kalangan pelancong.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 4H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-holbung.jpg" alt="Holbung Hills" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Holbung Hills</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Bukit hijau dengan view Danau Toba yang menakjubkan, cocok untuk piknik keluarga.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 3H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-sibea-bea.jpg" alt="Bukit Sibea-bea" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bukit Sibea-bea</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Tempat populer untuk melihat matahari terbit/terbenam dengan pemandangan danau yang memukau.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 3H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-efrata.jpg" alt="Efrata Waterfall" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Efrata Waterfall</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Air terjun alami yang sejuk dan asri, tersembunyi di antara pepohonan rimbun.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 3H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-tele-tower.jpg" alt="Tele Tower" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Tele Tower</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Menara pandang dengan pemandangan 360° yang memperlihatkan keindahan Danau Toba dari atas.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 5H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-loken-barn.jpg" alt="Loken Barn" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Loken Barn</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Bangunan tradisional Batak dengan arsitektur unik dan pemandangan gunung yang spektakuler.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 4H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-sipisopiso.jpg" alt="Sipiso-piso Waterfall" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Sipiso-piso Waterfall</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Air terjun tinggi ikonik di Desa Tongging, dengan ketinggian mencapai 120 meter.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di semua paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-tomok.jpg" alt="Tomok Palace" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Tomok Palace</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Situs sejarah kerajaan Batak Toba di Pulau Samosir. Tempat belajar budaya lokal.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 3H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-jembatan-tano.jpg" alt="Jembatan Tano Ponggol" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Jembatan Tano Ponggol</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Jembatan di pinggir Danau Toba yang menjadi spot foto populer dengan latar danau.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 4H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-tulas.jpg" alt="Tulas View" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Tulas View / Bukit Tulus</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Spot foto populer di tepi danau dengan pemandangan pulau-pulau kecil di Danau Toba.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 4H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-geosite.jpg" alt="Geosite Sipinsur" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Geosite Sipinsur</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Kawasan geologi unik di pinggir danau dengan formasi batuan yang menakjubkan.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 6H paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-huta-ginjang.jpg" alt="Huta Ginjang" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Huta Ginjang</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Desa dengan pemandangan Danau Toba dan gunung yang spektakuler dari ketinggian.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 5H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-pantai-bulbul.jpg" alt="Pantai Bul Bul" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Pantai Bul Bul</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Pantai pasir putih di Parapat yang sangat cocok untuk bersantai dan bermain air.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 6H paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-khairos.jpg" alt="Khairos Cafe" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Khairos Cafe</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Cafe estetik dengan view alam yang indah, tempat sempurna untuk bersantai dan menikmati kopi.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 6H paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-bukit-senyum.jpg" alt="Bukit Senyum" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bukit Senyum</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Tempat menikmati senja di tepi danau dengan suasana yang tenang dan romantis.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 6H paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-pantai-bebas.jpg" alt="Pantai Bebas Parapat" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Pantai Bebas Parapat</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Pantai umum di Parapat yang ramah keluarga, cocok untuk bermain dan berenang.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 6H paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="danau-toba">
+          <img src="foto-ferry.jpg" alt="Ferry Tigaras / Parapat" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-lake">Danau Toba</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Ferry Tigaras / Parapat</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Penyeberangan ke Pulau Samosir dengan kapal feri, pengalaman unik menyeberangi Danau Toba.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di semua paket</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Berastagi & Sibayak -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="berastagi-sibayak">
+          <img src="foto-sibayak.jpg" alt="Gunung Sibayak" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-mountains">Berastagi & Sibayak</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Gunung Sibayak</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Gunung aktif dengan trek hiking populer, fumarol, dan pemandian air panas alami.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Hiking opsional (tambahan RM 100)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="berastagi-sibayak">
+          <img src="foto-savanna.jpg" alt="Savanna Sinabung" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-mountains">Berastagi & Sibayak</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Savanna Sinabung</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Hutan savana di kaki Gunung Sinabung dengan pemandangan pegunungan yang menakjubkan.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 5H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="berastagi-sibayak">
+          <img src="foto-lau-kawar.jpg" alt="Danau Lau Kawar" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-mountains">Berastagi & Sibayak</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Danau Lau Kawar</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Danau kawah yang dikelilingi pegunungan, tempat sempurna untuk menikmati ketenangan alam.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 5H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="berastagi-sibayak">
+          <img src="foto-pasar-buah.jpg" alt="Pasar Buah Berastagi" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-mountains">Berastagi & Sibayak</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Pasar Buah Berastagi</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Pasar tradisional dengan buah-buahan segar seperti jeruk, salak, dan stroberi.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 4H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="berastagi-sibayak">
+          <img src="foto-gundaling.jpg" alt="Bukit Gundaling" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-mountains">Berastagi & Sibayak</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Bukit Gundaling</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Spot terbaik di Berastagi untuk melihat panorama gunung Sinabung & Sibayak.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 4H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="berastagi-sibayak">
+          <img src="foto-lumbini.jpg" alt="Lumbini Park / Tangke Tabu" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-mountains">Berastagi & Sibayak</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Lumbini Park / Tangke Tabu</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Taman Buddha dengan stupa besar yang indah, tempat spiritual dan fotogenik.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 5H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="berastagi-sibayak">
+          <img src="foto-sikulikap.jpg" alt="Sikulikap Waterfall" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-mountains">Berastagi & Sibayak</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Sikulikap Waterfall</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Air terjun tersembunyi di kawasan Sibayak, sejuk dan asri dengan alam yang masih alami.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 6H paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="berastagi-sibayak">
+          <img src="foto-sidebuk.jpg" alt="Hot Spring Sidebuk-debuk" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-mountains">Berastagi & Sibayak</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Hot Spring Sidebuk-debuk</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Pemandian air panas alami dengan kandungan belerang yang menyehatkan kulit.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 4H+ paket</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Medan -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="medan">
+          <img src="foto-istana-maimoon.jpg" alt="Istana Maimoon" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-city">Medan</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Istana Maimoon</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Istana kerajaan Melayu Deli di Medan. Arsitektur megah dengan nilai sejarah tinggi.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di akhir perjalanan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="medan">
+          <img src="foto-tjong-a-fie.jpg" alt="Tjong A Fie Mansion" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-city">Medan</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Tjong A Fie Mansion</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Bangunan kolonial Tionghoa yang megah, menampilkan sejarah perkembangan Medan.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di akhir perjalanan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="medan">
+          <img src="foto-masjid-raya.jpg" alt="Masjid Raya Medan" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-city">Medan</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Masjid Raya Medan</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Masjid besar bergaya Moorish dengan arsitektur megah dan nilai sejarah yang tinggi.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di akhir perjalanan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="medan">
+          <img src="foto-vihara.jpg" alt="Vihara Medan" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-city">Medan</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Vihara Medan</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Vihara tertua di Medan dengan arsitektur Tiongkok klasik dan suasana spiritual.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di akhir perjalanan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="medan">
+          <img src="foto-oleh-oleh.jpg" alt="Oleh-oleh Khas Medan" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-city">Medan</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Oleh-oleh Khas Medan</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Toko oleh-oleh seperti bika ambon, durian, kue nastar, dan aneka makanan khas Medan.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di akhir perjalanan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="medan">
+          <img src="foto-shopping.jpg" alt="Shopping Batik / Mall" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-city">Medan</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Shopping Batik / Mall</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Belanja batik Batak atau di pusat perbelanjaan modern di Medan.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di akhir perjalanan</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rute Utama -->
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="rute">
+          <img src="foto-kualanamu.jpg" alt="Pickup: Bandara Kualanamu atau hotel di Medan" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-route">Rute Utama</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Pickup: Bandara Kualanamu atau hotel di Medan</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Penjemputan dari Bandara Kualanamu atau hotel di Medan sebagai awal perjalanan.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di semua paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="rute">
+          <img src="foto-kebun-teh.jpg" alt="Kebun Teh Sidamanik" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-route">Rute Utama</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Kebun Teh Sidamanik</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Perkebunan teh dengan pemandangan hijau yang menyejukkan mata.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di semua paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="rute">
+          <img src="foto-simarjarunjung.jpg" alt="Simarjarunjung View" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-route">Rute Utama</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Simarjarunjung View</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Spot foto dari ketinggian dengan pemandangan Danau Toba yang spektakuler.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di semua paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="rute">
+          <img src="foto-paten-jaya.jpg" alt="Paten Jaya & Mbah Damanik" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-route">Rute Utama</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Paten Jaya & Mbah Damanik</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Rest area populer di jalan menuju Samosir, tempat beristirahat dan menikmati pemandangan.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di semua paket</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden dest-card fade-in" data-category="rute">
+          <img src="foto-air-bah-manik.jpg" alt="Air Bah Manik" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="mb-2"><span class="category-badge" data-i18n="category-route">Rute Utama</span></div>
+            <h3 class="text-xl font-bold text-gray-800 dark:text-white">Air Bah Manik</h3>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Lokasi wisata alam dengan air terjun kecil dan suasana yang sejuk.</p>
+            <div class="mt-4 flex items-center space-x-2 text-green-600">
+              <i class="fas fa-check"></i> <span data-i18n="included">Termasuk di 6H paket</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-16 bg-green-600 text-white text-center">
+    <div class="max-w-4xl mx-auto px-6 fade-in">
+      <h2 class="text-3xl font-bold mb-4" data-i18n="destinations-cta-title">Siap Jelajahi Destinasi Ini?</h2>
+      <p class="text-xl mb-8" data-i18n="destinations-cta-desc">Gabung bersama ratusan pelanggan puas kami.</p>
+      <a href="packages.html" class="btn-whatsapp inline-block px-8 py-4 rounded-lg font-semibold">
+        <i class="fab fa-whatsapp mr-2"></i> <span data-i18n="btn-see-packages">Lihat Paket Wisata</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 dark:bg-black text-white py-14">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center space-x-3 mb-5">
+            <img src="logo.png" alt="Logo" class="w-12 h-12 object-contain">
+            <div>
+              <h3 class="text-2xl font-bold">MEDAN TOBA SUMATERA</h3>
+              <p class="text-blue-200">Tour & Travel</p>
+            </div>
+          </div>
+          <p class="text-gray-400" data-i18n="footer-desc">Travel lokal terpercaya dengan supir Muslim. Kami menghadirkan pengalaman wisata Danau Toba yang nyaman, halal, dan berkesan.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4" data-i18n="footer-services">Layanan</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="packages.html" class="hover:text-white" data-i18n="package-3-title">Paket 3 Hari 2 Malam</a></li>
+            <li><a href="packages.html" class="hover:text-white" data-i18n="package-4-title">Paket 4 Hari 3 Malam</a></li>
+            <li><a href="packages.html" class="hover:text-white" data-i18n="package-5-title-1">Paket 5 Hari 4 Malam</a></li>
+            <li><a href="packages.html" class="hover:text-white" data-i18n="package-6-title">Paket 6 Hari 5 Malam</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4" data-i18n="footer-contact">Kontak</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li>📱 +62 813-9760-6622</li>
+            <li>📧 info@tobasumatera.com</li>
+            <li>📍 Medan, Sumatera Utara</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-10 pt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 MEDAN TOBA SUMATERA TOUR & TRAVEL. Dibuat dengan ❤️ untuk wisatawan Indonesia.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // === Terjemahan ===
+    const translations = {
+      id: {
+        "destinations-title": "Destinasi Wisata Kami",
+        "destinations-desc": "Nikmati keindahan alam, budaya Batak, dan pemandangan spektakuler di Medan, Danau Toba, Berastagi & Sibayak.",
+        "filter-all": "Semua",
+        "filter-lake": "Danau Toba",
+        "filter-mountains": "Berastagi & Sibayak",
+        "filter-city": "Medan",
+        "filter-route": "Rute Utama",
+        "category-lake": "Danau Toba",
+        "category-mountains": "Berastagi & Sibayak",
+        "category-city": "Medan",
+        "category-route": "Rute Utama",
+        "included": "Termasuk di semua paket",
+        "destinations-cta-title": "Siap Jelajahi Destinasi Ini?",
+        "destinations-cta-desc": "Gabung bersama ratusan pelanggan puas kami.",
+        "btn-see-packages": "Lihat Paket Wisata",
+        "nav-home": "Beranda",
+        "nav-packages": "Paket Wisata",
+        "nav-destinations": "Destinasi",
+        "nav-gallery": "Galeri",
+        "nav-about": "Tentang Kami",
+        "nav-contact": "Kontak",
+        "lang-toggle": "EN",
+        "theme-toggle": "Mode Gelap",
+        "footer-desc": "Travel lokal terpercaya dengan supir Muslim. Kami menghadirkan pengalaman wisata Danau Toba yang nyaman, halal, dan berkesan.",
+        "footer-services": "Layanan",
+        "footer-contact": "Kontak"
+      },
+      en: {
+        "destinations-title": "Our Travel Destinations",
+        "destinations-desc": "Enjoy the beauty of nature, Batak culture, and spectacular views in Medan, Lake Toba, Berastagi & Sibayak.",
+        "filter-all": "All",
+        "filter-lake": "Lake Toba",
+        "filter-mountains": "Berastagi & Sibayak",
+        "filter-city": "Medan",
+        "filter-route": "Main Route",
+        "category-lake": "Lake Toba",
+        "category-mountains": "Berastagi & Sibayak",
+        "category-city": "Medan",
+        "category-route": "Main Route",
+        "included": "Included in all packages",
+        "destinations-cta-title": "Ready to Explore These Destinations?",
+        "destinations-cta-desc": "Join hundreds of satisfied customers.",
+        "btn-see-packages": "View Tour Packages",
+        "nav-home": "Home",
+        "nav-packages": "Tour Packages",
+        "nav-destinations": "Destinations",
+        "nav-gallery": "Gallery",
+        "nav-about": "About Us",
+        "nav-contact": "Contact",
+        "lang-toggle": "ID",
+        "theme-toggle": "Light Mode",
+        "footer-desc": "Trusted local travel with Muslim drivers. We provide a comfortable, halal, and memorable Lake Toba experience.",
+        "footer-services": "Services",
+        "footer-contact": "Contact"
+      }
+    };
+
+    // === Variabel Global ===
+    let currentLang = localStorage.getItem('toba-lang') || 'id';
+    let currentTheme = localStorage.getItem('toba-theme') || 'light';
+
+    // === Terapkan Bahasa ===
+    function applyLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.placeholder = translations[lang][key];
+          } else {
+            el.textContent = translations[lang][key];
+          }
+        }
+      });
+      document.documentElement.lang = lang;
+      document.title = translations[lang]['destinations-title'] + " | MEDAN TOBA SUMATERA";
+    }
+
+    // === Terapkan Tema ===
+    function applyTheme(theme) {
+      const html = document.documentElement;
+      if (theme === 'dark') {
+        html.classList.add('dark');
+        document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+        document.getElementById('theme-toggle-mobile').innerHTML = '<i class="fas fa-sun"></i> <span data-i18n="theme-toggle">Mode Terang</span>';
+      } else {
+        html.classList.remove('dark');
+        document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-moon"></i>';
+        document.getElementById('theme-toggle-mobile').innerHTML = '<i class="fas fa-moon"></i> <span data-i18n="theme-toggle">Mode Gelap</span>';
+      }
+      // Terjemahkan ulang setelah ganti tema
+      applyLanguage(currentLang);
+    }
+
+    // === Filter Destinasi ===
+    function setupFilter() {
+      const buttons = document.querySelectorAll('[data-filter]');
+      const cards = document.querySelectorAll('.dest-card');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          const filter = button.getAttribute('data-filter');
+          
+          // Update active button
+          buttons.forEach(btn => btn.classList.remove('bg-blue-600', 'text-white'));
+          button.classList.add('bg-blue-600', 'text-white');
+
+          // Filter cards
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    // === Inisialisasi ===
+    document.addEventListener("DOMContentLoaded", () => {
+      applyLanguage(currentLang);
+      applyTheme(currentTheme);
+      setupFilter();
+
+      // Set teks tombol bahasa
+      document.getElementById('lang-toggle').textContent = currentLang === 'id' ? 'EN' : 'ID';
+      document.getElementById('lang-toggle-mobile').textContent = currentLang === 'id' ? 'EN' : 'ID';
+    });
+
+    // === Ganti Bahasa ===
+    ['lang-toggle', 'lang-toggle-mobile'].forEach(id => {
+      document.getElementById(id)?.addEventListener('click', () => {
+        currentLang = currentLang === 'id' ? 'en' : 'id';
+        applyLanguage(currentLang);
+        localStorage.setItem('toba-lang', currentLang);
+        document.getElementById('lang-toggle').textContent = currentLang === 'id' ? 'EN' : 'ID';
+        document.getElementById('lang-toggle-mobile').textContent = currentLang === 'id' ? 'EN' : 'ID';
+      });
+    });
+
+    // === Ganti Tema ===
+    ['theme-toggle', 'theme-toggle-mobile'].forEach(id => {
+      document.getElementById(id)?.addEventListener('click', () => {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+        localStorage.setItem('toba-theme', currentTheme);
+        applyTheme(currentTheme);
+      });
+    });
+
+    // === Fade-in saat scroll ===
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOnScroll = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('active');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>
+```
