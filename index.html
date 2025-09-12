@@ -15,224 +15,104 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Advanced CSS Variables with Expanded Color Palette */
+        /* CSS Variables dengan palet warna lengkap */
         :root {
             --primary: #0ea5e9;
-            --primary-50: #f0f9ff;
-            --primary-100: #e0f2fe;
-            --primary-200: #bae6fd;
-            --primary-300: #7dd3fc;
-            --primary-400: #38bdf8;
-            --primary-500: #0ea5e9;
-            --primary-600: #0284c7;
-            --primary-700: #0369a1;
-            --primary-800: #075985;
-            --primary-900: #0c4a6e;
-            
+            --primary-light: #38bdf8;
+            --primary-dark: #0284c7;
             --secondary: #10b981;
-            --secondary-50: #ecfdf5;
-            --secondary-100: #d1fae5;
-            --secondary-200: #a7f3d0;
-            --secondary-300: #6ee7b7;
-            --secondary-400: #34d399;
-            --secondary-500: #10b981;
-            --secondary-600: #059669;
-            --secondary-700: #047857;
-            --secondary-800: #065f46;
-            --secondary-900: #064e3b;
-            
+            --secondary-light: #34d399;
+            --secondary-dark: #059669;
             --accent: #8b5cf6;
-            --accent-50: #f5f3ff;
-            --accent-100: #ede9fe;
-            --accent-200: #ddd6fe;
-            --accent-300: #c4b5fd;
-            --accent-400: #a78bfa;
-            --accent-500: #8b5cf6;
-            --accent-600: #7c3aed;
-            --accent-700: #6d28d9;
-            --accent-800: #5b21b6;
-            --accent-900: #4c1d95;
-            
+            --accent-light: #a78bfa;
+            --accent-dark: #7c3aed;
             --warning: #f59e0b;
-            --warning-50: #fffbeb;
-            --warning-100: #fef3c7;
-            --warning-500: #f59e0b;
-            --warning-600: #d97706;
-            
-            --success: #10b981;
             --error: #ef4444;
+            --success: #10b981;
             --info: #3b82f6;
             
-            --background: #fafafa;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            --background: var(--gray-50);
             --surface: #ffffff;
-            --surface-2: #f8fafc;
-            --surface-3: #f1f5f9;
+            --text-primary: var(--gray-900);
+            --text-secondary: var(--gray-600);
+            --border: var(--gray-200);
             
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --text-light: #94a3b8;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.15s ease;
+            --transition-slow: all 0.5s ease;
             
-            --border: #e2e8f0;
-            --border-light: #f1f5f9;
-            --border-dark: #cbd5e1;
-            
-            --glass-bg: rgba(255, 255, 255, 0.25);
-            --glass-border: rgba(255, 255, 255, 0.18);
-            --glass-backdrop: blur(20px);
-            
-            --gradient-primary: linear-gradient(135deg, var(--primary-400), var(--primary-600), var(--primary-800));
-            --gradient-secondary: linear-gradient(135deg, var(--secondary-400), var(--secondary-600), var(--secondary-800));
-            --gradient-accent: linear-gradient(135deg, var(--accent-400), var(--accent-600), var(--accent-800));
-            --gradient-rainbow: linear-gradient(135deg, var(--primary-500), var(--secondary-500), var(--accent-500), var(--warning-500));
-            --gradient-sunset: linear-gradient(135deg, #ff6b6b, #ffa726, #42a5f5, #ab47bc);
-            --gradient-ocean: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
-            --gradient-cosmic: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
-            
-            --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
             --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-            --shadow-neon: 0 0 30px rgb(14 165 233 / 0.5), 0 0 60px rgb(14 165 233 / 0.3), 0 0 90px rgb(14 165 233 / 0.1);
-            --shadow-glow: 0 0 20px rgb(16 185 129 / 0.4), 0 0 40px rgb(16 185 129 / 0.2);
             
-            --transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            
-            --radius-sm: 0.375rem;
-            --radius-md: 0.5rem;
+            --radius: 0.5rem;
             --radius-lg: 0.75rem;
             --radius-xl: 1rem;
             --radius-2xl: 1.5rem;
-            --radius-3xl: 2rem;
             --radius-full: 9999px;
         }
 
         .dark {
-            --primary: #38bdf8;
-            --secondary: #34d399;
-            --accent: #a78bfa;
-            --warning: #fbbf24;
-            
-            --background: #0a0e1a;
-            --surface: #1a1f2e;
-            --surface-2: #242938;
-            --surface-3: #2d3748;
-            
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8;
-            --text-light: #64748b;
-            
-            --border: #374151;
-            --border-light: #4b5563;
-            --border-dark: #6b7280;
-            
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            
-            --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.3);
-            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px 0 rgb(0 0 0 / 0.3);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -1px rgb(0 0 0 / 0.3);
-            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -2px rgb(0 0 0 / 0.3);
-            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 10px 10px -5px rgb(0 0 0 / 0.2);
-            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.6);
-            --shadow-neon: 0 0 30px rgb(56 189 248 / 0.6), 0 0 60px rgb(56 189 248 / 0.4), 0 0 90px rgb(56 189 248 / 0.2);
-            --shadow-glow: 0 0 20px rgb(52 211 153 / 0.5), 0 0 40px rgb(52 211 153 / 0.3);
+            --background: var(--gray-900);
+            --surface: var(--gray-800);
+            --text-primary: var(--gray-100);
+            --text-secondary: var(--gray-300);
+            --border: var(--gray-700);
         }
 
-        /* Advanced Base Styles */
+        /* Base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
-
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
         }
 
         body {
-            font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--background);
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
             color: var(--text-primary);
             line-height: 1.6;
-            transition: var(--transition-all);
+            transition: var(--transition);
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        .font-accent { 
-            font-family: 'Playfair Display', Georgia, serif; 
+        .font-accent {
+            font-family: 'Playfair Display', serif;
         }
 
-        .font-primary {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* Advanced Typography */
-        .text-responsive-xs {
-            font-size: clamp(0.75rem, 2vw, 0.875rem);
-        }
-
-        .text-responsive-sm {
-            font-size: clamp(0.875rem, 2.5vw, 1rem);
-        }
-
-        .text-responsive-base {
-            font-size: clamp(1rem, 3vw, 1.125rem);
-        }
-
-        .text-responsive-lg {
-            font-size: clamp(1.125rem, 3.5vw, 1.5rem);
-        }
-
-        .text-responsive-xl {
-            font-size: clamp(1.25rem, 4vw, 2rem);
-        }
-
-        .text-responsive-2xl {
-            font-size: clamp(1.5rem, 5vw, 3rem);
-        }
-
-        .text-responsive-3xl {
-            font-size: clamp(2rem, 6vw, 4rem);
-        }
-
-        .text-responsive-4xl {
-            font-size: clamp(2.5rem, 7vw, 5rem);
-        }
-
-        /* Ultra Advanced Button System */
+        /* Button System */
         .btn {
-            position: relative;
-            font-weight: 600;
-            border-radius: var(--radius-xl);
-            transition: var(--transition-all);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            user-select: none;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
             text-decoration: none;
             border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
             overflow: hidden;
-            transform-style: preserve-3d;
-            perspective: 1000px;
         }
 
-        /* Shimmer Effect */
         .btn::before {
             content: '';
             position: absolute;
@@ -240,136 +120,67 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-            z-index: 1;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
         }
 
         .btn:hover::before {
             left: 100%;
         }
 
-        /* Ripple Effect */
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.3s, height 0.3s;
-            z-index: 0;
-        }
-
-        .btn:active::after {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn span, .btn i {
-            position: relative;
-            z-index: 2;
-        }
-
         .btn-primary {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 1rem 2.5rem;
-            box-shadow: var(--shadow-lg);
-            border: 2px solid transparent;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: var(--shadow-neon);
-            background: var(--gradient-cosmic);
-        }
-
-        .btn-primary:active {
-            transform: translateY(-2px) scale(0.98);
             box-shadow: var(--shadow-md);
         }
 
-        .btn-secondary {
-            background: var(--gradient-secondary);
-            color: white;
-            padding: 1rem 2.5rem;
+        .btn-primary:hover {
+            transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
-            border: 2px solid transparent;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            color: white;
+            box-shadow: var(--shadow-md);
         }
 
         .btn-secondary:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: var(--shadow-glow);
-            background: var(--gradient-ocean);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
         }
 
         .btn-outline {
             border: 2px solid var(--primary);
             color: var(--primary);
             background: transparent;
-            padding: 1rem 2.5rem;
-            backdrop-filter: var(--glass-backdrop);
         }
 
         .btn-outline:hover {
-            background: var(--gradient-primary);
+            background: var(--primary);
             color: white;
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: var(--shadow-neon);
         }
 
         .btn-ghost {
-            background: var(--glass-bg);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
-            border: 1px solid var(--glass-border);
-            backdrop-filter: var(--glass-backdrop);
-            padding: 1rem 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
 
         .btn-ghost:hover {
-            background: rgba(255,255,255,0.2);
-            border-color: rgba(255,255,255,0.4);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        .btn-glow {
-            position: relative;
-            overflow: visible;
-        }
-
-        .btn-glow::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient-rainbow);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: var(--transition-all);
-        }
-
-        .btn-glow:hover::before {
-            opacity: 1;
-        }
-
-        /* Ultra Advanced Card System */
+        /* Card System */
         .card {
             background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-2xl);
+            border-radius: var(--radius-xl);
             box-shadow: var(--shadow-sm);
-            transition: var(--transition-all);
-            position: relative;
+            border: 1px solid var(--border);
+            transition: var(--transition);
             overflow: hidden;
-            transform-style: preserve-3d;
+            position: relative;
         }
 
         .card::before {
@@ -378,71 +189,26 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: var(--gradient-rainbow);
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
             opacity: 0;
-            transition: var(--transition-all);
-            z-index: 1;
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-cosmic);
-            opacity: 0;
-            transition: var(--transition-all);
-            z-index: 0;
+            transition: var(--transition);
         }
 
         .card:hover {
-            transform: translateY(-12px) rotateX(2deg) rotateY(2deg);
-            box-shadow: var(--shadow-2xl);
-            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
         }
 
         .card:hover::before {
             opacity: 1;
         }
 
-        .card:hover::after {
-            opacity: 0.02;
-        }
-
-        .card-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .card-elevated {
-            box-shadow: var(--shadow-lg);
-            border: 2px solid var(--border-light);
-        }
-
-        .card-elevated:hover {
-            transform: translateY(-16px) scale(1.03);
-            box-shadow: var(--shadow-2xl);
-            border-color: var(--primary);
-        }
-
-        .card-neon {
-            border: 2px solid var(--primary);
-            box-shadow: var(--shadow-neon);
-        }
-
-        .card-neon:hover {
-            box-shadow: var(--shadow-neon), var(--shadow-2xl);
-        }
-
-        /* Glass Morphism Enhanced */
+        /* Glass Effect */
         .glass {
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-backdrop);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .glass-strong {
@@ -451,28 +217,20 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .glass-dark {
-            background: rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Advanced Mobile Menu */
+        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: 0;
             right: -100%;
-            width: 90%;
+            width: 85%;
             max-width: 400px;
             height: 100vh;
             background: var(--surface);
             z-index: 1000;
-            transition: right 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: right 0.4s ease;
             padding: 2rem;
             box-shadow: var(--shadow-2xl);
-            border-left: 4px solid var(--primary);
-            backdrop-filter: var(--glass-backdrop);
-            overflow-y: auto;
+            border-left: 3px solid var(--primary);
         }
 
         .mobile-menu.active {
@@ -485,12 +243,12 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
             z-index: 999;
             opacity: 0;
             visibility: hidden;
-            transition: var(--transition-all);
+            transition: var(--transition);
         }
 
         .mobile-overlay.active {
@@ -498,216 +256,32 @@
             visibility: visible;
         }
 
-        .dark .mobile-menu {
-            background: var(--surface);
-            border-left-color: var(--accent);
-        }
-
-        /* Ultra Advanced Navbar */
+        /* Navbar */
         .navbar {
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-backdrop);
-            border-bottom: 1px solid var(--glass-border);
-            transition: var(--transition-all);
-            position: relative;
-        }
-
-        .navbar::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: var(--gradient-rainbow);
-            opacity: 0;
-            transition: var(--transition-all);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
         }
 
         .navbar.scrolled {
-            background: var(--surface);
-            box-shadow: var(--shadow-xl);
-            border-bottom-color: var(--border);
-        }
-
-        .navbar.scrolled::before {
-            opacity: 1;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-lg);
         }
 
         .dark .navbar {
-            background: var(--glass-bg);
-            border-bottom-color: var(--glass-border);
+            background: rgba(31, 41, 55, 0.95);
         }
 
         .dark .navbar.scrolled {
-            background: var(--surface);
-            border-bottom-color: var(--border);
+            background: rgba(31, 41, 55, 0.98);
         }
 
-        /* Navigation Links with Advanced Hover */
-        .nav-link {
-            position: relative;
-            padding: 0.75rem 1rem;
-            border-radius: var(--radius-lg);
-            transition: var(--transition-all);
-        }
-
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            width: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            border-radius: var(--radius-full);
-            transition: var(--transition-bounce);
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::before,
-        .nav-link.active::before {
-            width: 80%;
-        }
-
-        .nav-link:hover {
-            background: var(--primary-50);
-            color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        .dark .nav-link:hover {
-            background: var(--surface-2);
-        }
-
-        /* Hero Section Ultra Advanced */
-        .hero-bg {
-            position: relative;
-            overflow: hidden;
-            min-height: 100vh;
-        }
-
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, 
-                rgba(0,0,0,0.8) 0%, 
-                rgba(15,23,42,0.7) 20%, 
-                rgba(30,41,59,0.6) 40%, 
-                rgba(0,30,60,0.7) 60%, 
-                rgba(0,0,0,0.8) 100%);
-            z-index: 2;
-        }
-
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(14,165,233,0.15) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(16,185,129,0.15) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(139,92,246,0.1) 0%, transparent 50%);
-            animation: float 8s ease-in-out infinite;
-            z-index: 3;
-        }
-
-        /* Floating Particles */
-        .hero-particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 4;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: particle-float 6s ease-in-out infinite;
-        }
-
-        .particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { top: 40%; left: 80%; animation-delay: 1s; }
-        .particle:nth-child(3) { top: 60%; left: 20%; animation-delay: 2s; }
-        .particle:nth-child(4) { top: 80%; left: 90%; animation-delay: 3s; }
-        .particle:nth-child(5) { top: 30%; left: 60%; animation-delay: 4s; }
-
-        @keyframes particle-float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(120deg); }
-            66% { transform: translateY(10px) rotate(240deg); }
-        }
-
-        /* Text Effects */
-        .text-gradient {
-            background: var(--gradient-rainbow);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 300% 300%;
-            animation: gradient-shift 4s ease-in-out infinite;
-        }
-
-        .text-glow {
-            text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
-        }
-
-        .text-neon {
-            color: white;
-            text-shadow: 
-                0 0 5px currentColor,
-                0 0 10px currentColor,
-                0 0 15px currentColor,
-                0 0 20px var(--primary),
-                0 0 35px var(--primary),
-                0 0 40px var(--primary);
-            animation: neon-flicker 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        @keyframes neon-flicker {
-            0%, 100% { 
-                text-shadow: 
-                    0 0 5px currentColor,
-                    0 0 10px currentColor,
-                    0 0 15px currentColor,
-                    0 0 20px var(--primary),
-                    0 0 35px var(--primary),
-                    0 0 40px var(--primary);
-            }
-            50% { 
-                text-shadow: 
-                    0 0 2px currentColor,
-                    0 0 5px currentColor,
-                    0 0 8px currentColor,
-                    0 0 12px var(--primary),
-                    0 0 18px var(--primary),
-                    0 0 25px var(--primary);
-            }
-        }
-
-        /* Advanced Animations */
+        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(100px);
+                transform: translateY(50px);
             }
             to {
                 opacity: 1;
@@ -718,7 +292,7 @@
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-100px);
+                transform: translateY(-50px);
             }
             to {
                 opacity: 1;
@@ -726,65 +300,20 @@
             }
         }
 
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes zoomIn {
-            from {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes rotateIn {
-            from {
-                opacity: 0;
-                transform: rotate(-360deg) scale(0.5);
-            }
-            to {
-                opacity: 1;
-                transform: rotate(0deg) scale(1);
-            }
-        }
-
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(120deg); }
-            66% { transform: translateY(10px) rotate(240deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.8; }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
 
         @keyframes wiggle {
@@ -799,43 +328,36 @@
 
         @keyframes heartbeat {
             0% { transform: scale(1); }
-            14% { transform: scale(1.2); }
+            14% { transform: scale(1.1); }
             28% { transform: scale(1); }
-            42% { transform: scale(1.2); }
+            42% { transform: scale(1.1); }
             70% { transform: scale(1); }
         }
 
-        /* Animation Classes */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
         .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .fade-in-down {
-            animation: fadeInDown 0.8s ease-out forwards;
-        }
-
-        .fade-in-left {
-            animation: fadeInLeft 0.8s ease-out forwards;
-        }
-
-        .fade-in-right {
-            animation: fadeInRight 0.8s ease-out forwards;
-        }
-
-        .zoom-in {
-            animation: zoomIn 0.6s ease-out forwards;
-        }
-
-        .rotate-in {
-            animation: rotateIn 0.8s ease-out forwards;
+            animation: fadeInDown 0.8s ease-out;
         }
 
         .animate-float {
-            animation: float 4s ease-in-out infinite;
+            animation: float 3s ease-in-out infinite;
         }
 
         .animate-pulse-slow {
-            animation: pulse 3s ease-in-out infinite;
+            animation: pulse 2s ease-in-out infinite;
         }
 
         .animate-bounce-slow {
@@ -850,81 +372,64 @@
             animation: heartbeat 1.5s ease-in-out infinite;
         }
 
-        /* Parallax Effects */
-        .parallax {
-            transform-style: preserve-3d;
+        .animate-shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite;
         }
 
-        .parallax-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+        /* Text Effects */
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease-in-out infinite;
         }
 
-        .parallax-back {
-            transform: translateZ(-2px) scale(3);
+        .text-glow {
+            text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
         }
 
-        .parallax-middle {
-            transform: translateZ(-1px) scale(2);
+        /* Hover Effects */
+        .hover-lift {
+            transition: var(--transition);
         }
 
-        .parallax-front {
-            transform: translateZ(0);
+        .hover-lift:hover {
+            transform: translateY(-4px);
         }
 
-        /* Scroll Progress Indicator */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 4px;
-            background: var(--gradient-rainbow);
-            z-index: 9999;
-            transition: width 0.3s ease;
-            box-shadow: 0 2px 10px rgba(14, 165, 233, 0.3);
+        .hover-scale {
+            transition: var(--transition);
         }
 
-        /* Section Enhancements */
-        .section-padding {
-            padding: 6rem 0;
-            position: relative;
+        .hover-scale:hover {
+            transform: scale(1.05);
         }
 
-        .section-padding::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(14,165,233,0.02) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(16,185,129,0.02) 0%, transparent 50%);
-            pointer-events: none;
+        .hover-rotate {
+            transition: var(--transition);
         }
 
-        @media (min-width: 768px) {
-            .section-padding {
-                padding: 8rem 0;
-            }
+        .hover-rotate:hover {
+            transform: rotate(5deg);
         }
 
-        @media (min-width: 1024px) {
-            .section-padding {
-                padding: 10rem 0;
-            }
+        .hover-glow {
+            transition: var(--transition);
         }
 
-        /* Container System Enhanced */
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.4);
+        }
+
+        /* Container */
         .container-custom {
-            width: 100%;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
-            position: relative;
         }
 
         @media (min-width: 640px) {
@@ -933,86 +438,69 @@
             }
         }
 
-        @media (min-width: 1024px) {
-            .container-custom {
-                padding: 0 3rem;
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 7rem 0;
             }
         }
 
-        @media (min-width: 1280px) {
-            .container-custom {
-                padding: 0 4rem;
-            }
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
         }
 
-        /* Interactive Hover Effects */
-        .hover-lift {
-            transition: var(--transition-all);
+        .loading-content {
+            text-align: center;
+            color: white;
         }
 
-        .hover-lift:hover {
-            transform: translateY(-8px);
+        .loading-logo {
+            width: 4rem;
+            height: 4rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse 1.5s infinite;
         }
 
-        .hover-scale {
-            transition: var(--transition-all);
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.1);
-        }
-
-        .hover-rotate {
-            transition: var(--transition-all);
-        }
-
-        .hover-rotate:hover {
-            transform: rotate(5deg) scale(1.05);
-        }
-
-        .hover-glow {
-            transition: var(--transition-all);
-        }
-
-        .hover-glow:hover {
-            box-shadow: var(--shadow-neon);
-        }
-
-        .hover-neon {
-            transition: var(--transition-all);
-        }
-
-        .hover-neon:hover {
-            box-shadow: var(--shadow-neon);
-            border-color: var(--primary);
-        }
-
-        /* Loading States */
-        .loading {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .loading::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        .loading-text {
+            background: rgba(255,255,255,0.3);
+            height: 0.75rem;
+            border-radius: var(--radius-full);
+            width: 200px;
+            margin: 0 auto;
             animation: shimmer 2s infinite;
         }
 
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            z-index: 1000;
+            transition: width 0.3s ease;
         }
 
-        /* Intersection Observer Effects */
+        /* Intersection Observer */
         .fade-in-observer {
             opacity: 0;
-            transform: translateY(80px);
+            transform: translateY(50px);
             transition: var(--transition-slow);
         }
 
@@ -1021,58 +509,20 @@
             transform: translateY(0);
         }
 
-        .scale-in-observer {
-            opacity: 0;
-            transform: scale(0.8);
-            transition: var(--transition-slow);
+        /* Responsive Typography */
+        .text-responsive-xl {
+            font-size: clamp(2rem, 5vw, 4rem);
         }
 
-        .scale-in-observer.visible {
-            opacity: 1;
-            transform: scale(1);
+        .text-responsive-lg {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
         }
 
-        /* Advanced Badge System */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-full);
-            font-weight: 600;
-            font-size: 0.875rem;
-            transition: var(--transition-all);
+        .text-responsive-md {
+            font-size: clamp(1.125rem, 3vw, 1.5rem);
         }
 
-        .badge-primary {
-            background: var(--gradient-primary);
-            color: white;
-            box-shadow: var(--shadow-md);
-        }
-
-        .badge-secondary {
-            background: var(--gradient-secondary);
-            color: white;
-            box-shadow: var(--shadow-md);
-        }
-
-        .badge-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
-        }
-
-        .badge-glass {
-            background: var(--glass-bg);
-            color: white;
-            border: 1px solid var(--glass-border);
-            backdrop-filter: var(--glass-backdrop);
-        }
-
-        .badge:hover {
-            transform: scale(1.05);
-        }
-
-        /* Social Media Enhancements */
+        /* Social Buttons */
         .social-btn {
             width: 3rem;
             height: 3rem;
@@ -1081,210 +531,87 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.25rem;
-            transition: var(--transition-bounce);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
-            opacity: 0;
-            transition: var(--transition-all);
+            transition: var(--transition);
         }
 
         .social-btn:hover {
-            transform: translateY(-4px) scale(1.1) rotate(5deg);
+            transform: translateY(-2px) scale(1.1);
         }
 
-        .social-btn:hover::before {
-            opacity: 1;
-        }
+        .social-facebook { background: linear-gradient(135deg, #1877f2, #42a5f5); }
+        .social-instagram { background: linear-gradient(135deg, #e1306c, #f56040, #fcaf45); }
+        .social-youtube { background: linear-gradient(135deg, #ff0000, #ff4444); }
+        .social-whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
 
-        .social-facebook {
-            background: linear-gradient(135deg, #1877f2, #42a5f5);
-        }
-
-        .social-instagram {
-            background: linear-gradient(135deg, #e1306c, #f56040, #fcaf45);
-        }
-
-        .social-youtube {
-            background: linear-gradient(135deg, #ff0000, #ff4444);
-        }
-
-        .social-whatsapp {
-            background: linear-gradient(135deg, #25d366, #128c7e);
-        }
-
-        /* Advanced Form Styles */
-        .form-group {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-
-        .form-input {
-            width: 100%;
-            padding: 1.25rem 1.5rem;
-            border: 2px solid var(--border);
-            border-radius: var(--radius-xl);
-            background: var(--surface);
-            color: var(--text-primary);
-            font-size: 1rem;
-            transition: var(--transition-all);
-            font-family: inherit;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .form-label {
-            position: absolute;
-            left: 1.5rem;
-            top: 1.25rem;
-            color: var(--text-secondary);
-            font-size: 1rem;
-            font-weight: 500;
-            pointer-events: none;
-            transition: var(--transition-all);
-            background: var(--surface);
-            padding: 0 0.5rem;
-        }
-
-        .form-input:focus + .form-label,
-        .form-input:not(:placeholder-shown) + .form-label {
-            top: -0.75rem;
-            left: 1rem;
-            font-size: 0.875rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* Testimonials Advanced */
-        .testimonial-card {
+        /* Package Cards */
+        .package-card {
             background: var(--surface);
             border-radius: var(--radius-2xl);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-xl);
-            border: 2px solid var(--border);
-            transition: var(--transition-all);
-            position: relative;
             overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--border);
         }
 
-        .testimonial-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: var(--gradient-cosmic);
-            opacity: 0;
-            transition: var(--transition-all);
-            z-index: 0;
+        .package-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
         }
 
-        .testimonial-card:hover::before {
-            opacity: 0.03;
+        .package-image {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+            transition: var(--transition);
         }
 
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
+        .package-card:hover .package-image {
+            transform: scale(1.1);
         }
 
-        /* Quote Styling */
-        .quote {
-            position: relative;
-            font-style: italic;
-            font-size: 1.125rem;
-            line-height: 1.8;
+        /* Feature Cards */
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            transition: var(--transition);
         }
 
-        .quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: -20px;
-            font-size: 4rem;
-            color: var(--primary);
-            font-family: serif;
-            opacity: 0.3;
-        }
-
-        .quote::after {
-            content: '"';
-            position: absolute;
-            bottom: -40px;
-            right: -10px;
-            font-size: 4rem;
-            color: var(--primary);
-            font-family: serif;
-            opacity: 0.3;
-        }
-
-        /* Star Rating Enhanced */
-        .star-rating {
+        .feature-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: var(--radius-xl);
             display: flex;
-            gap: 0.25rem;
-            margin-bottom: 1.5rem;
+            align-items: center;
             justify-content: center;
+            margin: 0 auto 1rem;
+            transition: var(--transition);
         }
 
-        .star {
-            font-size: 1.25rem;
-            color: var(--warning-500);
-            transition: var(--transition-fast);
-            filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.3));
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(10deg);
         }
 
-        .star:hover {
-            transform: scale(1.2) rotate(15deg);
-            filter: drop-shadow(0 4px 8px rgba(245, 158, 11, 0.5));
-        }
-
-        /* Gallery Grid Enhanced */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            perspective: 1000px;
-        }
-
+        /* Gallery */
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: var(--radius-xl);
+            border-radius: var(--radius-lg);
             cursor: pointer;
-            transition: var(--transition-all);
-            transform-style: preserve-3d;
+            transition: var(--transition);
         }
 
         .gallery-item:hover {
-            transform: translateY(-8px) rotateY(5deg) rotateX(5deg);
-            box-shadow: var(--shadow-2xl);
+            transform: scale(1.05);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 8rem;
+            height: 6rem;
             object-fit: cover;
-            transition: var(--transition-slow);
+            transition: var(--transition);
         }
 
         .gallery-item:hover img {
-            transform: scale(1.2) rotate(2deg);
+            transform: scale(1.2);
         }
 
         .gallery-overlay {
@@ -1292,7 +619,7 @@
             inset: 0;
             background: linear-gradient(135deg, rgba(14,165,233,0.8), rgba(16,185,129,0.8));
             opacity: 0;
-            transition: var(--transition-all);
+            transition: var(--transition);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1302,129 +629,35 @@
             opacity: 1;
         }
 
-        .gallery-icon {
-            font-size: 2rem;
-            color: white;
-            transform: scale(0);
-            transition: var(--transition-bounce);
-        }
-
-        .gallery-item:hover .gallery-icon {
-            transform: scale(1);
-        }
-
-        /* Feature Cards Advanced */
-        .feature-card {
-            text-align: center;
-            padding: 2rem;
-            border-radius: var(--radius-2xl);
-            transition: var(--transition-all);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-cosmic);
-            opacity: 0;
-            transition: var(--transition-all);
-        }
-
-        .feature-card:hover::before {
-            opacity: 0.05;
-        }
-
-        .feature-icon {
-            width: 5rem;
-            height: 5rem;
-            border-radius: var(--radius-2xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            position: relative;
-            transition: var(--transition-bounce);
-            overflow: hidden;
-        }
-
-        .feature-icon::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: inherit;
-            border-radius: inherit;
-            filter: blur(20px);
-            opacity: 0.3;
-            transform: scale(1.2);
-        }
-
-        .feature-icon i {
-            font-size: 2rem;
-            color: white;
-            position: relative;
-            z-index: 1;
-            transition: var(--transition-all);
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(10deg);
-            box-shadow: var(--shadow-neon);
-        }
-
-        .feature-card:hover .feature-icon i {
-            transform: scale(1.2);
-        }
-
-        /* Destination Cards Ultra */
+        /* Destination Cards */
         .destination-card {
             position: relative;
-            border-radius: var(--radius-2xl);
+            border-radius: var(--radius-xl);
             overflow: hidden;
-            transition: var(--transition-all);
+            transition: var(--transition);
             cursor: pointer;
-            transform-style: preserve-3d;
-        }
-
-        .destination-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gradient-rainbow);
-            opacity: 0;
-            transition: var(--transition-all);
-            z-index: 1;
-        }
-
-        .destination-card:hover::before {
-            opacity: 0.1;
         }
 
         .destination-card:hover {
-            transform: translateY(-12px) rotateY(8deg) rotateX(4deg);
-            box-shadow: var(--shadow-2xl);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
         }
 
         .destination-image {
             width: 100%;
             height: 12rem;
             object-fit: cover;
-            transition: var(--transition-slow);
+            transition: var(--transition);
         }
 
         .destination-card:hover .destination-image {
-            transform: scale(1.15) rotate(1deg);
+            transform: scale(1.1);
         }
 
         .destination-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, transparent 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%);
-            z-index: 2;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
         }
 
         .destination-content {
@@ -1432,121 +665,24 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 2rem;
+            padding: 1.5rem;
             color: white;
-            z-index: 3;
-            transform: translateY(20px);
-            transition: var(--transition-all);
         }
 
-        .destination-card:hover .destination-content {
-            transform: translateY(0);
-        }
-
-        /* Package Cards Ultra Enhanced */
-        .package-card {
+        /* Testimonial */
+        .testimonial-card {
             background: var(--surface);
-            border-radius: var(--radius-2xl);
-            overflow: hidden;
-            transition: var(--transition-all);
-            border: 2px solid var(--border);
-            position: relative;
-            transform-style: preserve-3d;
-        }
-
-        .package-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: var(--gradient-rainbow);
-            opacity: 0;
-            transition: var(--transition-all);
-            z-index: 1;
-        }
-
-        .package-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gradient-cosmic);
-            opacity: 0;
-            transition: var(--transition-all);
-            z-index: 0;
-        }
-
-        .package-card:hover {
-            transform: translateY(-16px) rotateY(5deg) rotateX(3deg);
-            box-shadow: var(--shadow-2xl);
-            border-color: var(--primary);
-        }
-
-        .package-card:hover::before {
-            opacity: 1;
-        }
-
-        .package-card:hover::after {
-            opacity: 0.02;
-        }
-
-        .package-image {
-            width: 100%;
-            height: 12rem;
-            object-fit: cover;
-            transition: var(--transition-slow);
-        }
-
-        .package-card:hover .package-image {
-            transform: scale(1.1) rotate(1deg);
-        }
-
-        .package-content {
+            border-radius: var(--radius-xl);
             padding: 2rem;
-            position: relative;
-            z-index: 2;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: var(--transition);
         }
 
-        .package-price {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-lg);
-            font-weight: 700;
-            font-size: 1.25rem;
-            box-shadow: var(--shadow-md);
-            transform: rotate(-2deg);
-            transition: var(--transition-bounce);
-        }
-
-        .package-card:hover .package-price {
-            transform: rotate(0deg) scale(1.1);
-            box-shadow: var(--shadow-neon);
-        }
-
-        .highlights-tag {
-            background: var(--primary-50);
-            color: var(--primary-700);
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-md);
-            font-size: 0.75rem;
-            font-weight: 500;
-            transition: var(--transition-all);
-        }
-
-        .dark .highlights-tag {
-            background: var(--primary-900);
-            color: var(--primary-300);
-        }
-
-        .highlights-tag:hover {
-            background: var(--primary-100);
-            transform: scale(1.05);
-        }
-
-        .dark .highlights-tag:hover {
-            background: var(--primary-800);
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
         }
 
         /* Floating Elements */
@@ -1556,7 +692,7 @@
             right: 2rem;
             width: 4rem;
             height: 4rem;
-            background: var(--gradient-secondary);
+            background: linear-gradient(135deg, #25d366, #128c7e);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1564,44 +700,32 @@
             color: white;
             font-size: 1.5rem;
             z-index: 50;
-            transition: var(--transition-bounce);
-            box-shadow: var(--shadow-xl);
-            animation: pulse 2s infinite, float 3s ease-in-out infinite;
-        }
-
-        .floating-whatsapp:hover {
-            transform: scale(1.2) rotate(10deg);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .floating-whatsapp::before {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            background: var(--gradient-secondary);
-            border-radius: 50%;
-            z-index: -1;
-            opacity: 0.3;
+            transition: var(--transition);
+            box-shadow: var(--shadow-lg);
             animation: pulse 2s infinite;
         }
 
-        /* Back to Top Enhanced */
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+        }
+
         .back-to-top {
             position: fixed;
             bottom: 2rem;
             left: 2rem;
             width: 3rem;
             height: 3rem;
-            background: var(--glass-bg);
-            backdrop-filter: var(--glass-backdrop);
-            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-primary);
             z-index: 50;
-            transition: var(--transition-bounce);
+            transition: var(--transition);
             opacity: 0;
             visibility: hidden;
             transform: translateY(100px);
@@ -1614,773 +738,395 @@
         }
 
         .back-to-top:hover {
-            transform: translateY(-4px) scale(1.1);
             background: var(--primary);
             color: white;
-            box-shadow: var(--shadow-neon);
+            transform: translateY(-2px);
         }
 
-        /* Advanced Grid Layouts */
-        .masonry-grid {
-            column-count: 1;
-            column-gap: 1rem;
+        /* Utilities */
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        @media (min-width: 640px) {
-            .masonry-grid {
-                column-count: 2;
-            }
+        .bg-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(14,165,233,0.15) 1px, transparent 0);
+            background-size: 20px 20px;
         }
-
-        @media (min-width: 1024px) {
-            .masonry-grid {
-                column-count: 3;
-            }
-        }
-
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 1rem;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--background);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--gradient-primary);
-            border-radius: var(--radius-full);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--gradient-cosmic);
-        }
-
-        /* Selection Styling */
-        ::selection {
-            background: var(--primary-200);
-            color: var(--primary-900);
-        }
-
-        .dark ::selection {
-            background: var(--primary-800);
-            color: var(--primary-100);
-        }
-
-        /* Focus Indicators */
-        .focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
-
-        /* Performance Optimizations */
-        .will-change-transform {
-            will-change: transform;
-        }
-
-        .will-change-opacity {
-            will-change: opacity;
-        }
-
-        .gpu-accelerated {
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            perspective: 1000px;
-        }
-
-        /* Print Optimizations */
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-            
-            .card {
-                box-shadow: none;
-                border: 1px solid #000;
-            }
-            
-            .btn {
-                border: 1px solid #000;
-                color: #000 !important;
-                background: none !important;
-            }
-        }
-
-        /* Accessibility Enhancements */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* High Contrast Mode */
-        @media (prefers-contrast: high) {
-            .card {
-                border: 2px solid var(--text-primary);
-            }
-            
-            .btn {
-                border: 2px solid currentColor;
-            }
-        }
-
-        /* Dark Mode Enhanced */
-        .dark {
-            color-scheme: dark;
-        }
-
-        .dark .hero-bg::before {
-            background: linear-gradient(135deg, 
-                rgba(0,0,0,0.9) 0%, 
-                rgba(15,23,42,0.8) 20%, 
-                rgba(30,41,59,0.7) 40%, 
-                rgba(0,30,60,0.8) 60%, 
-                rgba(0,0,0,0.9) 100%);
-        }
-
-        /* Ultra Advanced Responsive Design */
-        @media (max-width: 380px) {
-            .container-custom {
-                padding: 0 0.75rem;
-            }
-            
-            .btn {
-                padding: 0.75rem 1.5rem;
-            }
-            
-            .section-padding {
-                padding: 3rem 0;
-            }
-        }
-
-        @media (min-width: 1920px) {
-            .container-custom {
-                max-width: 1600px;
-            }
-        }
-
-        /* Loading Screen Enhanced */
-        .loading-screen {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(135deg, var(--background), var(--surface-2));
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-slow);
-        }
-
-        .loading-content {
-            text-align: center;
-            transform: scale(0.8);
-            animation: pulse 2s infinite;
-        }
-
-        .loading-logo {
-            width: 5rem;
-            height: 5rem;
-            background: var(--gradient-cosmic);
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: rotate-in 2s ease-out, pulse 2s infinite;
-            box-shadow: var(--shadow-neon);
-        }
-
-        .loading-text {
-            background: var(--gradient-rainbow);
-            height: 1rem;
-            border-radius: var(--radius-full);
-            width: 12rem;
-            margin: 0 auto;
-            animation: shimmer 2s infinite;
-            background-size: 200% 100%;
-        }
-
-        @keyframes shimmer-loading {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        /* Unique Decorative Elements */
-        .geometric-decoration {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: var(--gradient-primary);
-            opacity: 0.1;
-            border-radius: var(--radius-2xl);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .geometric-decoration:nth-child(1) {
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-            transform: rotate(45deg);
-        }
-
-        .geometric-decoration:nth-child(2) {
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-            border-radius: 50%;
-            background: var(--gradient-secondary);
-        }
-
-        .geometric-decoration:nth-child(3) {
-            bottom: 20%;
-            left: 15%;
-            animation-delay: 4s;
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-accent);
-        }
-
-        /* Advanced Typography Effects */
-        .text-shadow-soft {
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .text-shadow-hard {
-            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
-        }
-
-        .text-outline {
-            -webkit-text-stroke: 1px var(--primary);
-            color: transparent;
-        }
-
-        /* Interactive Elements */
-        .interactive-element {
-            transition: var(--transition-bounce);
-            cursor: pointer;
-        }
-
-        .interactive-element:hover {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        .interactive-element:active {
-            transform: scale(0.95);
-        }
-
-        /* Ultra Modern Gradients */
-        .gradient-cosmic {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-        }
-
-        .gradient-sunset {
-            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
-        }
-
-        .gradient-ocean {
-            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        }
-
-        .gradient-forest {
-            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
-        }
-
-        .gradient-royal {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        /* Custom Utility Classes */
-        .blur-sm { backdrop-filter: blur(4px); }
-        .blur-md { backdrop-filter: blur(12px); }
-        .blur-lg { backdrop-filter: blur(24px); }
-        .blur-xl { backdrop-filter: blur(40px); }
-
-        .brightness-50 { filter: brightness(0.5); }
-        .brightness-75 { filter: brightness(0.75); }
-        .brightness-125 { filter: brightness(1.25); }
-        .brightness-150 { filter: brightness(1.5); }
-
-        .saturate-50 { filter: saturate(0.5); }
-        .saturate-150 { filter: saturate(1.5); }
-        .saturate-200 { filter: saturate(2); }
-
-        .hue-rotate-15 { filter: hue-rotate(15deg); }
-        .hue-rotate-30 { filter: hue-rotate(30deg); }
-        .hue-rotate-60 { filter: hue-rotate(60deg); }
-        .hue-rotate-90 { filter: hue-rotate(90deg); }
     </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white font-primary">
-    <!-- Ultra Advanced Loading Screen -->
+<body>
+    <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
         <div class="loading-content">
             <div class="loading-logo">
-                <i class="fas fa-mountain text-white text-2xl"></i>
+                <i class="fas fa-mountain text-2xl"></i>
             </div>
             <div class="loading-text"></div>
-            <p class="mt-4 text-gray-600 dark:text-gray-400 font-medium">Memuat pengalaman luar biasa...</p>
+            <p class="mt-4 font-medium">Memuat pengalaman luar biasa...</p>
         </div>
     </div>
 
-    <!-- Scroll Progress Enhanced -->
+    <!-- Scroll Progress -->
     <div id="scroll-progress" class="scroll-progress" style="width: 0%;"></div>
 
-    <!-- Ultra Advanced Header -->
+    <!-- Header -->
     <header id="navbar" class="navbar fixed w-full top-0 z-40">
         <nav class="container-custom">
             <div class="flex items-center justify-between h-20">
-                <!-- Enhanced Logo -->
-                <a href="index.html" class="flex items-center space-x-4 hover-lift group">
-                    <div class="relative w-12 h-12 bg-gradient-cosmic rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-neon transition-all duration-500">
-                        <img src="logo.png" alt="Medan Toba Logo" class="w-8 h-8 object-contain transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
-                        <div class="absolute inset-0 bg-gradient-rainbow opacity-0 group-hover:opacity-20 rounded-2xl transition-all duration-500"></div>
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3 hover-lift">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl flex items-center justify-center shadow-lg">
+                        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f6ad9e1b-ad82-4071-a763-ec490b7c4e18.png
                     </div>
-                    <div class="group-hover:translate-x-1 transition-transform duration-300">
-                        <h1 class="font-accent font-bold text-xl text-gradient group-hover:scale-105 transition-transform duration-300">Medan Toba</h1>
-                        <p class="text-xs text-gray-500 hidden sm:block group-hover:text-primary transition-colors duration-300">Sumatera Tour</p>
+                    <div>
+                        <h1 class="font-accent font-bold text-xl text-gradient">Medan Toba</h1>
+                        <p class="text-xs text-gray-500 hidden sm:block">Sumatera Tour</p>
                     </div>
                 </a>
 
-                <!-- Ultra Enhanced Desktop Navigation -->
-                <div class="hidden lg:flex items-center space-x-2">
-                    <div class="flex items-center space-x-1 bg-gray-50 dark:bg-gray-800 rounded-2xl p-1">
-                        <a href="index.html" class="nav-link text-white bg-gradient-primary shadow-md">
-                            <i class="fas fa-home mr-2"></i>
-                            <span>Beranda</span>
-                        </a>
-                        <a href="packages.html" class="nav-link text-gray-600 hover:text-primary">
-                            <i class="fas fa-box mr-2"></i>
-                            <span>Paket</span>
-                        </a>
-                        <a href="gallery.html" class="nav-link text-gray-600 hover:text-primary">
-                            <i class="fas fa-images mr-2"></i>
-                            <span>Galeri</span>
-                        </a>
-                        <a href="destinations.html" class="nav-link text-gray-600 hover:text-primary">
-                            <i class="fas fa-map-marker-alt mr-2"></i>
-                            <span>Destinasi</span>
-                        </a>
-                        <a href="about.html" class="nav-link text-gray-600 hover:text-primary">
-                            <i class="fas fa-users mr-2"></i>
-                            <span>Tentang</span>
-                        </a>
-                        <a href="contact.html" class="nav-link text-gray-600 hover:text-primary">
-                            <i class="fas fa-phone mr-2"></i>
-                            <span>Kontak</span>
-                        </a>
-                    </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-6">
+                    <a href="index.html" class="text-blue-600 font-semibold px-3 py-2 rounded-lg">Beranda</a>
+                    <a href="packages.html" class="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 rounded-lg">Paket Wisata</a>
+                    <a href="gallery.html" class="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 rounded-lg">Galeri</a>
+                    <a href="destinations.html" class="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 rounded-lg">Destinasi</a>
+                    <a href="about.html" class="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 rounded-lg">Tentang Kami</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition-colors px-3 py-2 rounded-lg">Kontak</a>
                     
-                    <div class="flex items-center space-x-3 ml-4">
-                        <button id="lang-toggle" class="glass-strong px-4 py-2 rounded-xl text-sm font-semibold hover-scale transition-transform text-primary">
+                    <div class="flex items-center space-x-3">
+                        <button id="lang-toggle" class="glass-strong px-4 py-2 rounded-lg text-sm font-semibold hover-scale">
                             <i class="fas fa-globe mr-2"></i>EN
                         </button>
-                        <button id="theme-toggle" class="glass-strong p-3 rounded-xl hover-scale transition-transform">
-                            <i class="fas fa-moon text-lg"></i>
+                        <button id="theme-toggle" class="glass-strong p-3 rounded-lg hover-scale">
+                            <i class="fas fa-moon"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Enhanced Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden glass-strong p-3 rounded-xl hover-scale relative">
-                    <div class="hamburger-lines">
-                        <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
-                        <span class="block w-6 h-0.5 bg-current mt-1 transition-all duration-300"></span>
-                        <span class="block w-6 h-0.5 bg-current mt-1 transition-all duration-300"></span>
-                    </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden glass-strong p-3 rounded-lg hover-scale">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </nav>
     </header>
 
-    <!-- Ultra Enhanced Mobile Menu -->
+    <!-- Mobile Menu -->
     <div id="mobile-overlay" class="mobile-overlay"></div>
     <div id="mobile-menu" class="mobile-menu">
         <div class="flex justify-between items-center mb-8">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-gradient-cosmic rounded-xl flex items-center justify-center">
-                    <img src="logo.png" alt="Logo" class="w-6 h-6 object-contain">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl flex items-center justify-center">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1908c86f-74e1-48ba-8f2d-caede97a8892.png
                 </div>
                 <div>
                     <h2 class="font-accent font-bold text-lg text-gradient">Menu</h2>
                     <p class="text-xs text-gray-500">Navigation</p>
                 </div>
             </div>
-            <button id="mobile-close" class="p-2 glass-strong rounded-xl hover-rotate">
+            <button id="mobile-close" class="p-2 glass-strong rounded-lg hover-rotate">
                 <i class="fas fa-times text-xl"></i>
             </button>
         </div>
 
         <nav class="space-y-3 mb-8">
-            <a href="index.html" class="flex items-center space-x-4 p-4 rounded-xl bg-gradient-primary text-white shadow-lg">
-                <i class="fas fa-home text-xl"></i>
+            <a href="index.html" class="flex items-center space-x-3 p-3 rounded-lg bg-blue-600 text-white">
+                <i class="fas fa-home"></i>
                 <span class="font-semibold">Beranda</span>
-                <i class="fas fa-arrow-right ml-auto"></i>
             </a>
-            <a href="packages.html" class="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover-lift transition-all">
-                <i class="fas fa-box text-xl text-green-500"></i>
-                <span class="font-medium">Paket Wisata</span>
-                <i class="fas fa-arrow-right ml-auto text-gray-400"></i>
+            <a href="packages.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <i class="fas fa-box text-green-500"></i>
+                <span>Paket Wisata</span>
             </a>
-            <a href="gallery.html" class="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover-lift transition-all">
-                <i class="fas fa-images text-xl text-purple-500"></i>
-                <span class="font-medium">Galeri</span>
-                <i class="fas fa-arrow-right ml-auto text-gray-400"></i>
+            <a href="gallery.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <i class="fas fa-images text-purple-500"></i>
+                <span>Galeri</span>
             </a>
-            <a href="destinations.html" class="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover-lift transition-all">
-                <i class="fas fa-map-marker-alt text-xl text-red-500"></i>
-                <span class="font-medium">Destinasi</span>
-                <i class="fas fa-arrow-right ml-auto text-gray-400"></i>
+            <a href="destinations.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <i class="fas fa-map-marker-alt text-red-500"></i>
+                <span>Destinasi</span>
             </a>
-            <a href="about.html" class="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover-lift transition-all">
-                <i class="fas fa-users text-xl text-orange-500"></i>
-                <span class="font-medium">Tentang Kami</span>
-                <i class="fas fa-arrow-right ml-auto text-gray-400"></i>
+            <a href="about.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <i class="fas fa-users text-orange-500"></i>
+                <span>Tentang Kami</span>
             </a>
-            <a href="contact.html" class="flex items-center space-x-4 p-4 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 hover-lift transition-all">
-                <i class="fas fa-phone text-xl text-teal-500"></i>
-                <span class="font-medium">Kontak</span>
-                <i class="fas fa-arrow-right ml-auto text-gray-400"></i>
+            <a href="contact.html" class="flex items-center space-x-3 p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <i class="fas fa-phone text-teal-500"></i>
+                <span>Kontak</span>
             </a>
         </nav>
 
-        <div class="border-t border-gray-200 dark:border-gray-700 pt-8">
-            <div class="flex items-center justify-between mb-6">
-                <span class="font-semibold text-gradient">Ikuti Kami</span>
-                <div class="flex items-center space-x-2">
-                    <button id="mobile-lang-toggle" class="glass-strong px-3 py-1 rounded-full text-sm">EN</button>
-                    <button id="mobile-theme-toggle" class="glass-strong p-2 rounded-full">
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+            <div class="flex items-center justify-between mb-4">
+                <span class="font-semibold">Ikuti Kami</span>
+                <div class="flex space-x-2">
+                    <button id="mobile-lang-toggle" class="glass-strong px-3 py-1 rounded-lg text-sm">EN</button>
+                    <button id="mobile-theme-toggle" class="glass-strong p-2 rounded-lg">
                         <i class="fas fa-moon text-sm"></i>
                     </button>
                 </div>
             </div>
-            <div class="grid grid-cols-4 gap-3">
-                <a href="https://facebook.com/ariel.azhura" target="_blank" class="social-btn social-facebook hover-rotate">
+            <div class="flex space-x-3">
+                <a href="https://facebook.com/ariel.azhura" target="_blank" class="social-btn social-facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://instagram.com/sujailaketoba" target="_blank" class="social-btn social-instagram hover-rotate">
+                <a href="https://instagram.com/sujailaketoba" target="_blank" class="social-btn social-instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://youtube.com/@medantobasumatera" target="_blank" class="social-btn social-youtube hover-rotate">
+                <a href="https://youtube.com/@medantobasumatera" target="_blank" class="social-btn social-youtube">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="https://wa.me/6281397606622" target="_blank" class="social-btn social-whatsapp hover-rotate">
+                <a href="https://wa.me/6281397606622" target="_blank" class="social-btn social-whatsapp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Ultra Enhanced Hero Section -->
-    <section class="hero-bg flex items-center justify-center relative overflow-hidden">
-        <img src="assets/hero.jpg" alt="Danau Toba yang memukau dengan pemandangan pegunungan dan air biru jernih" class="absolute inset-0 w-full h-full object-cover parallax-back">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-pattern">
+        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cfab2263-5b1d-4e41-9210-649952d9ecb1.png
+        <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
         
-        <!-- Floating Particles -->
-        <div class="hero-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
+        <!-- Floating Decorations -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-blue-500 rounded-full opacity-20 animate-float"></div>
+        <div class="absolute bottom-32 right-16 w-16 h-16 bg-green-500 rounded-full opacity-20 animate-float" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 right-10 w-12 h-12 bg-purple-500 rounded-full opacity-20 animate-float" style="animation-delay: 2s;"></div>
         
-        <!-- Geometric Decorations -->
-        <div class="geometric-decoration"></div>
-        <div class="geometric-decoration"></div>
-        <div class="geometric-decoration"></div>
-        
-        <div class="hero-content container-custom text-center lg:text-left relative z-10">
-            <div class="max-w-6xl mx-auto lg:mx-0">
+        <div class="relative z-10 container-custom text-center lg:text-left">
+            <div class="max-w-5xl mx-auto lg:mx-0">
                 <!-- Hero Badge -->
                 <div class="fade-in-down mb-8">
-                    <span class="badge badge-glass text-white hover-glow animate-pulse-slow">
-                        <i class="fas fa-star mr-2 animate-wiggle"></i>
-                        <span data-text="trusted-badge">6+ Tahun Terpercaya & Bersertifikat Halal</span>
+                    <span class="inline-block px-6 py-3 glass text-white rounded-full font-semibold animate-pulse-slow">
+                        <i class="fas fa-star mr-2 text-yellow-400 animate-wiggle"></i>
+                        6+ Tahun Terpercaya & Bersertifikat Halal
                         <i class="fas fa-certificate ml-2 text-yellow-400"></i>
                     </span>
                 </div>
                 
                 <!-- Hero Title -->
-                <h1 class="font-accent text-responsive-4xl font-bold text-white mb-8 leading-tight fade-in-up text-neon" style="animation-delay: 0.2s">
+                <h1 class="font-accent text-responsive-xl font-bold text-white mb-8 leading-tight fade-in-up text-shadow" style="animation-delay: 0.2s">
                     <span class="block">Wisata Nyaman & Halal</span>
-                    <span class="block text-gradient bg-gradient-to-r from-blue-400 via-green-400 to-purple-400">Medan – Danau Toba</span>
+                    <span class="block text-gradient">Medan – Danau Toba</span>
                 </h1>
                 
                 <!-- Hero Description -->
-                <p class="text-responsive-lg text-gray-200 mb-12 max-w-4xl mx-auto lg:mx-0 leading-relaxed fade-in-up text-shadow-soft" style="animation-delay: 0.4s">
-                    🌟 Jelajahi keindahan Danau Toba dengan <strong class="text-blue-400">supir Muslim lokal berpengalaman</strong>, kendaraan bersih nyaman, dan itinerary fleksibel. 
-                    <strong class="text-green-400">Pengalaman wisata halal tak terlupakan</strong> menanti Anda bersama keluarga tercinta! ✨
+                <p class="text-responsive-md text-gray-200 mb-12 max-w-4xl mx-auto lg:mx-0 leading-relaxed fade-in-up" style="animation-delay: 0.4s">
+                    Jelajahi keindahan <strong class="text-blue-400">Danau Toba</strong> dengan supir Muslim lokal berpengalaman, 
+                    kendaraan bersih nyaman, dan itinerary fleksibel. <strong class="text-green-400">Pengalaman wisata halal tak terlupakan</strong> 
+                    menanti Anda bersama keluarga tercinta!
                 </p>
                 
-                <!-- Hero CTA Buttons -->
+                <!-- Hero CTA -->
                 <div class="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start mb-16 fade-in-up" style="animation-delay: 0.6s">
-                    <a href="https://wa.me/6281397606622?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR!%20Saya%20tertarik%20dengan%20paket%20wisata%20halal%20Anda." target="_blank" class="btn btn-secondary btn-glow px-10 py-5 text-lg hover:animate-heartbeat">
+                    <a href="https://wa.me/6281397606622?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR!%20Saya%20tertarik%20dengan%20paket%20wisata%20halal%20Anda." target="_blank" class="btn btn-secondary px-10 py-5 text-lg hover:animate-heartbeat">
                         <i class="fab fa-whatsapp mr-3 text-2xl animate-bounce-slow"></i>
-                        <span>Konsultasi Gratis Sekarang</span>
+                        Konsultasi Gratis Sekarang
                     </a>
-                    <a href="#packages" class="btn btn-ghost px-10 py-5 text-lg hover:animate-wiggle">
+                    <a href="#packages" class="btn btn-ghost px-10 py-5 text-lg">
                         <i class="fas fa-compass mr-3 text-xl"></i>
-                        <span>Jelajahi Paket Eksklusif</span>
+                        Jelajahi Paket Eksklusif
                     </a>
                 </div>
                 
-                <!-- Enhanced Trust Indicators -->
+                <!-- Trust Indicators -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto lg:mx-0 fade-in-up" style="animation-delay: 0.8s">
-                    <div class="flex items-center justify-center lg:justify-start space-x-4 text-white group">
-                        <div class="w-16 h-16 glass-strong rounded-2xl flex items-center justify-center group-hover:animate-heartbeat">
-                            <i class="fas fa-certificate text-yellow-400 text-2xl group-hover:rotate-12 transition-transform duration-300"></i>
+                    <div class="flex items-center justify-center lg:justify-start space-x-4 text-white">
+                        <div class="w-16 h-16 glass-strong rounded-xl flex items-center justify-center">
+                            <i class="fas fa-certificate text-yellow-400 text-2xl"></i>
                         </div>
                         <div>
-                            <p class="font-bold text-xl text-gradient">6+ Tahun</p>
-                            <p class="text-sm opacity-90 font-medium">Pengalaman Terpercaya</p>
+                            <p class="font-bold text-xl">6+ Tahun</p>
+                            <p class="text-sm opacity-90">Pengalaman Terpercaya</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-center lg:justify-start space-x-4 text-white group">
-                        <div class="w-16 h-16 glass-strong rounded-2xl flex items-center justify-center group-hover:animate-heartbeat">
-                            <i class="fas fa-mosque text-green-400 text-2xl group-hover:rotate-12 transition-transform duration-300"></i>
+                    <div class="flex items-center justify-center lg:justify-start space-x-4 text-white">
+                        <div class="w-16 h-16 glass-strong rounded-xl flex items-center justify-center">
+                            <i class="fas fa-mosque text-green-400 text-2xl"></i>
                         </div>
                         <div>
-                            <p class="font-bold text-xl text-gradient">100% Halal</p>
-                            <p class="text-sm opacity-90 font-medium">Terjamin & Bersertifikat</p>
+                            <p class="font-bold text-xl">100% Halal</p>
+                            <p class="text-sm opacity-90">Terjamin & Bersertifikat</p>
                         </div>
                     </div>
-                    <div class="flex items-center justify-center lg:justify-start space-x-4 text-white group">
-                        <div class="w-16 h-16 glass-strong rounded-2xl flex items-center justify-center group-hover:animate-heartbeat">
-                            <i class="fas fa-users text-blue-400 text-2xl group-hover:rotate-12 transition-transform duration-300"></i>
+                    <div class="flex items-center justify-center lg:justify-start space-x-4 text-white">
+                        <div class="w-16 h-16 glass-strong rounded-xl flex items-center justify-center">
+                            <i class="fas fa-users text-blue-400 text-2xl"></i>
                         </div>
                         <div>
-                            <p class="font-bold text-xl text-gradient">500+</p>
-                            <p class="text-sm opacity-90 font-medium">Keluarga Bahagia</p>
+                            <p class="font-bold text-xl">500+</p>
+                            <p class="text-sm opacity-90">Keluarga Bahagia</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Enhanced Scroll Indicator -->
-        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
-            <div class="glass-strong p-4 rounded-2xl group cursor-pointer">
-                <i class="fas fa-chevron-down text-white text-2xl group-hover:animate-bounce transition-all duration-300"></i>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
+            <div class="glass-strong p-4 rounded-xl cursor-pointer" onclick="document.getElementById('packages').scrollIntoView({behavior: 'smooth'})">
+                <i class="fas fa-chevron-down text-white text-xl"></i>
             </div>
         </div>
     </section>
 
-    <!-- Ultra Enhanced Packages Section -->
-    <section id="packages" class="section-padding bg-gradient-to-br from-gray-50 via-blue-50 to-green-50 dark:from-gray-800 dark:via-blue-900 dark:to-green-900 relative overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-5">
-            <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 25% 25%, var(--primary) 2px, transparent 2px), radial-gradient(circle at 75% 75%, var(--secondary) 2px, transparent 2px); background-size: 50px 50px;"></div>
-        </div>
-        
-        <div class="container-custom relative z-10">
+    <!-- Packages Section -->
+    <section id="packages" class="section-padding bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+        <div class="container-custom">
             <div class="text-center mb-20 fade-in-observer">
-                <div class="inline-block mb-6">
-                    <span class="badge badge-primary hover-glow animate-pulse-slow px-6 py-3 text-lg">
-                        <i class="fas fa-gift mr-3 animate-wiggle"></i>
-                        <span>Paket Terpilih & Terfavorit</span>
-                        <i class="fas fa-sparkles ml-3 animate-wiggle"></i>
-                    </span>
-                </div>
-                <h2 class="font-accent text-responsive-3xl font-bold mb-8 text-gradient">
-                    🎯 Paket Wisata Unggulan 🎯
+                <span class="inline-block px-6 py-3 bg-blue-600 text-white rounded-full font-semibold mb-6 animate-pulse-slow">
+                    <i class="fas fa-gift mr-3 animate-wiggle"></i>
+                    Paket Terpilih & Terfavorit
+                    <i class="fas fa-sparkles ml-3 animate-wiggle"></i>
+                </span>
+                <h2 class="font-accent text-responsive-lg font-bold mb-8 text-gradient">
+                    Paket Wisata Unggulan
                 </h2>
-                <p class="text-responsive-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    Pilihan paket wisata terbaik dengan <strong class="text-primary">pelayanan halal terpercaya</strong>, 
-                    <strong class="text-secondary">fasilitas lengkap premium</strong>, dan 
-                    <strong class="text-accent">harga transparan tanpa biaya tersembunyi</strong> untuk pengalaman tak terlupakan! 🌟
+                <p class="text-responsive-md text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Pilihan paket wisata terbaik dengan <strong class="text-blue-600">pelayanan halal terpercaya</strong>, 
+                    <strong class="text-green-600">fasilitas lengkap premium</strong>, dan 
+                    <strong class="text-purple-600">harga transparan tanpa biaya tersembunyi</strong>
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Package 1 - Ultra Enhanced -->
-                <div class="package-card card-elevated hover-glow fade-in-observer">
-                    <div class="relative overflow-hidden">
-                        <img src="assets/danau-toba.jpg" alt="Paket 1 Hari Danau Toba dengan pemandangan spektakuler" class="package-image">
-                        
-                        <!-- Enhanced Badges -->
-                        <div class="absolute top-4 left-4 flex flex-col gap-2">
-                            <span class="badge badge-secondary text-xs px-3 py-1 animate-pulse-slow">
+                <!-- Package 1 -->
+                <div class="package-card hover-glow fade-in-observer">
+                    <div class="relative">
+                        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8b484152-a17a-41d0-9fff-33106b375f27.png
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse-slow">
                                 <i class="fas fa-mosque mr-1"></i>100% Halal
                             </span>
-                            <span class="badge badge-outline text-white border-white text-xs px-3 py-1">
-                                <i class="fas fa-clock mr-1"></i>1 Hari
-                            </span>
                         </div>
-                        
                         <div class="absolute top-4 right-4">
-                            <div class="badge badge-glass text-white px-3 py-1 text-xs hover-scale">
+                            <span class="glass text-white px-3 py-1 rounded-full text-sm font-semibold">
                                 <i class="fas fa-star mr-1 text-yellow-400"></i>Populer
-                            </div>
+                            </span>
                         </div>
-                        
-                        <!-- Price Badge -->
                         <div class="absolute bottom-4 right-4">
-                            <div class="package-price bg-gradient-cosmic text-white px-4 py-2 rounded-xl font-bold text-lg shadow-neon">
+                            <span class="bg-blue-600 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-lg">
                                 Rp 350K
-                            </div>
+                            </span>
                         </div>
                     </div>
-                    
-                    <div class="package-content">
+                    <div class="p-6">
+                        <h3 class="font-accent text-2xl font-bold mb-3 text-gradient">Paket 1 Hari Eksplorer</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Jelajahi keindahan Danau Toba dalam sehari dengan destinasi utama yang menakjubkan.
+                        </p>
                         <div class="mb-6">
-                            <h3 class="font-accent text-2xl font-bold mb-3 text-gradient">🏞️ Paket 1 Hari Eksplorer</h3>
-                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                                Jelajahi keindahan <strong>Danau Toba</strong> dalam sehari dengan destinasi utama yang menakjubkan dan pemandu lokal berpengalaman.
-                            </p>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-semibold mb-3 text-sm text-primary flex items-center">
-                                <i class="fas fa-map-marked-alt mr-2"></i>Destinasi Unggulan:
-                            </h4>
+                            <h4 class="font-semibold mb-3 text-sm text-blue-600">Destinasi Unggulan:</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="highlights-tag">🏔️ Danau Toba</span>
-                                <span class="highlights-tag">🏝️ Pulau Samosir</span>
-                                <span class="highlights-tag">📸 Simarjarunjung</span>
-                                <span class="highlights-tag">🏖️ Pantai Batu Hoda</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-xs">Danau Toba</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-xs">Pulau Samosir</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-xs">Simarjarunjung</span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-lg text-xs">Batu Hoda</span>
                             </div>
                         </div>
-                        
-                        <div class="mb-6 p-4 bg-green-50 dark:bg-green-900 rounded-xl border-l-4 border-green-500">
-                            <div class="flex items-center text-green-700 dark:text-green-300 text-sm">
+                        <div class="mb-6 p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                            <div class="flex items-center text-green-700 text-sm">
                                 <i class="fas fa-check-circle mr-2"></i>
-                                <span class="font-semibold">Termasuk: Transport + Guide + Tiket Masuk + Makan</span>
+                                <span class="font-semibold">Termasuk: Transport + Guide + Tiket + Makan</span>
                             </div>
                         </div>
-                        
-                        <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20tertarik%20dengan%20Paket%201%20Hari%20Danau%20Toba.%20Mohon%20info%20lengkap%20dan%20jadwal%20tersedia." target="_blank" class="btn btn-primary w-full hover-glow btn-glow py-4 text-lg">
-                            <i class="fab fa-whatsapp mr-3 text-xl animate-heartbeat"></i>
-                            <span>🚀 Pesan Sekarang</span>
+                        <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20tertarik%20dengan%20Paket%201%20Hari%20Danau%20Toba." target="_blank" class="btn btn-primary w-full hover-glow py-4">
+                            <i class="fab fa-whatsapp mr-3 animate-heartbeat"></i>
+                            Pesan Sekarang
                         </a>
                     </div>
                 </div>
 
-                <!-- Package 2 - Ultra Enhanced -->
-                <div class="package-card card-elevated hover-glow fade-in-observer" style="animation-delay: 0.2s;">
-                    <div class="relative overflow-hidden">
-                        <img src="assets/berastagi.jpg" alt="Paket 2 Hari 1 Malam Danau Toba dan Berastagi dengan pemandangan gunung" class="package-image">
-                        
-                        <div class="absolute top-4 left-4 flex flex-col gap-2">
-                            <span class="badge badge-secondary text-xs px-3 py-1 animate-pulse-slow">
+                <!-- Package 2 -->
+                <div class="package-card hover-glow fade-in-observer" style="animation-delay: 0.2s;">
+                    <div class="relative">
+                        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2fe99964-9a32-4a38-b05a-d7b134a436c0.png
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse-slow">
                                 <i class="fas fa-mosque mr-1"></i>100% Halal
                             </span>
-                            <span class="badge badge-outline text-white border-white text-xs px-3 py-1">
-                                <i class="fas fa-bed mr-1"></i>2D1N
-                            </span>
                         </div>
-                        
                         <div class="absolute top-4 right-4">
-                            <div class="badge badge-glass text-white px-3 py-1 text-xs hover-scale">
+                            <span class="glass text-white px-3 py-1 rounded-full text-sm font-semibold">
                                 <i class="fas fa-fire mr-1 text-orange-400"></i>Terlaris
-                            </div>
+                            </span>
                         </div>
-                        
                         <div class="absolute bottom-4 right-4">
-                            <div class="package-price bg-gradient-ocean text-white px-4 py-2 rounded-xl font-bold text-lg shadow-glow">
+                            <span class="bg-green-600 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-lg">
                                 Rp 750K
-                            </div>
+                            </span>
                         </div>
                     </div>
-                    
-                    <div class="package-content">
+                    <div class="p-6">
+                        <h3 class="font-accent text-2xl font-bold mb-3 text-gradient">Paket 2D1N Adventure</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Kombinasi sempurna Danau Toba & Berastagi dengan menginap 1 malam.
+                        </p>
                         <div class="mb-6">
-                            <h3 class="font-accent text-2xl font-bold mb-3 text-gradient">🏔️ Paket 2D1N Adventure</h3>
-                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                                Kombinasi sempurna <strong>Danau Toba & Berastagi</strong> dengan menginap 1 malam di hotel nyaman yang halal-friendly.
-                            </p>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-semibold mb-3 text-sm text-primary flex items-center">
-                                <i class="fas fa-route mr-2"></i>Petualangan Menunggu:
-                            </h4>
+                            <h4 class="font-semibold mb-3 text-sm text-blue-600">Petualangan Menunggu:</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="highlights-tag">🏞️ Danau Toba</span>
-                                <span class="highlights-tag">🏔️ Berastagi</span>
-                                <span class="highlights-tag">🌋 Gunung Sibayak</span>
-                                <span class="highlights-tag">💦 Air Terjun Sipiso-piso</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-lg text-xs">Danau Toba</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-lg text-xs">Berastagi</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-lg text-xs">Gunung Sibayak</span>
+                                <span class="bg-green-50 text-green-700 px-3 py-1 rounded-lg text-xs">Sipiso-piso</span>
                             </div>
                         </div>
-                        
-                        <div class="mb-6 p-4 bg-blue-50 dark:bg-blue-900 rounded-xl border-l-4 border-blue-500">
-                            <div class="flex items-center text-blue-700 dark:text-blue-300 text-sm">
+                        <div class="mb-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                            <div class="flex items-center text-blue-700 text-sm">
                                 <i class="fas fa-hotel mr-2"></i>
-                                <span class="font-semibold">Termasuk: Hotel + Semua Fasilitas + Guide Expert</span>
+                                <span class="font-semibold">Termasuk: Hotel + Semua Fasilitas + Guide</span>
                             </div>
                         </div>
-                        
-                        <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20tertarik%20dengan%20Paket%202D1N%20Danau%20Toba%20%2B%20Berastagi.%20Mohon%20info%20detail%20dan%20ketersediaan." target="_blank" class="btn btn-primary w-full hover-glow btn-glow py-4 text-lg">
-                            <i class="fab fa-whatsapp mr-3 text-xl animate-heartbeat"></i>
-                            <span>🎊 Pesan Adventure</span>
+                        <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20tertarik%20dengan%20Paket%202D1N%20Adventure." target="_blank" class="btn btn-primary w-full hover-glow py-4">
+                            <i class="fab fa-whatsapp mr-3 animate-heartbeat"></i>
+                            Pesan Adventure
                         </a>
                     </div>
                 </div>
 
-                <!-- Package 3 - Ultra Enhanced -->
-                <div class="package-card card-neon hover-glow fade-in-observer" style="animation-delay: 0.4s;">
-                    <div class="relative overflow-hidden">
-                        <img src="assets/pulau-samosir.jpg" alt="Paket 3 Hari 2 Malam lengkap Danau Toba, Samosir dan Medan City" class="package-image">
-                        
-                        <div class="absolute top-4 left-4 flex flex-col gap-2">
-                            <span class="badge badge-secondary text-xs px-3 py-1 animate-pulse-slow">
+                <!-- Package 3 -->
+                <div class="package-card hover-glow fade-in-observer" style="animation-delay: 0.4s;">
+                    <div class="relative">
+                        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aced4813-2b43-4cd5-adee-26731bc68b06.png
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse-slow">
                                 <i class="fas fa-mosque mr-1"></i>100% Halal
                             </span>
-                            <span class="badge badge-outline text-white border-white text-xs px-3 py-1">
-                                <i class="fas fa-calendar-alt mr-1"></i>3D2N
+                        </div>
+                        <div class="absolute top-4 right-4">
+                            <span class="glass text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-crown mr-1 text-yellow-400"></i>Premium
                             </span>
                         </div>
-                        
-                        <div class="absolute top-4 right-4">
-                            <div class="badge badge-glass text-white px-3 py-1 text-xs hover-scale">
-                                <i class="fas fa-crown mr-1 text-yellow-400"></i>Premium
-                            </div>
-                        </div>
-                        
                         <div class="absolute bottom-4 right-4">
-                            <div class="package-price bg-gradient-royal text-white px-4 py-2 rounded-xl font-bold text-lg shadow-neon">
+                            <span class="bg-purple-600 text-white px-4 py-2 rounded-xl font-bold text-lg shadow-lg">
                                 Rp 1.2Jt
-                            </div>
+                            </span>
                         </div>
                     </div>
-                    
-                    <div class="package-content">
+                    <div class="p-6">
+                        <h3 class="font-accent text-2xl font-bold mb-3 text-gradient">Paket 3D2N Premium Complete</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+                            Paket LENGKAP & EKSKLUSIF dengan eksplorasi mendalam semua destinasi utama.
+                        </p>
                         <div class="mb-6">
-                            <h3 class="font-accent text-2xl font-bold mb-3 text-gradient">👑 Paket 3D2N Premium Complete</h3>
-                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                                Paket <strong class="text-purple-600">LENGKAP & EKSKLUSIF</strong> dengan eksplorasi mendalam Danau Toba, Samosir, Berastagi, dan Medan City!
-                            </p>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <h4 class="font-semibold mb-3 text-sm text-primary flex items-center">
-                                <i class="fas fa-gem mr-2"></i>Petualangan Premium:
-                            </h4>
+                            <h4 class="font-semibold mb-3 text-sm text-blue-600">Petualangan Premium:</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="highlights-tag">🏞️ Danau Toba</span>
-                                <span class="highlights-tag">🏝️ Pulau Samosir</span>
-                                <span class="highlights-tag">🏔️ Berastagi Hills</span>
-                                <span class="highlights-tag">🏙️ Medan City Tour</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-xs">Danau Toba</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-xs">Pulau Samosir</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-xs">Berastagi Hills</span>
+                                <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-lg text-xs">Medan City</span>
                             </div>
                         </div>
-                        
-                        <div class="mb-6 p-4 bg-purple-50 dark:bg-purple-900 rounded-xl border-l-4 border-purple-500">
-                            <div class="flex items-center text-purple-700 dark:text-purple-300 text-sm">
+                        <div class="mb-6 p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
+                            <div class="flex items-center text-purple-700 text-sm">
                                 <i class="fas fa-crown mr-2"></i>
                                 <span class="font-semibold">VIP: Hotel Premium + Meal Plan + Private Guide</span>
                             </div>
                         </div>
-                        
-                        <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20sangat%20tertarik%20dengan%20Paket%203D2N%20Premium%20Complete.%20Mohon%20info%20lengkap%2C%20jadwal%2C%20dan%20special%20offer!" target="_blank" class="btn btn-primary w-full hover-glow btn-glow py-4 text-lg bg-gradient-royal">
-                            <i class="fab fa-whatsapp mr-3 text-xl animate-heartbeat"></i>
-                            <span>👑 Pesan VIP Experience</span>
+                        <a href="https://wa.me/6281397606622?text=Halo!%20Saya%20sangat%20tertarik%20dengan%20Paket%203D2N%20Premium%20Complete." target="_blank" class="btn btn-primary w-full hover-glow py-4 bg-purple-600 hover:bg-purple-700">
+                            <i class="fab fa-whatsapp mr-3 animate-heartbeat"></i>
+                            Pesan VIP Experience
                         </a>
                     </div>
                 </div>
@@ -2389,159 +1135,149 @@
             <div class="text-center mt-16 fade-in-observer">
                 <a href="packages.html" class="btn btn-outline hover-glow px-12 py-4 text-lg">
                     <i class="fas fa-rocket mr-3 animate-bounce-slow"></i>
-                    <span>🎉 Lihat Semua Paket Eksklusif</span>
+                    Lihat Semua Paket Eksklusif
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Ultra Enhanced Features Section -->
-    <section class="section-padding bg-white dark:bg-gray-900 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-50 via-transparent to-green-50 dark:from-blue-900 dark:via-transparent dark:to-green-900 opacity-50"></div>
-        
-        <div class="container-custom relative z-10">
+    <!-- Features Section -->
+    <section class="section-padding bg-white dark:bg-gray-900">
+        <div class="container-custom">
             <div class="text-center mb-20 fade-in-observer">
-                <h2 class="font-accent text-responsive-3xl font-bold mb-8 text-gradient">
-                    🌟 Mengapa 500+ Keluarga Memilih Kami? 🌟
+                <h2 class="font-accent text-responsive-lg font-bold mb-8 text-gradient">
+                    Mengapa 500+ Keluarga Memilih Kami?
                 </h2>
-                <p class="text-responsive-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
-                    Kepercayaan <strong class="text-primary">6+ tahun</strong> melayani wisata halal dengan 
-                    <strong class="text-secondary">standar kualitas internasional</strong> dan 
-                    <strong class="text-accent">pelayanan terdepan</strong>
+                <p class="text-responsive-md text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+                    Kepercayaan 6+ tahun melayani wisata halal dengan standar kualitas internasional
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Feature 1 -->
-                <div class="feature-card scale-in-observer">
-                    <div class="feature-icon bg-gradient-secondary hover-neon">
-                        <i class="fas fa-certificate"></i>
+                <div class="feature-card fade-in-observer">
+                    <div class="feature-icon bg-green-500 hover-glow">
+                        <i class="fas fa-certificate text-white text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-4 text-gradient">🥇 Halal Terjamin</h3>
+                    <h3 class="font-bold text-xl mb-4 text-gradient">Halal Terjamin</h3>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        <strong>100% Bersertifikat Halal</strong> - Semua makanan, hotel, dan aktivitas telah tersertifikasi halal oleh MUI
+                        100% Bersertifikat Halal - Semua makanan, hotel, dan aktivitas telah tersertifikasi halal oleh MUI
                     </p>
-                    <div class="mt-4 flex justify-center">
-                        <span class="badge badge-secondary text-xs">✅ MUI Certified</span>
+                    <div class="mt-4">
+                        <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">MUI Certified</span>
                     </div>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="feature-card scale-in-observer" style="animation-delay: 0.1s;">
-                    <div class="feature-icon bg-gradient-primary hover-neon">
-                        <i class="fas fa-user-tie"></i>
+                <div class="feature-card fade-in-observer" style="animation-delay: 0.1s;">
+                    <div class="feature-icon bg-blue-500 hover-glow">
+                        <i class="fas fa-user-tie text-white text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-4 text-gradient">👨‍✈️ Driver Expert</h3>
+                    <h3 class="font-bold text-xl mb-4 text-gradient">Driver Expert</h3>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        <strong>Tim driver profesional Muslim</strong> dengan pengalaman 6+ tahun dan pengetahuan mendalam tentang budaya lokal
+                        Tim driver profesional Muslim dengan pengalaman 6+ tahun dan pengetahuan mendalam budaya lokal
                     </p>
-                    <div class="mt-4 flex justify-center">
-                        <span class="badge badge-primary text-xs">⭐ 6+ Years Pro</span>
+                    <div class="mt-4">
+                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">6+ Years Pro</span>
                     </div>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="feature-card scale-in-observer" style="animation-delay: 0.2s;">
-                    <div class="feature-icon bg-gradient-accent hover-neon">
-                        <i class="fas fa-money-bill-wave"></i>
+                <div class="feature-card fade-in-observer" style="animation-delay: 0.2s;">
+                    <div class="feature-icon bg-purple-500 hover-glow">
+                        <i class="fas fa-money-bill-wave text-white text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-4 text-gradient">💎 Harga Transparan</h3>
+                    <h3 class="font-bold text-xl mb-4 text-gradient">Harga Transparan</h3>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        <strong>Tidak ada biaya tersembunyi</strong> - Semua sudah termasuk dalam paket dengan garansi harga terbaik
+                        Tidak ada biaya tersembunyi - Semua sudah termasuk dalam paket dengan garansi harga terbaik
                     </p>
-                    <div class="mt-4 flex justify-center">
-                        <span class="badge badge-accent text-xs">💯 No Hidden Fee</span>
+                    <div class="mt-4">
+                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">No Hidden Fee</span>
                     </div>
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="feature-card scale-in-observer" style="animation-delay: 0.3s;">
-                    <div class="feature-icon bg-gradient-sunset hover-neon">
-                        <i class="fas fa-headset"></i>
+                <div class="feature-card fade-in-observer" style="animation-delay: 0.3s;">
+                    <div class="feature-icon bg-orange-500 hover-glow">
+                        <i class="fas fa-headset text-white text-2xl"></i>
                     </div>
-                    <h3 class="font-bold text-xl mb-4 text-gradient">🔥 Support 24/7</h3>
+                    <h3 class="font-bold text-xl mb-4 text-gradient">Support 24/7</h3>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        <strong>Customer service siap 24/7</strong> - Tim support profesional siap membantu kapan saja Anda butuhkan
+                        Customer service siap 24/7 - Tim support profesional siap membantu kapan saja Anda butuhkan
                     </p>
-                    <div class="mt-4 flex justify-center">
-                        <span class="badge badge-outline border-orange-400 text-orange-600 text-xs">⚡ 24/7 Ready</span>
+                    <div class="mt-4">
+                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-semibold">24/7 Ready</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ultra Enhanced Destinations Preview -->
-    <section class="section-padding bg-gradient-to-br from-gray-50 via-purple-50 to-pink-50 dark:from-gray-800 dark:via-purple-900 dark:to-pink-900 relative overflow-hidden">
-        <div class="container-custom relative z-10">
+    <!-- Destinations Preview -->
+    <section class="section-padding bg-gray-100 dark:bg-gray-800">
+        <div class="container-custom">
             <div class="text-center mb-20 fade-in-observer">
-                <h2 class="font-accent text-responsive-3xl font-bold mb-8 text-gradient">
-                    🗺️ Destinasi Spektakuler Menanti! 🗺️
+                <h2 class="font-accent text-responsive-lg font-bold mb-8 text-gradient">
+                    Destinasi Spektakuler Menanti!
                 </h2>
-                <p class="text-responsive-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
-                    Jelajahi <strong class="text-primary">keindahan alam Sumatera Utara</strong> yang memukau dengan 
-                    <strong class="text-secondary">panduan wisata berpengalaman</strong> dan 
-                    <strong class="text-accent">fasilitas premium</strong>
+                <p class="text-responsive-md text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+                    Jelajahi keindahan alam Sumatera Utara yang memukau dengan panduan wisata berpengalaman
                 </p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Destination 1 -->
                 <div class="destination-card fade-in-observer">
-                    <img src="assets/danau-toba.jpg" alt="Danau Toba vulkanik terbesar di dunia dengan pemandangan menakjubkan" class="destination-image">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/80e7d8cb-25a2-4bdd-b76b-ad9cd72b4ef8.png
                     <div class="destination-overlay"></div>
                     <div class="destination-content">
-                        <h3 class="font-bold text-xl mb-2">🏞️ Danau Toba</h3>
-                        <p class="text-sm opacity-90 leading-relaxed">Danau vulkanik terbesar di dunia dengan pemandangan spektakuler yang memukau mata</p>
+                        <h3 class="font-bold text-xl mb-2">Danau Toba</h3>
+                        <p class="text-sm opacity-90">Danau vulkanik terbesar di dunia dengan pemandangan spektakuler</p>
                         <div class="mt-3 flex items-center text-yellow-400">
                             <i class="fas fa-star mr-1"></i>
                             <span class="text-sm font-semibold">4.9/5</span>
-                            <span class="text-xs ml-2 text-white opacity-75">(2.5k reviews)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Destination 2 -->
                 <div class="destination-card fade-in-observer" style="animation-delay: 0.1s;">
-                    <img src="assets/pulau-samosir.jpg" alt="Pulau Samosir dengan budaya Batak yang kaya dan autentik" class="destination-image">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d3315447-2269-477b-b5d2-4eac23c6be53.png
                     <div class="destination-overlay"></div>
                     <div class="destination-content">
-                        <h3 class="font-bold text-xl mb-2">🏝️ Pulau Samosir</h3>
-                        <p class="text-sm opacity-90 leading-relaxed">Pulau budaya Batak di tengah Danau Toba dengan tradisi yang masih terjaga autentik</p>
+                        <h3 class="font-bold text-xl mb-2">Pulau Samosir</h3>
+                        <p class="text-sm opacity-90">Pulau budaya Batak di tengah Danau Toba</p>
                         <div class="mt-3 flex items-center text-yellow-400">
                             <i class="fas fa-star mr-1"></i>
                             <span class="text-sm font-semibold">4.8/5</span>
-                            <span class="text-xs ml-2 text-white opacity-75">(1.8k reviews)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Destination 3 -->
                 <div class="destination-card fade-in-observer" style="animation-delay: 0.2s;">
-                    <img src="assets/berastagi.jpg" alt="Berastagi kota pegunungan dengan udara sejuk dan buah segar" class="destination-image">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b377fb38-8cd0-480a-98bd-511c13d9f1be.png
                     <div class="destination-overlay"></div>
                     <div class="destination-content">
-                        <h3 class="font-bold text-xl mb-2">🏔️ Berastagi</h3>
-                        <p class="text-sm opacity-90 leading-relaxed">Kota pegunungan dengan udara sejuk, buah segar, dan pemandangan Gunung Sinabung</p>
+                        <h3 class="font-bold text-xl mb-2">Berastagi</h3>
+                        <p class="text-sm opacity-90">Kota pegunungan dengan udara sejuk dan buah segar</p>
                         <div class="mt-3 flex items-center text-yellow-400">
                             <i class="fas fa-star mr-1"></i>
                             <span class="text-sm font-semibold">4.7/5</span>
-                            <span class="text-xs ml-2 text-white opacity-75">(1.2k reviews)</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Destination 4 -->
                 <div class="destination-card fade-in-observer" style="animation-delay: 0.3s;">
-                    <img src="assets/medan.jpg" alt="Medan City dengan kuliner lezat dan warisan budaya yang kaya" class="destination-image">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a088605-880d-4653-9c49-a118e75c991d.png
                     <div class="destination-overlay"></div>
                     <div class="destination-content">
-                        <h3 class="font-bold text-xl mb-2">🏙️ Medan City</h3>
-                        <p class="text-sm opacity-90 leading-relaxed">Ibu kota Sumatera Utara dengan kuliner halal lezat dan warisan budaya multikultural</p>
+                        <h3 class="font-bold text-xl mb-2">Medan City</h3>
+                        <p class="text-sm opacity-90">Ibu kota Sumatera Utara dengan kuliner lezat</p>
                         <div class="mt-3 flex items-center text-yellow-400">
                             <i class="fas fa-star mr-1"></i>
                             <span class="text-sm font-semibold">4.6/5</span>
-                            <span class="text-xs ml-2 text-white opacity-75">(950 reviews)</span>
                         </div>
                     </div>
                 </div>
@@ -2550,71 +1286,70 @@
             <div class="text-center mt-16 fade-in-observer">
                 <a href="destinations.html" class="btn btn-outline hover-glow px-12 py-4 text-lg">
                     <i class="fas fa-map-marked-alt mr-3 animate-bounce-slow"></i>
-                    <span>🚁 Jelajahi Semua Destinasi Eksklusif</span>
+                    Jelajahi Semua Destinasi
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Ultra Enhanced Gallery Preview -->
-    <section class="section-padding bg-white dark:bg-gray-900 relative overflow-hidden">
+    <!-- Gallery Preview -->
+    <section class="section-padding bg-white dark:bg-gray-900">
         <div class="container-custom">
             <div class="text-center mb-20 fade-in-observer">
-                <h2 class="font-accent text-responsive-3xl font-bold mb-8 text-gradient">
-                    📸 Galeri Momen Berharga 📸
+                <h2 class="font-accent text-responsive-lg font-bold mb-8 text-gradient">
+                    Galeri Momen Berharga
                 </h2>
-                <p class="text-responsive-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
-                    Momen indah dan <strong class="text-primary">pengalaman tak terlupakan</strong> dari perjalanan wisata bersama 
-                    <strong class="text-secondary">500+ keluarga bahagia</strong> yang telah mempercayai layanan kami
+                <p class="text-responsive-md text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+                    Momen indah dan pengalaman tak terlupakan dari perjalanan wisata bersama 500+ keluarga bahagia
                 </p>
             </div>
             
-            <div class="gallery-grid">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 <!-- Gallery Item 1 -->
                 <div class="gallery-item fade-in-observer">
-                    <img src="assets/foto1.jpg" alt="Wisata Danau Toba dengan keluarga bahagia di tepi danau" loading="lazy">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b4fe9bbd-6605-431a-808d-e32837e36498.png
                     <div class="gallery-overlay">
-                        <i class="gallery-icon fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
                 </div>
 
                 <!-- Gallery Item 2 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.1s;">
-                    <img src="assets/foto2.jpg" alt="Pemandangan Berastagi dengan pegunungan hijau yang menawan" loading="lazy">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d92e9749-0a87-4c34-a370-eff9b3cc77a5.png
                     <div class="gallery-overlay">
-                        <i class="gallery-icon fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
                 </div>
 
                 <!-- Gallery Item 3 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.2s;">
-                    <img src="assets/foto3.jpg" alt="Pulau Samosir dengan budaya Batak yang autentik" loading="lazy">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/deeae1db-8d07-4bf6-b495-403b6f346327.png
                     <div class="gallery-overlay">
-                        <i class="gallery-icon fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
                 </div>
 
                 <!-- Gallery Item 4 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.3s;">
-                    <img src="assets/foto4.jpg" alt="Air Terjun Sipiso-piso yang spektakuler dan memukau" loading="lazy">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d23dd7ef-eeb5-4245-be96-feb9b1cb22f1.png
                     <div class="gallery-overlay">
-                        <i class="gallery-icon fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
                 </div>
 
                 <!-- Gallery Item 5 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.4s;">
-                    <img src="assets/foto5.jpg" alt="Bukit Holbung dengan pemandangan Danau Toba dari ketinggian" loading="lazy">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0e803ad9-1887-4d24-85ac-41a6368b962c.png
                     <div class="gallery-overlay">
-                        <i class="gallery-icon fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
                 </div>
 
                 <!-- Gallery Item 6 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.5s;">
-                    <img src="assets/foto6.jpg" alt="Gunung Sibayak dengan pendakian yang menantang" loading="lazy">
+                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/206a667e-001c-4b95-8fe8-1c4a54779d07.png
                     <div class="gallery-overlay">
-                        <i class="gallery-icon fas fa-search-plus"></i>
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
                 </div>
             </div>
@@ -2622,23 +1357,1344 @@
             <div class="text-center mt-16 fade-in-observer">
                 <a href="gallery.html" class="btn btn-outline hover-glow px-12 py-4 text-lg">
                     <i class="fas fa-camera mr-3 animate-bounce-slow"></i>
-                    <span>📷 Lihat 1000+ Foto Perjalanan</span>
+                    Lihat 1000+ Foto Perjalanan
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Ultra Enhanced Testimonials Section -->
-    <section class="section-padding bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900 dark:via-indigo-900 dark:to-purple-900 relative overflow-hidden">
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-gray-100 dark:bg-gray-800">
         <div class="container-custom">
             <div class="text-center mb-20 fade-in-observer">
-                <h2 class="font-accent text-responsive-3xl font-bold mb-8 text-gradient">
-                    💝 Kata Pelanggan Bahagia 💝
+                <h2 class="font-accent text-responsive-lg font-bold mb-8 text-gradient">
+                    Kata Pelanggan Bahagia
                 </h2>
-                <p class="text-responsive-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
-                    Pengalaman nyata dari <strong class="text-primary">500+ keluarga</strong>
+                <p class="text-responsive-md text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
+                    Pengalaman nyata dari 500+ keluarga yang telah mempercayai layanan wisata halal kami
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div id="testimonials-container" class="testimonial-card fade-in-observer">
+                    <div class="flex justify-center mb-6">
+                        <i class="fas fa-star text-yellow-400 text-xl mx-1"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl mx-1"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl mx-1"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl mx-1"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl mx-1"></i>
+                    </div>
+                    <img id="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="Ahmad & Keluarga" class="w-16 h-16 rounded-full mx-auto mb-4 object-cover">
+                    <blockquote id="testimonial-text" class="text-lg text-gray-600 dark:text-gray-300 mb-6 italic leading-relaxed">
+                        "Pengalaman wisata yang luar biasa! Guide ramah, kendaraan bersih, dan jadwal tepat waktu. Sangat merekomendasikan untuk keluarga Muslim."
+                    </blockquote>
+                    <div>
+                        <div id="testimonial-name" class="font-bold text-lg">Ahmad & Keluarga</div>
+                        <div id="testimonial-location" class="text-gray-500 text-sm">Jakarta</div>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center mt-8 space-x-4">
+                    <button id="prev-testimonial" class="w-12 h-12 glass text-gray-600 dark:text-gray-300 rounded-full flex items-center justify-center hover-scale">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="flex space-x-2 items-center">
+                        <button class="w-3 h-3 rounded-full bg-blue-500 testimonial-dot" data-index="0"></button>
+                        <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 testimonial-dot" data-index="1"></button>
+                        <button class="w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 testimonial-dot" data-index="2"></button>
+                    </div>
+                    <button id="next-testimonial" class="w-12 h-12 glass text-gray-600 dark:text-gray-300 rounded-full flex items-center justify-center hover-scale">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-🎨 **Generating images based on descriptions...**
+    <!-- CTA Section -->
+    <section class="section-padding bg-gradient-to-br from-blue-600 via-blue-700 to-green-600 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="container-custom text-center relative z-10">
+            <div class="max-w-4xl mx-auto fade-in-observer">
+                <h2 class="font-accent text-responsive-lg font-bold mb-8">
+                    Siap Memulai Perjalanan Berkah Anda?
+                </h2>
+                <p class="text-responsive-md mb-12 opacity-90 leading-relaxed">
+                    Konsultasi gratis dengan tim ahli kami untuk merencanakan wisata halal yang tak terlupakan. Pengalaman terbaik menanti Anda!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="https://wa.me/6281397606622?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR!" target="_blank" class="btn btn-ghost px-10 py-5 text-lg hover:bg-white hover:text-blue-600">
+                        <i class="fab fa-whatsapp mr-3 text-2xl animate-heartbeat"></i>
+                        Konsultasi Sekarang
+                    </a>
+                    <a href="tel:+6281397606622" class="btn btn-ghost px-10 py-5 text-lg hover:bg-white hover:text-blue-600">
+                        <i class="fas fa-phone mr-3"></i>
+                        Hubungi Langsung
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-✅ **Images generated successfully! Here's your updated content:**
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white section-padding">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="fade-in-observer">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl flex items-center justify-center">
+                            https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/96918d16-acf9-4638-9417-55ff009d08cd.png
+                        </div>
+                        <div>
+                            <h3 class="font-accent font-bold text-xl">Medan Toba</h3>
+                            <p class="text-gray-400 text-sm">Sumatera Tour</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Wisata Berkah dengan pengalaman 6+ tahun melayani keluarga Muslim. Terpercaya, aman, dan nyaman.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/ariel.azhura" target="_blank" class="social-btn social-facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com/sujailaketoba" target="_blank" class="social-btn social-instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@medantobasumatera" target="_blank" class="social-btn social-youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/6281397606622" target="_blank" class="social-btn social-whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
 
+                <!-- Quick Links -->
+                <div class="fade-in-observer" style="animation-delay: 0.2s;">
+                    <h4 class="font-semibold text-lg mb-6">Menu Utama</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-gray-300 hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="packages.html" class="text-gray-300 hover:text-white transition-colors">Paket Wisata</a></li>
+                        <li><a href="gallery.html" class="text-gray-300 hover:text-white transition-colors">Galeri</a></li>
+                        <li><a href="destinations.html" class="text-gray-300 hover:text-white transition-colors">Destinasi</a></li>
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition-colors">Tentang Kami</a></li>
+                        <li><a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="fade-in-observer" style="animation-delay: 0.4s;">
+                    <h4 class="font-semibold text-lg mb-6">Layanan Kami</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Tour Halal Terpercaya</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Driver Muslim Berpengalaman</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Kendaraan Bersih & Nyaman</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Panduan Wisata Lokal</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Konsultasi Gratis</li>
+                        <li><i class="fas fa-check text-green-400 mr-2"></i>Harga Transparan</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="fade-in-observer" style="animation-delay: 0.6s;">
+                    <h4 class="font-semibold text-lg mb-6">Kontak</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-blue-400 mt-1"></i>
+                            <p class="text-gray-300 text-sm">
+                                Jalan Trimurti, Tambak Lau Mulgap I<br>
+                                Kabupaten Karo, Sumatera Utara
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fab fa-whatsapp text-green-400"></i>
+                            <a href="https://wa.me/6281397606622" class="text-gray-300 hover:text-white">+62 813-9760-6622</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <a href="mailto:info@medantobasumatera.com" class="text-gray-300 hover:text-white">info@medantobasumatera.com</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-purple-400"></i>
+                            <span class="text-gray-300 text-sm">24/7 Customer Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8 text-center fade-in-observer">
+                <p class="text-gray-400 text-sm">
+                    © 2025 Medan Toba Sumatera Tour. All Rights Reserved. |
+                    <span class="text-green-400 font-medium">Your Trusted Travel Companion</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281397606622?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR!" target="_blank" class="floating-whatsapp no-print" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top no-print" aria-label="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Complex JavaScript -->
+    <script>
+        // Main Website Class
+        class MedanTobaWebsite {
+            constructor() {
+                // State management
+                this.currentLang = localStorage.getItem('toba-lang') || 'id';
+                this.currentTheme = localStorage.getItem('toba-theme') || 'light';
+                this.currentTestimonial = 0;
+                this.isScrolling = false;
+                this.lastScrollY = 0;
+                this.scrollDirection = 'up';
+                
+                // Data
+                this.translations = {
+                    id: {
+                        'home': 'Beranda',
+                        'packages': 'Paket Wisata',
+                        'gallery': 'Galeri',
+                        'destinations': 'Destinasi',
+                        'about': 'Tentang Kami',
+                        'contact': 'Kontak'
+                    },
+                    en: {
+                        'home': 'Home',
+                        'packages': 'Tour Packages',
+                        'gallery': 'Gallery',
+                        'destinations': 'Destinations',
+                        'about': 'About Us',
+                        'contact': 'Contact'
+                    }
+                };
+
+                this.testimonials = [
+                    {
+                        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face",
+                        alt: "Ahmad & Keluarga",
+                        text: {
+                            id: '"Pengalaman wisata yang luar biasa! Guide ramah, kendaraan bersih, dan jadwal tepat waktu. Sangat merekomendasikan untuk keluarga Muslim."',
+                            en: '"Amazing travel experience! Friendly guide, clean vehicle, and on-time schedule. Highly recommend for Muslim families."'
+                        },
+                        name: {
+                            id: 'Ahmad & Keluarga',
+                            en: 'Ahmad & Family'
+                        },
+                        location: 'Jakarta'
+                    },
+                    {
+                        avatar: "https://images.unsplash.com/photo-1494790108755-2616c0763c5b?w=80&h=80&fit=crop&crop=face",
+                        alt: "Sarah Fitria",
+                        text: {
+                            id: '"Pelayanan halal terjamin dan harga sesuai budget. Tim sangat profesional dan memahami kebutuhan wisatawan Muslim. Terima kasih!"',
+                            en: '"Guaranteed halal service and budget-friendly prices. Very professional team that understands the needs of Muslim travelers. Thank you!"'
+                        },
+                        name: {
+                            id: 'Sarah Fitria',
+                            en: 'Sarah Fitria'
+                        },
+                        location: 'Bandung'
+                    },
+                    {
+                        avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face",
+                        alt: "Ridwan Pratama",
+                        text: {
+                            id: '"Driver sangat berpengalaman dan mengetahui spot foto terbaik. Perjalanan menjadi sangat berkesan dan nyaman untuk keluarga."',
+                            en: '"Very experienced driver who knows the best photo spots. The trip became very memorable and comfortable for the family."'
+                        },
+                        name: {
+                            id: 'Ridwan Pratama',
+                            en: 'Ridwan Pratama'
+                        },
+                        location: 'Surabaya'
+                    }
+                ];
+
+                // DOM Elements
+                this.navbar = document.getElementById('navbar');
+                this.scrollProgress = document.getElementById('scroll-progress');
+                this.backToTop = document.getElementById('back-to-top');
+                this.loadingScreen = document.getElementById('loading-screen');
+                
+                // Mobile menu elements
+                this.mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                this.mobileMenu = document.getElementById('mobile-menu');
+                this.mobileOverlay = document.getElementById('mobile-overlay');
+                this.mobileClose = document.getElementById('mobile-close');
+                
+                // Theme and language toggle elements
+                this.themeToggle = document.getElementById('theme-toggle');
+                this.langToggle = document.getElementById('lang-toggle');
+                this.mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+                this.mobileLangToggle = document.getElementById('mobile-lang-toggle');
+                
+                // Testimonial elements
+                this.testimonialContainer = document.getElementById('testimonials-container');
+                this.testimonialAvatar = document.getElementById('testimonial-avatar');
+                this.testimonialText = document.getElementById('testimonial-text');
+                this.testimonialName = document.getElementById('testimonial-name');
+                this.testimonialLocation = document.getElementById('testimonial-location');
+                this.prevTestimonialBtn = document.getElementById('prev-testimonial');
+                this.nextTestimonialBtn = document.getElementById('next-testimonial');
+                this.testimonialDots = document.querySelectorAll('.testimonial-dot');
+
+                this.init();
+            }
+
+            init() {
+                console.log('Initializing Medan Toba Website...');
+                
+                // Setup all features
+                this.setupEventListeners();
+                this.setupIntersectionObserver();
+                this.setupScrollEffects();
+                this.setupTestimonialSlider();
+                this.setupParticleSystem();
+                this.setupTypingEffect();
+                this.setupCounterAnimation();
+                this.setupImageLazyLoading();
+                
+                // Apply saved preferences
+                this.applyTheme(this.currentTheme);
+                this.applyLanguage(this.currentLang);
+                
+                // Hide loading screen
+                this.hideLoadingScreen();
+                
+                console.log('Website initialized successfully!');
+            }
+
+            setupEventListeners() {
+                // Mobile menu events
+                this.mobileMenuBtn?.addEventListener('click', () => this.toggleMobileMenu());
+                this.mobileClose?.addEventListener('click', () => this.toggleMobileMenu());
+                this.mobileOverlay?.addEventListener('click', () => this.toggleMobileMenu());
+
+                // Theme toggle events
+                this.themeToggle?.addEventListener('click', () => this.toggleTheme());
+                this.mobileThemeToggle?.addEventListener('click', () => this.toggleTheme());
+
+                // Language toggle events
+                this.langToggle?.addEventListener('click', () => this.toggleLanguage());
+                this.mobileLangToggle?.addEventListener('click', () => this.toggleLanguage());
+
+                // Back to top
+                this.backToTop?.addEventListener('click', () => this.scrollToTop());
+
+                // Testimonial navigation
+                this.prevTestimonialBtn?.addEventListener('click', () => this.prevTestimonial());
+                this.nextTestimonialBtn?.addEventListener('click', () => this.nextTestimonial());
+                
+                this.testimonialDots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToTestimonial(index));
+                });
+
+                // Scroll events with throttling
+                window.addEventListener('scroll', this.throttle(() => this.handleScroll(), 16));
+                
+                // Resize events
+                window.addEventListener('resize', this.debounce(() => this.handleResize(), 250));
+                
+                // Keyboard events
+                document.addEventListener('keydown', (e) => this.handleKeyboard(e));
+                
+                // Click events for animations
+                document.addEventListener('click', (e) => this.handleClick(e));
+
+                // Visibility change
+                document.addEventListener('visibilitychange', () => this.handleVisibilityChange());
+
+                console.log('Event listeners setup complete');
+            }
+
+            setupIntersectionObserver() {
+                if ('IntersectionObserver' in window) {
+                    const options = {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    };
+
+                    this.observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('visible');
+                                
+                                // Add stagger effect for grouped elements
+                                const parent = entry.target.parentNode;
+                                const siblings = parent.querySelectorAll('.fade-in-observer');
+                                siblings.forEach((sibling, index) => {
+                                    setTimeout(() => {
+                                        sibling.classList.add('visible');
+                                    }, index * 100);
+                                });
+
+                                // Trigger counter animation for stats
+                                if (entry.target.classList.contains('stats-counter')) {
+                                    this.animateCounter(entry.target);
+                                }
+
+                                this.observer.unobserve(entry.target);
+                            }
+                        });
+                    }, options);
+
+                    // Observe all fade-in elements
+                    document.querySelectorAll('.fade-in-observer').forEach(el => {
+                        this.observer.observe(el);
+                    });
+
+                    console.log('Intersection Observer setup complete');
+                }
+            }
+
+            setupScrollEffects() {
+                this.handleScroll = () => {
+                    const scrollY = window.scrollY;
+                    const windowHeight = window.innerHeight;
+                    const documentHeight = document.documentElement.scrollHeight;
+                    
+                    // Update scroll progress
+                    const progress = (scrollY / (documentHeight - windowHeight)) * 100;
+                    this.scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+                    
+                    // Update navbar
+                    if (scrollY > 100) {
+                        this.navbar?.classList.add('scrolled');
+                    } else {
+                        this.navbar?.classList.remove('scrolled');
+                    }
+                    
+                    // Update back to top button
+                    if (scrollY > 500) {
+                        this.backToTop?.classList.add('visible');
+                    } else {
+                        this.backToTop?.classList.remove('visible');
+                    }
+                    
+                    // Parallax effects
+                    this.updateParallax(scrollY);
+                    
+                    // Track scroll direction
+                    this.scrollDirection = scrollY > this.lastScrollY ? 'down' : 'up';
+                    this.lastScrollY = scrollY;
+                };
+
+                console.log('Scroll effects setup complete');
+            }
+
+            updateParallax(scrollY) {
+                const parallaxElements = document.querySelectorAll('[data-parallax]');
+                parallaxElements.forEach(el => {
+                    const speed = parseFloat(el.dataset.parallax) || 0.5;
+                    const yPos = -(scrollY * speed);
+                    el.style.transform = `translateY(${yPos}px)`;
+                });
+            }
+
+            setupTestimonialSlider() {
+                // Auto-play testimonials
+                setInterval(() => {
+                    this.nextTestimonial();
+                }, 5000);
+
+                // Initialize first testimonial
+                this.updateTestimonial(0);
+
+                console.log('Testimonial slider setup complete');
+            }
+
+            setupParticleSystem() {
+                const heroSection = document.querySelector('.hero-bg');
+                if (!heroSection) return;
+
+                // Create particle container if it doesn't exist
+                let particleContainer = heroSection.querySelector('.particles');
+                if (!particleContainer) {
+                    particleContainer = document.createElement('div');
+                    particleContainer.className = 'particles absolute inset-0 pointer-events-none';
+                    heroSection.appendChild(particleContainer);
+                }
+
+                // Create particles
+                for (let i = 0; i < 20; i++) {
+                    const particle = document.createElement('div');
+                    particle.className = 'particle absolute w-1 h-1 bg-white rounded-full opacity-60';
+                    particle.style.left = Math.random() * 100 + '%';
+                    particle.style.top = Math.random() * 100 + '%';
+                    particle.style.animationDelay = Math.random() * 5 + 's';
+                    particle.style.animation = 'float 8s ease-in-out infinite';
+                    particleContainer.appendChild(particle);
+                }
+
+                console.log('Particle system setup complete');
+            }
+
+            setupTypingEffect() {
+                const typingElements = document.querySelectorAll('[data-typing]');
+                typingElements.forEach(el => {
+                    const text = el.textContent;
+                    el.textContent = '';
+                    
+                    let i = 0;
+                    const typeWriter = () => {
+                        if (i < text.length) {
+                            el.textContent += text.charAt(i);
+                            i++;
+                            setTimeout(typeWriter, 50);
+                        }
+                    };
+                    
+                    // Start typing when element is visible
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                typeWriter();
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    });
+                    
+                    observer.observe(el);
+                });
+
+                console.log('Typing effect setup complete');
+            }
+
+            setupCounterAnimation() {
+                const counters = document.querySelectorAll('[data-counter]');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.dataset.counter);
+                    const duration = parseInt(counter.dataset.duration) || 2000;
+                    
+                    const animateCounter = () => {
+                        let current = 0;
+                        const increment = target / (duration / 16);
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            counter.textContent = Math.floor(current);
+                        }, 16);
+                    };
+
+                    // Trigger when visible
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                animateCounter();
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    });
+                    
+                    observer.observe(counter);
+                });
+
+                console.log('Counter animation setup complete');
+            }
+
+            setupImageLazyLoading() {
+                if ('IntersectionObserver' in window) {
+                    const imageObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                if (img.dataset.src) {
+                                    img.src = img.dataset.src;
+                                    img.classList.remove('loading');
+                                    imageObserver.unobserve(img);
+                                }
+                            }
+                        });
+                    });
+
+                    document.querySelectorAll('img[data-src]').forEach(img => {
+                        img.classList.add('loading');
+                        imageObserver.observe(img);
+                    });
+                }
+
+                console.log('Image lazy loading setup complete');
+            }
+
+            // Mobile Menu Methods
+            toggleMobileMenu() {
+                const isActive = this.mobileMenu.classList.contains('active');
+                
+                if (isActive) {
+                    this.closeMobileMenu();
+                } else {
+                    this.openMobileMenu();
+                }
+            }
+
+            openMobileMenu() {
+                this.mobileMenu.classList.add('active');
+                this.mobileOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Add opening animation to menu items
+                const menuItems = this.mobileMenu.querySelectorAll('nav a');
+                menuItems.forEach((item, index) => {
+                    item.style.transform = 'translateX(100px)';
+                    item.style.opacity = '0';
+                    setTimeout(() => {
+                        item.style.transform = 'translateX(0)';
+                        item.style.opacity = '1';
+                        item.style.transition = 'all 0.3s ease';
+                    }, index * 50);
+                });
+
+                console.log('Mobile menu opened');
+            }
+
+            closeMobileMenu() {
+                this.mobileMenu.classList.remove('active');
+                this.mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                console.log('Mobile menu closed');
+            }
+
+            // Theme Methods
+            toggleTheme() {
+                this.currentTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+                localStorage.setItem('toba-theme', this.currentTheme);
+                this.applyTheme(this.currentTheme);
+            }
+
+            applyTheme(theme) {
+                const html = document.documentElement;
+                const themeButtons = [this.themeToggle, this.mobileThemeToggle];
+                
+                if (theme === 'dark') {
+                    html.classList.add('dark');
+                    themeButtons.forEach(btn => {
+                        if (btn) btn.innerHTML = '<i class="fas fa-sun"></i>';
+                    });
+                } else {
+                    html.classList.remove('dark');
+                    themeButtons.forEach(btn => {
+                        if (btn) btn.innerHTML = '<i class="fas fa-moon"></i>';
+                    });
+                }
+
+                // Add theme transition effect
+                document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+                
+                console.log(`Theme applied: ${theme}`);
+            }
+
+            // Language Methods
+            toggleLanguage() {
+                this.currentLang = this.currentLang === 'id' ? 'en' : 'id';
+                localStorage.setItem('toba-lang', this.currentLang);
+                this.applyLanguage(this.currentLang);
+            }
+
+            applyLanguage(lang) {
+                const langButtons = [this.langToggle, this.mobileLangToggle];
+                const targetLang = lang === 'id' ? 'en' : 'id';
+                
+                langButtons.forEach(btn => {
+                    if (btn) {
+                        btn.innerHTML = `<i class="fas fa-globe mr-2"></i>${targetLang.toUpperCase()}`;
+                    }
+                });
+
+                // Update navigation texts
+                document.querySelectorAll('[data-nav]').forEach(el => {
+                    const key = el.getAttribute('data-nav');
+                    if (this.translations[lang][key]) {
+                        const span = el.querySelector('span');
+                        if (span) {
+                            span.textContent = this.translations[lang][key];
+                        } else {
+                            el.textContent = this.translations[lang][key];
+                        }
+                    }
+                });
+
+                document.documentElement.lang = lang;
+                this.updateTestimonial(this.currentTestimonial);
+                
+                console.log(`Language applied: ${lang}`);
+            }
+
+            // Testimonial Methods
+            updateTestimonial(index) {
+                const testimonial = this.testimonials[index];
+                if (!testimonial) return;
+
+                // Add fade effect
+                this.testimonialContainer.style.opacity = '0.5';
+                
+                setTimeout(() => {
+                    this.testimonialAvatar.src = testimonial.avatar;
+                    this.testimonialAvatar.alt = testimonial.alt;
+                    this.testimonialText.innerHTML = testimonial.text[this.currentLang];
+                    this.testimonialName.textContent = testimonial.name[this.currentLang];
+                    this.testimonialLocation.textContent = testimonial.location;
+
+                    // Update dots
+                    this.testimonialDots.forEach((dot, i) => {
+                        if (i === index) {
+                            dot.className = 'w-3 h-3 rounded-full bg-blue-500 testimonial-dot transition-all';
+                        } else {
+                            dot.className = 'w-3 h-3 rounded-full bg-gray-300 dark:bg-gray-600 testimonial-dot transition-all';
+                        }
+                    });
+
+                    this.testimonialContainer.style.opacity = '1';
+                }, 200);
+
+                this.currentTestimonial = index;
+            }
+
+            nextTestimonial() {
+                const nextIndex = (this.currentTestimonial + 1) % this.testimonials.length;
+                this.updateTestimonial(nextIndex);
+            }
+
+            prevTestimonial() {
+                const prevIndex = (this.currentTestimonial - 1 + this.testimonials.length) % this.testimonials.length;
+                this.updateTestimonial(prevIndex);
+            }
+
+            goToTestimonial(index) {
+                this.updateTestimonial(index);
+            }
+
+            // Scroll Methods
+            handleScroll() {
+                const scrollY = window.scrollY;
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                
+                // Update scroll progress
+                const progress = (scrollY / (documentHeight - windowHeight)) * 100;
+                this.scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+                
+                // Update navbar
+                if (scrollY > 100) {
+                    this.navbar?.classList.add('scrolled');
+                } else {
+                    this.navbar?.classList.remove('scrolled');
+                }
+                
+                // Update back to top button
+                if (scrollY > 500) {
+                    this.backToTop?.classList.add('visible');
+                } else {
+                    this.backToTop?.classList.remove('visible');
+                }
+                
+                // Parallax effects
+                this.updateParallax(scrollY);
+            }
+
+            scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Utility Methods
+            throttle(func, limit) {
+                let inThrottle;
+                return function() {
+                    const args = arguments;
+                    const context = this;
+                    if (!inThrottle) {
+                        func.apply(context, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                }
+            }
+
+            debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+
+            // Event Handlers
+            handleKeyboard(e) {
+                switch(e.key) {
+                    case 'Escape':
+                        if (this.mobileMenu.classList.contains('active')) {
+                            this.closeMobileMenu();
+                        }
+                        break;
+                    case 'ArrowLeft':
+                        if (e.ctrlKey) {
+                            e.preventDefault();
+                            this.prevTestimonial();
+                        }
+                        break;
+                    case 'ArrowRight':
+                        if (e.ctrlKey) {
+                            e.preventDefault();
+                            this.nextTestimonial();
+                        }
+                        break;
+                    case 'Home':
+                        if (e.ctrlKey) {
+                            e.preventDefault();
+                            this.scrollToTop();
+                        }
+                        break;
+                }
+            }
+
+            handleClick(e) {
+                // Add ripple effect to buttons
+                if (e.target.classList.contains('btn') || e.target.closest('.btn')) {
+                    this.addRippleEffect(e);
+                }
+
+                // Add wiggle effect to interactive elements
+                if (e.target.classList.contains('interactive') || e.target.closest('.interactive')) {
+                    e.target.classList.add('animate-wiggle');
+                    setTimeout(() => {
+                        e.target.classList.remove('animate-wiggle');
+                    }, 1000);
+                }
+            }
+
+            addRippleEffect(e) {
+                const button = e.target.classList.contains('btn') ? e.target : e.target.closest('.btn');
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                const ripple = document.createElement('span');
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.className = 'absolute bg-white opacity-30 rounded-full animate-ping pointer-events-none';
+                
+                button.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            }
+
+            handleResize() {
+                // Update container heights
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+                // Close mobile menu on resize to desktop
+                if (window.innerWidth >= 1024) {
+                    this.closeMobileMenu();
+                }
+
+                console.log('Resize handled');
+            }
+
+            handleVisibilityChange() {
+                if (document.hidden) {
+                    console.log('Page hidden');
+                } else {
+                    console.log('Page visible');
+                }
+            }
+
+            // Animation Methods
+            animateCounter(element) {
+                const target = parseInt(element.textContent);
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current);
+                }, 16);
+            }
+
+            // Loading Screen
+            hideLoadingScreen() {
+                setTimeout(() => {
+                    if (this.loadingScreen) {
+                        this.loadingScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            this.loadingScreen.remove();
+                            this.triggerInitialAnimations();
+                        }, 500);
+                    }
+                }, 1500);
+            }
+
+            triggerInitialAnimations() {
+                // Trigger hero animations
+                const heroElements = document.querySelectorAll('.fade-in-up, .fade-in-down');
+                heroElements.forEach((el, index) => {
+                    el.style.animationDelay = `${index * 0.2}s`;
+                    el.style.opacity = '1';
+                });
+
+                console.log('Initial animations triggered');
+            }
+
+            // Notification System
+            showNotification(message, type = 'info') {
+                const notification = document.createElement('div');
+                notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full`;
+                
+                const bgColor = {
+                    success: 'bg-green-500',
+                    error: 'bg-red-500',
+                    warning: 'bg-yellow-500',
+                    info: 'bg-blue-500'
+                }[type];
+                
+                notification.className += ` ${bgColor} text-white`;
+                notification.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-${type === 'success' ? 'check' : type === 'error' ? 'times' : type === 'warning' ? 'exclamation' : 'info'}-circle"></i>
+                        <span>${message}</span>
+                        <button class="ml-4 text-white hover:text-gray-200" onclick="this.parentElement.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Animate in
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(0)';
+                }, 100);
+                
+                // Auto remove
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(100%)';
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 5000);
+            }
+
+            // Performance Monitoring
+            measurePerformance(name, fn) {
+                const start = performance.now();
+                const result = fn();
+                const end = performance.now();
+                console.log(`${name} took ${end - start} milliseconds`);
+                return result;
+            }
+
+            // Error Handling
+            handleError(error, context = '') {
+                console.error(`Error in ${context}:`, error);
+                this.showNotification(`Terjadi kesalahan: ${error.message}`, 'error');
+            }
+
+            // Analytics
+            trackEvent(eventName, properties = {}) {
+                console.log('Event tracked:', eventName, properties);
+                
+                // Google Analytics 4
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', eventName, properties);
+                }
+                
+                // Facebook Pixel
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', eventName, properties);
+                }
+            }
+
+            // SEO Methods
+            updateMetaTags(title, description) {
+                document.title = title;
+                
+                const metaDescription = document.querySelector('meta[name="description"]');
+                if (metaDescription) {
+                    metaDescription.content = description;
+                }
+                
+                const ogTitle = document.querySelector('meta[property="og:title"]');
+                if (ogTitle) {
+                    ogTitle.content = title;
+                }
+                
+                const ogDescription = document.querySelector('meta[property="og:description"]');
+                if (ogDescription) {
+                    ogDescription.content = description;
+                }
+            }
+
+            // PWA Methods
+            setupServiceWorker() {
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(registration => {
+                            console.log('Service Worker registered successfully');
+                        })
+                        .catch(error => {
+                            console.log('Service Worker registration failed');
+                        });
+                }
+            }
+
+            // Advanced Features
+            setupAdvancedFeatures() {
+                // Setup mouse tracking for interactive elements
+                this.setupMouseTracking();
+                
+                // Setup advanced animations
+                this.setupAdvancedAnimations();
+                
+                // Setup easter eggs
+                this.setupEasterEggs();
+                
+                console.log('Advanced features setup complete');
+            }
+
+            setupMouseTracking() {
+                document.addEventListener('mousemove', (e) => {
+                    const cursor = document.querySelector('.custom-cursor');
+                    if (cursor) {
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
+                    }
+
+                    // Parallax effect for hero elements
+                    const heroElements = document.querySelectorAll('[data-mouse-parallax]');
+                    heroElements.forEach(el => {
+                        const speed = parseFloat(el.dataset.mouseParallax) || 0.1;
+                        const x = (e.clientX - window.innerWidth / 2) * speed;
+                        const y = (e.clientY - window.innerHeight / 2) * speed;
+                        el.style.transform = `translate(${x}px, ${y}px)`;
+                    });
+                });
+            }
+
+            setupAdvancedAnimations() {
+                // Stagger animations for cards
+                const cards = document.querySelectorAll('.card');
+                cards.forEach((card, index) => {
+                    card.style.animationDelay = `${index * 0.1}s`;
+                });
+
+                // Morphing background
+                this.startMorphingBackground();
+            }
+
+            startMorphingBackground() {
+                const morphingElement = document.createElement('div');
+                morphingElement.className = 'fixed inset-0 pointer-events-none z-0';
+                morphingElement.style.background = `
+                    radial-gradient(circle at 20% 50%, rgba(14,165,233,0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(16,185,129,0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 80%, rgba(139,92,246,0.03) 0%, transparent 50%)
+                `;
+                morphingElement.style.animation = 'morphing 10s ease-in-out infinite';
+                document.body.appendChild(morphingElement);
+
+                // Add morphing keyframes
+                const morphingStyles = document.createElement('style');
+                morphingStyles.innerHTML = `
+                    @keyframes morphing {
+                        0%, 100% {
+                            background: 
+                                radial-gradient(circle at 20% 50%, rgba(14,165,233,0.03) 0%, transparent 50%),
+                                radial-gradient(circle at 80% 20%, rgba(16,185,129,0.03) 0%, transparent 50%),
+                                radial-gradient(circle at 40% 80%, rgba(139,92,246,0.03) 0%, transparent 50%);
+                        }
+                        50% {
+                            background: 
+                                radial-gradient(circle at 80% 80%, rgba(14,165,233,0.03) 0%, transparent 50%),
+                                radial-gradient(circle at 20% 80%, rgba(16,185,129,0.03) 0%, transparent 50%),
+                                radial-gradient(circle at 60% 20%, rgba(139,92,246,0.03) 0%, transparent 50%);
+                        }
+                    }
+                `;
+                document.head.appendChild(morphingStyles);
+            }
+
+            setupEasterEggs() {
+                let konamiCode = '';
+                const konamiSequence = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightKeyBKeyA';
+                
+                document.addEventListener('keydown', (e) => {
+                    konamiCode += e.code;
+                    if (konamiSequence.indexOf(konamiCode) !== 0) {
+                        konamiCode = '';
+                    }
+                    if (konamiCode === konamiSequence) {
+                        this.triggerEasterEgg();
+                        konamiCode = '';
+                    }
+                });
+
+                // Secret click sequence
+                let clickCount = 0;
+                const logo = document.querySelector('.font-accent');
+                logo?.addEventListener('click', () => {
+                    clickCount++;
+                    if (clickCount === 7) {
+                        this.triggerEasterEgg();
+                        clickCount = 0;
+                    }
+                    setTimeout(() => {
+                        clickCount = 0;
+                    }, 3000);
+                });
+            }
+
+            triggerEasterEgg() {
+                // Add party mode
+                document.body.classList.add('party-mode');
+                
+                // Create confetti
+                this.createConfetti();
+                
+                // Show special message
+                this.showNotification('🎉 Easter Egg Found! You discovered our secret! 🎉', 'success');
+                
+                // Add special effects
+                const partyStyles = document.createElement('style');
+                partyStyles.innerHTML = `
+                    .party-mode * {
+                        animation: rainbow-colors 2s linear infinite !important;
+                    }
+                    
+                    @keyframes rainbow-colors {
+                        0% { filter: hue-rotate(0deg); }
+                        100% { filter: hue-rotate(360deg); }
+                    }
+                `;
+                document.head.appendChild(partyStyles);
+                
+                setTimeout(() => {
+                    document.body.classList.remove('party-mode');
+                    partyStyles.remove();
+                }, 5000);
+            }
+
+            createConfetti() {
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'fixed w-2 h-2 bg-yellow-400 pointer-events-none z-50';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear forwards`;
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }
+
+                // Add confetti animation
+                const confettiStyles = document.createElement('style');
+                confettiStyles.innerHTML = `
+                    @keyframes confetti-fall {
+                        to {
+                            transform: translateY(100vh) rotate(720deg);
+                        }
+                    }
+                `;
+                document.head.appendChild(confettiStyles);
+                
+                setTimeout(() => {
+                    confettiStyles.remove();
+                }, 5000);
+            }
+
+            // API Methods (for future enhancements)
+            async sendContactForm(formData) {
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+                    
+                    if (response.ok) {
+                        this.showNotification('Pesan berhasil dikirim!', 'success');
+                        this.trackEvent('form_submit', { form_type: 'contact' });
+                    } else {
+                        throw new Error('Failed to send message');
+                    }
+                } catch (error) {
+                    this.handleError(error, 'sendContactForm');
+                }
+            }
+
+            async loadDynamicContent(endpoint) {
+                try {
+                    const response = await fetch(endpoint);
+                    const data = await response.json();
+                    return data;
+                } catch (error) {
+                    this.handleError(error, 'loadDynamicContent');
+                    return null;
+                }
+            }
+
+            // Cleanup Methods
+            destroy() {
+                // Remove event listeners
+                this.observer?.disconnect();
+                
+                // Clear intervals
+                clearInterval(this.testimonialInterval);
+                
+                console.log('Website destroyed');
+            }
+        }
+
+        // Initialize Website when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                console.log('DOM Content Loaded - Initializing website...');
+                
+                // Create website instance
+                window.medanTobaWebsite = new MedanTobaWebsite();
+                
+                // Setup advanced features
+                window.medanTobaWebsite.setupAdvancedFeatures();
+                
+                // Track page load performance
+                window.addEventListener('load', () => {
+                    const loadTime = performance.now();
+                    console.log(`Page loaded in ${loadTime}ms`);
+                    
+                    window.medanTobaWebsite.trackEvent('page_load', {
+                        load_time: loadTime,
+                        page: 'index'
+                    });
+                });
+                
+                console.log('Website initialization complete!');
+                
+            } catch (error) {
+                console.error('Failed to initialize website:', error);
+                
+                // Fallback for critical functionality
+                document.getElementById('loading-screen')?.remove();
+                
+                // Basic mobile menu fallback
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileOverlay = document.getElementById('mobile-overlay');
+                const mobileClose = document.getElementById('mobile-close');
+
+                const toggleMenu = () => {
+                    mobileMenu?.classList.toggle('active');
+                    mobileOverlay?.classList.toggle('active');
+                };
+
+                mobileMenuBtn?.addEventListener('click', toggleMenu);
+                mobileClose?.addEventListener('click', toggleMenu);
+                mobileOverlay?.addEventListener('click', toggleMenu);
+
+                // Basic theme toggle fallback
+                const themeToggle = document.getElementById('theme-toggle');
+                themeToggle?.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('dark');
+                });
+            }
+        });
+
+        // Global utility functions
+        window.smoothScrollTo = (element) => {
+            element.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        window.showTooltip = (element, text) => {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'absolute bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-lg pointer-events-none z-50';
+            tooltip.textContent = text;
+            tooltip.style.top = element.offsetTop - 40 + 'px';
+            tooltip.style.left = element.offsetLeft + 'px';
+            
+            document.body.appendChild(tooltip);
+            
+            setTimeout(() => {
+                tooltip.remove();
+            }, 3000);
+        };
+
+        // Konami code for advanced debugging
+        let debugMode = false;
+        const konamiCode = [38,38,40,40,37,39,37,39,66,65];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.keyCode === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    debugMode = !debugMode;
+                    console.log(`Debug mode: ${debugMode ? 'ON' : 'OFF'}`);
+                    
+                    if (debugMode) {
+                        document.body.classList.add('debug-mode');
+                        window.medanTobaWebsite?.showNotification('Debug mode activated! 🎯', 'info');
+                    } else {
+                        document.body.classList.remove('debug-mode');
+                    }
+                    
+                    konamiIndex = 0;
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+
+        // Performance monitoring
+        const observer = new PerformanceObserver((list) => {
+            list.getEntries().forEach((entry) => {
+                console.log('Performance entry:', entry);
+            });
+        });
+
+        observer.observe({entryTypes: ['navigation', 'paint', 'largest-contentful-paint']});
+
+        // Error tracking
+        window.addEventListener('error', (e) => {
+            console.error('Global error:', e.error);
+            window.medanTobaWebsite?.handleError(e.error, 'global');
+        });
+
+        window.addEventListener('unhandledrejection', (e) => {
+            console.error('Unhandled promise rejection:', e.reason);
+            window.medanTobaWebsite?.handleError(e.reason, 'promise');
+        });
+
+        console.log('Advanced JavaScript system loaded successfully! 🚀');
+    </script>
+</body>
+</html>
