@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medan Toba Sumatera Tour - Wisata Halal Danau Toba Terpercaya</title>
     <meta name="description" content="Wisata halal terpercaya ke Danau Toba dengan supir Muslim lokal, kendaraan nyaman, dan harga transparan. Pengalaman 6+ tahun melayani keluarga Muslim.">
-    <link rel="icon" href="logo.png">
+    <link rel="icon" href="https://placehold.co/16x16/0ea5e9/ffffff?text=MT">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -173,377 +173,6 @@
         }
 
         /* Card System */
-        .card {
-            background: var(--surface);
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .card:hover::before {
-            opacity: 1;
-        }
-
-        /* Glass Effect */
-        .glass {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .glass-strong {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 85%;
-            max-width: 400px;
-            height: 100vh;
-            background: var(--surface);
-            z-index: 1000;
-            transition: right 0.4s ease;
-            padding: 2rem;
-            box-shadow: var(--shadow-2xl);
-            border-left: 3px solid var(--primary);
-        }
-
-        .mobile-menu.active {
-            right: 0;
-        }
-
-        .mobile-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .mobile-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            transition: var(--transition);
-        }
-
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .dark .navbar {
-            background: rgba(31, 41, 55, 0.95);
-        }
-
-        .dark .navbar.scrolled {
-            background: rgba(31, 41, 55, 0.98);
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        @keyframes wiggle {
-            0%, 7% { transform: rotateZ(0); }
-            15% { transform: rotateZ(-15deg); }
-            20% { transform: rotateZ(10deg); }
-            25% { transform: rotateZ(-10deg); }
-            30% { transform: rotateZ(6deg); }
-            35% { transform: rotateZ(-4deg); }
-            40%, 100% { transform: rotateZ(0); }
-        }
-
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            14% { transform: scale(1.1); }
-            28% { transform: scale(1); }
-            42% { transform: scale(1.1); }
-            70% { transform: scale(1); }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .fade-in-down {
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .animate-pulse-slow {
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .animate-bounce-slow {
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        .animate-wiggle {
-            animation: wiggle 1s ease-in-out;
-        }
-
-        .animate-heartbeat {
-            animation: heartbeat 1.5s ease-in-out infinite;
-        }
-
-        .animate-shimmer {
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            background-size: 200% 100%;
-            animation: shimmer 2s infinite;
-        }
-
-        /* Text Effects */
-        .text-gradient {
-            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: gradient-shift 3s ease-in-out infinite;
-        }
-
-        .text-glow {
-            text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
-        }
-
-        /* Hover Effects */
-        .hover-lift {
-            transition: var(--transition);
-        }
-
-        .hover-lift:hover {
-            transform: translateY(-4px);
-        }
-
-        .hover-scale {
-            transition: var(--transition);
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-
-        .hover-rotate {
-            transition: var(--transition);
-        }
-
-        .hover-rotate:hover {
-            transform: rotate(5deg);
-        }
-
-        .hover-glow {
-            transition: var(--transition);
-        }
-
-        .hover-glow:hover {
-            box-shadow: 0 0 30px rgba(14, 165, 233, 0.4);
-        }
-
-        /* Container */
-        .container-custom {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 640px) {
-            .container-custom {
-                padding: 0 2rem;
-            }
-        }
-
-        .section-padding {
-            padding: 5rem 0;
-        }
-
-        @media (min-width: 768px) {
-            .section-padding {
-                padding: 7rem 0;
-            }
-        }
-
-        /* Loading Screen */
-        .loading-screen {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.5s ease;
-        }
-
-        .loading-content {
-            text-align: center;
-            color: white;
-        }
-
-        .loading-logo {
-            width: 4rem;
-            height: 4rem;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: pulse 1.5s infinite;
-        }
-
-        .loading-text {
-            background: rgba(255,255,255,0.3);
-            height: 0.75rem;
-            border-radius: var(--radius-full);
-            width: 200px;
-            margin: 0 auto;
-            animation: shimmer 2s infinite;
-        }
-
-        /* Scroll Progress */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-            z-index: 1000;
-            transition: width 0.3s ease;
-        }
-
-        /* Intersection Observer */
-        .fade-in-observer {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: var(--transition-slow);
-        }
-
-        .fade-in-observer.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Typography */
-        .text-responsive-xl {
-            font-size: clamp(2rem, 5vw, 4rem);
-        }
-
-        .text-responsive-lg {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-        }
-
-        .text-responsive-md {
-            font-size: clamp(1.125rem, 3vw, 1.5rem);
-        }
-
-        /* Social Buttons */
-        .social-btn {
-            width: 3rem;
-            height: 3rem;
-            border-radius: var(--radius-xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            transition: var(--transition);
-        }
-
-        .social-btn:hover {
-            transform: translateY(-2px) scale(1.1);
-        }
-
-        .social-facebook { background: linear-gradient(135deg, #1877f2, #42a5f5); }
-        .social-instagram { background: linear-gradient(135deg, #e1306c, #f56040, #fcaf45); }
-        .social-youtube { background: linear-gradient(135deg, #ff0000, #ff4444); }
-        .social-whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); }
-
-        /* Package Cards */
         .package-card {
             background: var(--surface);
             border-radius: var(--radius-2xl);
@@ -752,6 +381,36 @@
             background-image: radial-gradient(circle at 1px 1px, rgba(14,165,233,0.15) 1px, transparent 0);
             background-size: 20px 20px;
         }
+
+        @keyframes morphing {
+            0%, 100% {
+                background:
+                    radial-gradient(circle at 20% 50%, rgba(14,165,233,0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(16,185,129,0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 80%, rgba(139,92,246,0.03) 0%, transparent 50%);
+            }
+            50% {
+                background:
+                    radial-gradient(circle at 80% 80%, rgba(14,165,233,0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 80%, rgba(16,185,129,0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 60% 20%, rgba(139,92,246,0.03) 0%, transparent 50%);
+            }
+        }
+
+        .party-mode * {
+            animation: rainbow-colors 2s linear infinite !important;
+        }
+                
+        @keyframes rainbow-colors {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
     </style>
 </head>
 <body>
@@ -775,9 +434,7 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center space-x-3 hover-lift">
-                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl flex items-center justify-center shadow-lg">
-                        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f6ad9e1b-ad82-4071-a763-ec490b7c4e18.png
-                    </div>
+                    <img src="https://placehold.co/48x48/0ea5e9/ffffff?text=MT" onerror="this.onerror=null;this.src='https://placehold.co/48x48/0ea5e9/ffffff?text=MT';" alt="Logo Medan Toba" class="w-12 h-12 rounded-xl shadow-lg">
                     <div>
                         <h1 class="font-accent font-bold text-xl text-gradient">Medan Toba</h1>
                         <p class="text-xs text-gray-500 hidden sm:block">Sumatera Tour</p>
@@ -816,9 +473,7 @@
     <div id="mobile-menu" class="mobile-menu">
         <div class="flex justify-between items-center mb-8">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl flex items-center justify-center">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1908c86f-74e1-48ba-8f2d-caede97a8892.png
-                </div>
+                <img src="https://placehold.co/40x40/0ea5e9/ffffff?text=MT" onerror="this.onerror=null;this.src='https://placehold.co/40x40/0ea5e9/ffffff?text=MT';" alt="Logo Medan Toba" class="w-10 h-10 rounded-xl">
                 <div>
                     <h2 class="font-accent font-bold text-lg text-gradient">Menu</h2>
                     <p class="text-xs text-gray-500">Navigation</p>
@@ -885,7 +540,7 @@
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-pattern">
-        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cfab2263-5b1d-4e41-9210-649952d9ecb1.png
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cfab2263-5b1d-4e41-9210-649952d9ecb1.png" alt="Pemandangan Danau Toba" class="absolute inset-0 w-full h-full object-cover z-0">
         <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
         
         <!-- Floating Decorations -->
@@ -993,7 +648,7 @@
                 <!-- Package 1 -->
                 <div class="package-card hover-glow fade-in-observer">
                     <div class="relative">
-                        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8b484152-a17a-41d0-9fff-33106b375f27.png
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8b484152-a17a-41d0-9fff-33106b375f27.png" alt="Paket Wisata 1 Hari" class="package-image transform-gpu">
                         <div class="absolute top-4 left-4">
                             <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse-slow">
                                 <i class="fas fa-mosque mr-1"></i>100% Halal
@@ -1040,7 +695,7 @@
                 <!-- Package 2 -->
                 <div class="package-card hover-glow fade-in-observer" style="animation-delay: 0.2s;">
                     <div class="relative">
-                        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2fe99964-9a32-4a38-b05a-d7b134a436c0.png
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2fe99964-9a32-4a38-b05a-d7b134a436c0.png" alt="Paket Wisata 2 Hari 1 Malam" class="package-image transform-gpu">
                         <div class="absolute top-4 left-4">
                             <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse-slow">
                                 <i class="fas fa-mosque mr-1"></i>100% Halal
@@ -1087,7 +742,7 @@
                 <!-- Package 3 -->
                 <div class="package-card hover-glow fade-in-observer" style="animation-delay: 0.4s;">
                     <div class="relative">
-                        https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aced4813-2b43-4cd5-adee-26731bc68b06.png
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aced4813-2b43-4cd5-adee-26731bc68b06.png" alt="Paket Wisata 3 Hari 2 Malam" class="package-image transform-gpu">
                         <div class="absolute top-4 left-4">
                             <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold animate-pulse-slow">
                                 <i class="fas fa-mosque mr-1"></i>100% Halal
@@ -1228,7 +883,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Destination 1 -->
                 <div class="destination-card fade-in-observer">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/80e7d8cb-25a2-4bdd-b76b-ad9cd72b4ef8.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/80e7d8cb-25a2-4bdd-b76b-ad9cd72b4ef8.png" alt="Danau Toba" class="destination-image transform-gpu">
                     <div class="destination-overlay"></div>
                     <div class="destination-content">
                         <h3 class="font-bold text-xl mb-2">Danau Toba</h3>
@@ -1242,7 +897,7 @@
 
                 <!-- Destination 2 -->
                 <div class="destination-card fade-in-observer" style="animation-delay: 0.1s;">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d3315447-2269-477b-b5d2-4eac23c6be53.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d3315447-2269-477b-b5d2-4eac23c6be53.png" alt="Pulau Samosir" class="destination-image transform-gpu">
                     <div class="destination-overlay"></div>
                     <div class="destination-content">
                         <h3 class="font-bold text-xl mb-2">Pulau Samosir</h3>
@@ -1256,7 +911,7 @@
 
                 <!-- Destination 3 -->
                 <div class="destination-card fade-in-observer" style="animation-delay: 0.2s;">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b377fb38-8cd0-480a-98bd-511c13d9f1be.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b377fb38-8cd0-480a-98bd-511c13d9f1be.png" alt="Berastagi" class="destination-image transform-gpu">
                     <div class="destination-overlay"></div>
                     <div class="destination-content">
                         <h3 class="font-bold text-xl mb-2">Berastagi</h3>
@@ -1270,7 +925,7 @@
 
                 <!-- Destination 4 -->
                 <div class="destination-card fade-in-observer" style="animation-delay: 0.3s;">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a088605-880d-4653-9c49-a118e75c991d.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a088605-880d-4653-9c49-a118e75c991d.png" alt="Medan City" class="destination-image transform-gpu">
                     <div class="destination-overlay"></div>
                     <div class="destination-content">
                         <h3 class="font-bold text-xl mb-2">Medan City</h3>
@@ -1307,7 +962,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
                 <!-- Gallery Item 1 -->
                 <div class="gallery-item fade-in-observer">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b4fe9bbd-6605-431a-808d-e32837e36498.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b4fe9bbd-6605-431a-808d-e32837e36498.png" alt="Momen Indah di Danau Toba" class="w-full h-24 object-cover transform-gpu">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
@@ -1315,7 +970,7 @@
 
                 <!-- Gallery Item 2 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.1s;">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d92e9749-0a87-4c34-a370-eff9b3cc77a5.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d92e9749-0a87-4c34-a370-eff9b3cc77a5.png" alt="Momen Indah di Pulau Samosir" class="w-full h-24 object-cover transform-gpu">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
@@ -1323,7 +978,7 @@
 
                 <!-- Gallery Item 3 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.2s;">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/deeae1db-8d07-4bf6-b495-403b6f346327.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/deeae1db-8d07-4bf6-b495-403b6f346327.png" alt="Momen Indah di Berastagi" class="w-full h-24 object-cover transform-gpu">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
@@ -1331,7 +986,7 @@
 
                 <!-- Gallery Item 4 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.3s;">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d23dd7ef-eeb5-4245-be96-feb9b1cb22f1.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d23dd7ef-eeb5-4245-be96-feb9b1cb22f1.png" alt="Momen Indah di Kota Medan" class="w-full h-24 object-cover transform-gpu">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
@@ -1339,7 +994,7 @@
 
                 <!-- Gallery Item 5 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.4s;">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0e803ad9-1887-4d24-85ac-41a6368b962c.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0e803ad9-1887-4d24-85ac-41a6368b962c.png" alt="Momen Indah Bersama Keluarga" class="w-full h-24 object-cover transform-gpu">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
@@ -1347,7 +1002,7 @@
 
                 <!-- Gallery Item 6 -->
                 <div class="gallery-item fade-in-observer" style="animation-delay: 0.5s;">
-                    https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/206a667e-001c-4b95-8fe8-1c4a54779d07.png
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/206a667e-001c-4b95-8fe8-1c4a54779d07.png" alt="Momen Indah Bersama Teman" class="w-full h-24 object-cover transform-gpu">
                     <div class="gallery-overlay">
                         <i class="fas fa-search-plus text-white text-2xl"></i>
                     </div>
@@ -1443,9 +1098,7 @@
                 <!-- Company Info -->
                 <div class="fade-in-observer">
                     <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-green-500 rounded-xl flex items-center justify-center">
-                            https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/96918d16-acf9-4638-9417-55ff009d08cd.png
-                        </div>
+                        <img src="https://placehold.co/48x48/0ea5e9/ffffff?text=MT" onerror="this.onerror=null;this.src='https://placehold.co/48x48/0ea5e9/ffffff?text=MT';" alt="Logo Medan Toba" class="w-12 h-12 rounded-xl shadow-lg">
                         <div>
                             <h3 class="font-accent font-bold text-xl">Medan Toba</h3>
                             <p class="text-gray-400 text-sm">Sumatera Tour</p>
@@ -1542,8 +1195,7 @@
     <button id="back-to-top" class="back-to-top no-print" aria-label="Back to Top">
         <i class="fas fa-chevron-up"></i>
     </button>
-
-    <!-- Complex JavaScript -->
+    
     <script>
         // Main Website Class
         class MedanTobaWebsite {
@@ -1552,10 +1204,8 @@
                 this.currentLang = localStorage.getItem('toba-lang') || 'id';
                 this.currentTheme = localStorage.getItem('toba-theme') || 'light';
                 this.currentTestimonial = 0;
-                this.isScrolling = false;
-                this.lastScrollY = 0;
-                this.scrollDirection = 'up';
-                
+                this.testimonialInterval = null;
+
                 // Data
                 this.translations = {
                     id: {
@@ -1646,28 +1296,21 @@
                 this.nextTestimonialBtn = document.getElementById('next-testimonial');
                 this.testimonialDots = document.querySelectorAll('.testimonial-dot');
 
-                this.init();
+                // Initialize on DOM load
+                document.addEventListener('DOMContentLoaded', this.init.bind(this));
+                window.addEventListener('load', this.hideLoadingScreen.bind(this));
             }
 
             init() {
                 console.log('Initializing Medan Toba Website...');
                 
-                // Setup all features
                 this.setupEventListeners();
                 this.setupIntersectionObserver();
                 this.setupScrollEffects();
                 this.setupTestimonialSlider();
-                this.setupParticleSystem();
-                this.setupTypingEffect();
-                this.setupCounterAnimation();
-                this.setupImageLazyLoading();
                 
-                // Apply saved preferences
                 this.applyTheme(this.currentTheme);
                 this.applyLanguage(this.currentLang);
-                
-                // Hide loading screen
-                this.hideLoadingScreen();
                 
                 console.log('Website initialized successfully!');
             }
@@ -1697,7 +1340,7 @@
                     dot.addEventListener('click', () => this.goToTestimonial(index));
                 });
 
-                // Scroll events with throttling
+                // Scroll events
                 window.addEventListener('scroll', this.throttle(() => this.handleScroll(), 16));
                 
                 // Resize events
@@ -1708,9 +1351,6 @@
                 
                 // Click events for animations
                 document.addEventListener('click', (e) => this.handleClick(e));
-
-                // Visibility change
-                document.addEventListener('visibilitychange', () => this.handleVisibilityChange());
 
                 console.log('Event listeners setup complete');
             }
@@ -1726,21 +1366,6 @@
                         entries.forEach(entry => {
                             if (entry.isIntersecting) {
                                 entry.target.classList.add('visible');
-                                
-                                // Add stagger effect for grouped elements
-                                const parent = entry.target.parentNode;
-                                const siblings = parent.querySelectorAll('.fade-in-observer');
-                                siblings.forEach((sibling, index) => {
-                                    setTimeout(() => {
-                                        sibling.classList.add('visible');
-                                    }, index * 100);
-                                });
-
-                                // Trigger counter animation for stats
-                                if (entry.target.classList.contains('stats-counter')) {
-                                    this.animateCounter(entry.target);
-                                }
-
                                 this.observer.unobserve(entry.target);
                             }
                         });
@@ -1763,169 +1388,41 @@
                     
                     // Update scroll progress
                     const progress = (scrollY / (documentHeight - windowHeight)) * 100;
-                    this.scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+                    if (this.scrollProgress) {
+                        this.scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+                    }
                     
                     // Update navbar
-                    if (scrollY > 100) {
-                        this.navbar?.classList.add('scrolled');
-                    } else {
-                        this.navbar?.classList.remove('scrolled');
+                    if (this.navbar) {
+                        if (scrollY > 100) {
+                            this.navbar.classList.add('scrolled');
+                        } else {
+                            this.navbar.classList.remove('scrolled');
+                        }
                     }
                     
                     // Update back to top button
-                    if (scrollY > 500) {
-                        this.backToTop?.classList.add('visible');
-                    } else {
-                        this.backToTop?.classList.remove('visible');
+                    if (this.backToTop) {
+                        if (scrollY > 500) {
+                            this.backToTop.classList.add('visible');
+                        } else {
+                            this.backToTop.classList.remove('visible');
+                        }
                     }
-                    
-                    // Parallax effects
-                    this.updateParallax(scrollY);
-                    
-                    // Track scroll direction
-                    this.scrollDirection = scrollY > this.lastScrollY ? 'down' : 'up';
-                    this.lastScrollY = scrollY;
                 };
 
                 console.log('Scroll effects setup complete');
             }
 
-            updateParallax(scrollY) {
-                const parallaxElements = document.querySelectorAll('[data-parallax]');
-                parallaxElements.forEach(el => {
-                    const speed = parseFloat(el.dataset.parallax) || 0.5;
-                    const yPos = -(scrollY * speed);
-                    el.style.transform = `translateY(${yPos}px)`;
-                });
-            }
-
             setupTestimonialSlider() {
+                this.updateTestimonial(0);
+
                 // Auto-play testimonials
-                setInterval(() => {
+                this.testimonialInterval = setInterval(() => {
                     this.nextTestimonial();
                 }, 5000);
 
-                // Initialize first testimonial
-                this.updateTestimonial(0);
-
                 console.log('Testimonial slider setup complete');
-            }
-
-            setupParticleSystem() {
-                const heroSection = document.querySelector('.hero-bg');
-                if (!heroSection) return;
-
-                // Create particle container if it doesn't exist
-                let particleContainer = heroSection.querySelector('.particles');
-                if (!particleContainer) {
-                    particleContainer = document.createElement('div');
-                    particleContainer.className = 'particles absolute inset-0 pointer-events-none';
-                    heroSection.appendChild(particleContainer);
-                }
-
-                // Create particles
-                for (let i = 0; i < 20; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle absolute w-1 h-1 bg-white rounded-full opacity-60';
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.top = Math.random() * 100 + '%';
-                    particle.style.animationDelay = Math.random() * 5 + 's';
-                    particle.style.animation = 'float 8s ease-in-out infinite';
-                    particleContainer.appendChild(particle);
-                }
-
-                console.log('Particle system setup complete');
-            }
-
-            setupTypingEffect() {
-                const typingElements = document.querySelectorAll('[data-typing]');
-                typingElements.forEach(el => {
-                    const text = el.textContent;
-                    el.textContent = '';
-                    
-                    let i = 0;
-                    const typeWriter = () => {
-                        if (i < text.length) {
-                            el.textContent += text.charAt(i);
-                            i++;
-                            setTimeout(typeWriter, 50);
-                        }
-                    };
-                    
-                    // Start typing when element is visible
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                typeWriter();
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    });
-                    
-                    observer.observe(el);
-                });
-
-                console.log('Typing effect setup complete');
-            }
-
-            setupCounterAnimation() {
-                const counters = document.querySelectorAll('[data-counter]');
-                counters.forEach(counter => {
-                    const target = parseInt(counter.dataset.counter);
-                    const duration = parseInt(counter.dataset.duration) || 2000;
-                    
-                    const animateCounter = () => {
-                        let current = 0;
-                        const increment = target / (duration / 16);
-                        
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= target) {
-                                current = target;
-                                clearInterval(timer);
-                            }
-                            counter.textContent = Math.floor(current);
-                        }, 16);
-                    };
-
-                    // Trigger when visible
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                animateCounter();
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    });
-                    
-                    observer.observe(counter);
-                });
-
-                console.log('Counter animation setup complete');
-            }
-
-            setupImageLazyLoading() {
-                if ('IntersectionObserver' in window) {
-                    const imageObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                const img = entry.target;
-                                if (img.dataset.src) {
-                                    img.src = img.dataset.src;
-                                    img.classList.remove('loading');
-                                    imageObserver.unobserve(img);
-                                }
-                            }
-                        });
-                    });
-
-                    document.querySelectorAll('img[data-src]').forEach(img => {
-                        img.classList.add('loading');
-                        imageObserver.observe(img);
-                    });
-                }
-
-                console.log('Image lazy loading setup complete');
             }
 
             // Mobile Menu Methods
@@ -1943,19 +1440,6 @@
                 this.mobileMenu.classList.add('active');
                 this.mobileOverlay.classList.add('active');
                 document.body.style.overflow = 'hidden';
-                
-                // Add opening animation to menu items
-                const menuItems = this.mobileMenu.querySelectorAll('nav a');
-                menuItems.forEach((item, index) => {
-                    item.style.transform = 'translateX(100px)';
-                    item.style.opacity = '0';
-                    setTimeout(() => {
-                        item.style.transform = 'translateX(0)';
-                        item.style.opacity = '1';
-                        item.style.transition = 'all 0.3s ease';
-                    }, index * 50);
-                });
-
                 console.log('Mobile menu opened');
             }
 
@@ -1963,7 +1447,6 @@
                 this.mobileMenu.classList.remove('active');
                 this.mobileOverlay.classList.remove('active');
                 document.body.style.overflow = '';
-                
                 console.log('Mobile menu closed');
             }
 
@@ -1989,9 +1472,6 @@
                         if (btn) btn.innerHTML = '<i class="fas fa-moon"></i>';
                     });
                 }
-
-                // Add theme transition effect
-                document.body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
                 
                 console.log(`Theme applied: ${theme}`);
             }
@@ -2014,15 +1494,12 @@
                 });
 
                 // Update navigation texts
-                document.querySelectorAll('[data-nav]').forEach(el => {
-                    const key = el.getAttribute('data-nav');
-                    if (this.translations[lang][key]) {
-                        const span = el.querySelector('span');
-                        if (span) {
-                            span.textContent = this.translations[lang][key];
-                        } else {
-                            el.textContent = this.translations[lang][key];
-                        }
+                const navLinks = document.querySelectorAll('.hidden.lg\\:flex a, .mobile-menu nav a span');
+                navLinks.forEach(link => {
+                    const originalText = link.textContent.trim();
+                    const translationKey = this.findTranslationKey(originalText, lang === 'id' ? 'en' : 'id');
+                    if (translationKey && this.translations[lang][translationKey]) {
+                        link.textContent = this.translations[lang][translationKey];
                     }
                 });
 
@@ -2032,12 +1509,21 @@
                 console.log(`Language applied: ${lang}`);
             }
 
+            // Helper to find translation key by value
+            findTranslationKey(value, lang) {
+                for (const key in this.translations[lang]) {
+                    if (this.translations[lang][key] === value) {
+                        return key;
+                    }
+                }
+                return null;
+            }
+
             // Testimonial Methods
             updateTestimonial(index) {
                 const testimonial = this.testimonials[index];
                 if (!testimonial) return;
 
-                // Add fade effect
                 this.testimonialContainer.style.opacity = '0.5';
                 
                 setTimeout(() => {
@@ -2047,7 +1533,6 @@
                     this.testimonialName.textContent = testimonial.name[this.currentLang];
                     this.testimonialLocation.textContent = testimonial.location;
 
-                    // Update dots
                     this.testimonialDots.forEach((dot, i) => {
                         if (i === index) {
                             dot.className = 'w-3 h-3 rounded-full bg-blue-500 testimonial-dot transition-all';
@@ -2084,24 +1569,27 @@
                 
                 // Update scroll progress
                 const progress = (scrollY / (documentHeight - windowHeight)) * 100;
-                this.scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+                if (this.scrollProgress) {
+                    this.scrollProgress.style.width = `${Math.min(progress, 100)}%`;
+                }
                 
                 // Update navbar
-                if (scrollY > 100) {
-                    this.navbar?.classList.add('scrolled');
-                } else {
-                    this.navbar?.classList.remove('scrolled');
+                if (this.navbar) {
+                    if (scrollY > 100) {
+                        this.navbar.classList.add('scrolled');
+                    } else {
+                        this.navbar.classList.remove('scrolled');
+                    }
                 }
                 
                 // Update back to top button
-                if (scrollY > 500) {
-                    this.backToTop?.classList.add('visible');
-                } else {
-                    this.backToTop?.classList.remove('visible');
+                if (this.backToTop) {
+                    if (scrollY > 500) {
+                        this.backToTop.classList.add('visible');
+                    } else {
+                        this.backToTop.classList.remove('visible');
+                    }
                 }
-                
-                // Parallax effects
-                this.updateParallax(scrollY);
             }
 
             scrollToTop() {
@@ -2141,7 +1629,7 @@
             handleKeyboard(e) {
                 switch(e.key) {
                     case 'Escape':
-                        if (this.mobileMenu.classList.contains('active')) {
+                        if (this.mobileMenu?.classList.contains('active')) {
                             this.closeMobileMenu();
                         }
                         break;
@@ -2168,21 +1656,22 @@
 
             handleClick(e) {
                 // Add ripple effect to buttons
-                if (e.target.classList.contains('btn') || e.target.closest('.btn')) {
-                    this.addRippleEffect(e);
+                const button = e.target.closest('.btn');
+                if (button) {
+                    this.addRippleEffect(e, button);
                 }
 
                 // Add wiggle effect to interactive elements
-                if (e.target.classList.contains('interactive') || e.target.closest('.interactive')) {
-                    e.target.classList.add('animate-wiggle');
+                const interactive = e.target.closest('.interactive');
+                if (interactive) {
+                    interactive.classList.add('animate-wiggle');
                     setTimeout(() => {
-                        e.target.classList.remove('animate-wiggle');
+                        interactive.classList.remove('animate-wiggle');
                     }, 1000);
                 }
             }
 
-            addRippleEffect(e) {
-                const button = e.target.classList.contains('btn') ? e.target : e.target.closest('.btn');
+            addRippleEffect(e, button) {
                 const rect = button.getBoundingClientRect();
                 const size = Math.max(rect.width, rect.height);
                 const x = e.clientX - rect.left - size / 2;
@@ -2202,44 +1691,15 @@
             }
 
             handleResize() {
-                // Update container heights
                 const vh = window.innerHeight * 0.01;
                 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-                // Close mobile menu on resize to desktop
                 if (window.innerWidth >= 1024) {
                     this.closeMobileMenu();
                 }
-
                 console.log('Resize handled');
             }
 
-            handleVisibilityChange() {
-                if (document.hidden) {
-                    console.log('Page hidden');
-                } else {
-                    console.log('Page visible');
-                }
-            }
-
-            // Animation Methods
-            animateCounter(element) {
-                const target = parseInt(element.textContent);
-                const duration = 2000;
-                const increment = target / (duration / 16);
-                let current = 0;
-                
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    element.textContent = Math.floor(current);
-                }, 16);
-            }
-
-            // Loading Screen
             hideLoadingScreen() {
                 setTimeout(() => {
                     if (this.loadingScreen) {
@@ -2253,446 +1713,17 @@
             }
 
             triggerInitialAnimations() {
-                // Trigger hero animations
                 const heroElements = document.querySelectorAll('.fade-in-up, .fade-in-down');
                 heroElements.forEach((el, index) => {
                     el.style.animationDelay = `${index * 0.2}s`;
                     el.style.opacity = '1';
                 });
-
                 console.log('Initial animations triggered');
-            }
-
-            // Notification System
-            showNotification(message, type = 'info') {
-                const notification = document.createElement('div');
-                notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full`;
-                
-                const bgColor = {
-                    success: 'bg-green-500',
-                    error: 'bg-red-500',
-                    warning: 'bg-yellow-500',
-                    info: 'bg-blue-500'
-                }[type];
-                
-                notification.className += ` ${bgColor} text-white`;
-                notification.innerHTML = `
-                    <div class="flex items-center space-x-3">
-                        <i class="fas fa-${type === 'success' ? 'check' : type === 'error' ? 'times' : type === 'warning' ? 'exclamation' : 'info'}-circle"></i>
-                        <span>${message}</span>
-                        <button class="ml-4 text-white hover:text-gray-200" onclick="this.parentElement.parentElement.remove()">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                `;
-                
-                document.body.appendChild(notification);
-                
-                // Animate in
-                setTimeout(() => {
-                    notification.style.transform = 'translateX(0)';
-                }, 100);
-                
-                // Auto remove
-                setTimeout(() => {
-                    notification.style.transform = 'translateX(100%)';
-                    setTimeout(() => {
-                        notification.remove();
-                    }, 300);
-                }, 5000);
-            }
-
-            // Performance Monitoring
-            measurePerformance(name, fn) {
-                const start = performance.now();
-                const result = fn();
-                const end = performance.now();
-                console.log(`${name} took ${end - start} milliseconds`);
-                return result;
-            }
-
-            // Error Handling
-            handleError(error, context = '') {
-                console.error(`Error in ${context}:`, error);
-                this.showNotification(`Terjadi kesalahan: ${error.message}`, 'error');
-            }
-
-            // Analytics
-            trackEvent(eventName, properties = {}) {
-                console.log('Event tracked:', eventName, properties);
-                
-                // Google Analytics 4
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', eventName, properties);
-                }
-                
-                // Facebook Pixel
-                if (typeof fbq !== 'undefined') {
-                    fbq('track', eventName, properties);
-                }
-            }
-
-            // SEO Methods
-            updateMetaTags(title, description) {
-                document.title = title;
-                
-                const metaDescription = document.querySelector('meta[name="description"]');
-                if (metaDescription) {
-                    metaDescription.content = description;
-                }
-                
-                const ogTitle = document.querySelector('meta[property="og:title"]');
-                if (ogTitle) {
-                    ogTitle.content = title;
-                }
-                
-                const ogDescription = document.querySelector('meta[property="og:description"]');
-                if (ogDescription) {
-                    ogDescription.content = description;
-                }
-            }
-
-            // PWA Methods
-            setupServiceWorker() {
-                if ('serviceWorker' in navigator) {
-                    navigator.serviceWorker.register('/sw.js')
-                        .then(registration => {
-                            console.log('Service Worker registered successfully');
-                        })
-                        .catch(error => {
-                            console.log('Service Worker registration failed');
-                        });
-                }
-            }
-
-            // Advanced Features
-            setupAdvancedFeatures() {
-                // Setup mouse tracking for interactive elements
-                this.setupMouseTracking();
-                
-                // Setup advanced animations
-                this.setupAdvancedAnimations();
-                
-                // Setup easter eggs
-                this.setupEasterEggs();
-                
-                console.log('Advanced features setup complete');
-            }
-
-            setupMouseTracking() {
-                document.addEventListener('mousemove', (e) => {
-                    const cursor = document.querySelector('.custom-cursor');
-                    if (cursor) {
-                        cursor.style.left = e.clientX + 'px';
-                        cursor.style.top = e.clientY + 'px';
-                    }
-
-                    // Parallax effect for hero elements
-                    const heroElements = document.querySelectorAll('[data-mouse-parallax]');
-                    heroElements.forEach(el => {
-                        const speed = parseFloat(el.dataset.mouseParallax) || 0.1;
-                        const x = (e.clientX - window.innerWidth / 2) * speed;
-                        const y = (e.clientY - window.innerHeight / 2) * speed;
-                        el.style.transform = `translate(${x}px, ${y}px)`;
-                    });
-                });
-            }
-
-            setupAdvancedAnimations() {
-                // Stagger animations for cards
-                const cards = document.querySelectorAll('.card');
-                cards.forEach((card, index) => {
-                    card.style.animationDelay = `${index * 0.1}s`;
-                });
-
-                // Morphing background
-                this.startMorphingBackground();
-            }
-
-            startMorphingBackground() {
-                const morphingElement = document.createElement('div');
-                morphingElement.className = 'fixed inset-0 pointer-events-none z-0';
-                morphingElement.style.background = `
-                    radial-gradient(circle at 20% 50%, rgba(14,165,233,0.03) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(16,185,129,0.03) 0%, transparent 50%),
-                    radial-gradient(circle at 40% 80%, rgba(139,92,246,0.03) 0%, transparent 50%)
-                `;
-                morphingElement.style.animation = 'morphing 10s ease-in-out infinite';
-                document.body.appendChild(morphingElement);
-
-                // Add morphing keyframes
-                const morphingStyles = document.createElement('style');
-                morphingStyles.innerHTML = `
-                    @keyframes morphing {
-                        0%, 100% {
-                            background: 
-                                radial-gradient(circle at 20% 50%, rgba(14,165,233,0.03) 0%, transparent 50%),
-                                radial-gradient(circle at 80% 20%, rgba(16,185,129,0.03) 0%, transparent 50%),
-                                radial-gradient(circle at 40% 80%, rgba(139,92,246,0.03) 0%, transparent 50%);
-                        }
-                        50% {
-                            background: 
-                                radial-gradient(circle at 80% 80%, rgba(14,165,233,0.03) 0%, transparent 50%),
-                                radial-gradient(circle at 20% 80%, rgba(16,185,129,0.03) 0%, transparent 50%),
-                                radial-gradient(circle at 60% 20%, rgba(139,92,246,0.03) 0%, transparent 50%);
-                        }
-                    }
-                `;
-                document.head.appendChild(morphingStyles);
-            }
-
-            setupEasterEggs() {
-                let konamiCode = '';
-                const konamiSequence = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightKeyBKeyA';
-                
-                document.addEventListener('keydown', (e) => {
-                    konamiCode += e.code;
-                    if (konamiSequence.indexOf(konamiCode) !== 0) {
-                        konamiCode = '';
-                    }
-                    if (konamiCode === konamiSequence) {
-                        this.triggerEasterEgg();
-                        konamiCode = '';
-                    }
-                });
-
-                // Secret click sequence
-                let clickCount = 0;
-                const logo = document.querySelector('.font-accent');
-                logo?.addEventListener('click', () => {
-                    clickCount++;
-                    if (clickCount === 7) {
-                        this.triggerEasterEgg();
-                        clickCount = 0;
-                    }
-                    setTimeout(() => {
-                        clickCount = 0;
-                    }, 3000);
-                });
-            }
-
-            triggerEasterEgg() {
-                // Add party mode
-                document.body.classList.add('party-mode');
-                
-                // Create confetti
-                this.createConfetti();
-                
-                // Show special message
-                this.showNotification('🎉 Easter Egg Found! You discovered our secret! 🎉', 'success');
-                
-                // Add special effects
-                const partyStyles = document.createElement('style');
-                partyStyles.innerHTML = `
-                    .party-mode * {
-                        animation: rainbow-colors 2s linear infinite !important;
-                    }
-                    
-                    @keyframes rainbow-colors {
-                        0% { filter: hue-rotate(0deg); }
-                        100% { filter: hue-rotate(360deg); }
-                    }
-                `;
-                document.head.appendChild(partyStyles);
-                
-                setTimeout(() => {
-                    document.body.classList.remove('party-mode');
-                    partyStyles.remove();
-                }, 5000);
-            }
-
-            createConfetti() {
-                for (let i = 0; i < 50; i++) {
-                    const confetti = document.createElement('div');
-                    confetti.className = 'fixed w-2 h-2 bg-yellow-400 pointer-events-none z-50';
-                    confetti.style.left = Math.random() * 100 + 'vw';
-                    confetti.style.top = '-10px';
-                    confetti.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear forwards`;
-                    document.body.appendChild(confetti);
-                    
-                    setTimeout(() => {
-                        confetti.remove();
-                    }, 5000);
-                }
-
-                // Add confetti animation
-                const confettiStyles = document.createElement('style');
-                confettiStyles.innerHTML = `
-                    @keyframes confetti-fall {
-                        to {
-                            transform: translateY(100vh) rotate(720deg);
-                        }
-                    }
-                `;
-                document.head.appendChild(confettiStyles);
-                
-                setTimeout(() => {
-                    confettiStyles.remove();
-                }, 5000);
-            }
-
-            // API Methods (for future enhancements)
-            async sendContactForm(formData) {
-                try {
-                    const response = await fetch('/api/contact', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData)
-                    });
-                    
-                    if (response.ok) {
-                        this.showNotification('Pesan berhasil dikirim!', 'success');
-                        this.trackEvent('form_submit', { form_type: 'contact' });
-                    } else {
-                        throw new Error('Failed to send message');
-                    }
-                } catch (error) {
-                    this.handleError(error, 'sendContactForm');
-                }
-            }
-
-            async loadDynamicContent(endpoint) {
-                try {
-                    const response = await fetch(endpoint);
-                    const data = await response.json();
-                    return data;
-                } catch (error) {
-                    this.handleError(error, 'loadDynamicContent');
-                    return null;
-                }
-            }
-
-            // Cleanup Methods
-            destroy() {
-                // Remove event listeners
-                this.observer?.disconnect();
-                
-                // Clear intervals
-                clearInterval(this.testimonialInterval);
-                
-                console.log('Website destroyed');
             }
         }
 
-        // Initialize Website when DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            try {
-                console.log('DOM Content Loaded - Initializing website...');
-                
-                // Create website instance
-                window.medanTobaWebsite = new MedanTobaWebsite();
-                
-                // Setup advanced features
-                window.medanTobaWebsite.setupAdvancedFeatures();
-                
-                // Track page load performance
-                window.addEventListener('load', () => {
-                    const loadTime = performance.now();
-                    console.log(`Page loaded in ${loadTime}ms`);
-                    
-                    window.medanTobaWebsite.trackEvent('page_load', {
-                        load_time: loadTime,
-                        page: 'index'
-                    });
-                });
-                
-                console.log('Website initialization complete!');
-                
-            } catch (error) {
-                console.error('Failed to initialize website:', error);
-                
-                // Fallback for critical functionality
-                document.getElementById('loading-screen')?.remove();
-                
-                // Basic mobile menu fallback
-                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-                const mobileMenu = document.getElementById('mobile-menu');
-                const mobileOverlay = document.getElementById('mobile-overlay');
-                const mobileClose = document.getElementById('mobile-close');
-
-                const toggleMenu = () => {
-                    mobileMenu?.classList.toggle('active');
-                    mobileOverlay?.classList.toggle('active');
-                };
-
-                mobileMenuBtn?.addEventListener('click', toggleMenu);
-                mobileClose?.addEventListener('click', toggleMenu);
-                mobileOverlay?.addEventListener('click', toggleMenu);
-
-                // Basic theme toggle fallback
-                const themeToggle = document.getElementById('theme-toggle');
-                themeToggle?.addEventListener('click', () => {
-                    document.documentElement.classList.toggle('dark');
-                });
-            }
-        });
-
-        // Global utility functions
-        window.smoothScrollTo = (element) => {
-            element.scrollIntoView({ behavior: 'smooth' });
-        };
-
-        window.showTooltip = (element, text) => {
-            const tooltip = document.createElement('div');
-            tooltip.className = 'absolute bg-gray-900 text-white text-sm px-3 py-2 rounded-lg shadow-lg pointer-events-none z-50';
-            tooltip.textContent = text;
-            tooltip.style.top = element.offsetTop - 40 + 'px';
-            tooltip.style.left = element.offsetLeft + 'px';
-            
-            document.body.appendChild(tooltip);
-            
-            setTimeout(() => {
-                tooltip.remove();
-            }, 3000);
-        };
-
-        // Konami code for advanced debugging
-        let debugMode = false;
-        const konamiCode = [38,38,40,40,37,39,37,39,66,65];
-        let konamiIndex = 0;
-
-        document.addEventListener('keydown', (e) => {
-            if (e.keyCode === konamiCode[konamiIndex]) {
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
-                    debugMode = !debugMode;
-                    console.log(`Debug mode: ${debugMode ? 'ON' : 'OFF'}`);
-                    
-                    if (debugMode) {
-                        document.body.classList.add('debug-mode');
-                        window.medanTobaWebsite?.showNotification('Debug mode activated! 🎯', 'info');
-                    } else {
-                        document.body.classList.remove('debug-mode');
-                    }
-                    
-                    konamiIndex = 0;
-                }
-            } else {
-                konamiIndex = 0;
-            }
-        });
-
-        // Performance monitoring
-        const observer = new PerformanceObserver((list) => {
-            list.getEntries().forEach((entry) => {
-                console.log('Performance entry:', entry);
-            });
-        });
-
-        observer.observe({entryTypes: ['navigation', 'paint', 'largest-contentful-paint']});
-
-        // Error tracking
-        window.addEventListener('error', (e) => {
-            console.error('Global error:', e.error);
-            window.medanTobaWebsite?.handleError(e.error, 'global');
-        });
-
-        window.addEventListener('unhandledrejection', (e) => {
-            console.error('Unhandled promise rejection:', e.reason);
-            window.medanTobaWebsite?.handleError(e.reason, 'promise');
-        });
+        // Instantiate the class to start the application
+        new MedanTobaWebsite();
 
         console.log('Advanced JavaScript system loaded successfully! 🚀');
     </script>
