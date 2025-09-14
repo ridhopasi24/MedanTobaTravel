@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="about-title-long">Tentang Kami | Medan Toba Sumatera Tour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/20GNY+vD6q2t5O9u+h6n5yF9lE+I/0b9B50/XJ5O9J+G5A+E5YJ+D5B6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Terang Mode */
+            --color-primary: #0ea5e9;
+            --color-primary-50: #f0f9ff;
+            --color-primary-100: #e0f2fe;
+            --color-primary-200: #bae6fd;
+            --color-primary-300: #7dd3fc;
+            --color-primary-400: #38bdf8;
+            --color-primary-500: #0ea5e9;
+            --color-primary-600: #0284c7;
+            --color-primary-700: #0369a1;
+            --color-primary-800: #075985;
+            --color-primary-900: #0c4a6e;
+            --color-secondary: #10b981;
+            --color-secondary-50: #ecfdf5;
+            --color-secondary-100: #d1fae5;
+            --color-secondary-200: #a7f3d0;
+            --color-secondary-300: #6ee7b7;
+            --color-secondary-400: #34d399;
+            --color-secondary-500: #10b981;
+            --color-secondary-600: #059669;
+            --color-secondary-700: #047857;
+            --color-secondary-800: #065f46;
+            --color-secondary-900: #064e3b;
+            --color-accent: #8b5cf6;
+            --color-accent-50: #f5f3ff;
+            --color-accent-100: #ede9fe;
+            --color-accent-200: #ddd6fe;
+            --color-accent-300: #c4b5fd;
+            --color-accent-400: #a78bfa;
+            --color-accent-500: #8b5cf6;
+            --color-accent-600: #7c3aed;
+            --color-accent-700: #6d28d9;
+            --color-accent-800: #5b21b6;
+            --color-accent-900: #4c1d95;
+            --color-background: #fefefe;
+            --color-surface: #f8fafc;
+            --color-text-primary: #0f172a;
+            --color-text-secondary: #64748b;
+            --color-success: #059669;
+            --color-warning: #d97706;
+            --color-error: #dc2626;
+            --color-border: #e2e8f0;
+            --color-border-light: #f1f5f9;
+            --color-card-bg: white;
+            --color-header-bg: white;
+        }
+
+        .dark {
+            /* Gelap Mode */
+            --color-background: #0f172a;
+            --color-surface: #1e293b;
+            --color-text-primary: #f8fafc;
+            --color-text-secondary: #94a3b8;
+            --color-border: #334155;
+            --color-border-light: #1e293b;
+            --color-card-bg: #1e293b;
+            --color-header-bg: #1e293b;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-600);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-secondary-600);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-elevated {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-elevated:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .input-field:focus {
+            border-color: var(--color-primary);
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-padding {
+            padding: 3rem 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .section-padding {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 4rem 2rem;
+            }
+        }
+
+        .container-custom {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container-custom {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container-custom {
+                padding: 0 2rem;
+            }
+        }
+
+        .shadow-soft {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        .shadow-warm {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .animate-gentle-bounce {
+            animation: gentleBounce 2s infinite;
+        }
+
+        @keyframes gentleBounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-5px);
+            }
+
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .font-accent {
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .mobile-menu.active .mobile-menu-content {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-content {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 75%;
+                height: 100%;
+                background-color: var(--color-header-bg);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 1000;
+                padding: 2rem;
+                overflow-y: auto;
+            }
+
+            .mobile-menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                display: none;
+            }
+
+            .mobile-menu-overlay.active {
+                display: block;
+            }
+
+            .mobile-menu-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+
+            .mobile-menu-close {
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: var(--color-text-primary);
+            }
+
+            .mobile-menu-nav {
+                margin-bottom: 2rem;
+            }
+
+            .mobile-menu-nav a {
+                display: block;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--color-border);
+                text-decoration: none;
+                color: var(--color-text-primary);
+            }
+
+            .mobile-menu-nav a:hover {
+                color: var(--color-primary);
+            }
+
+            .mobile-menu-social {
+                display: flex;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            .mobile-menu-social a {
+                color: var(--color-text-primary);
+            }
+
+            .mobile-menu-social a:hover {
+                color: var(--color-primary);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-text-primary font-sans">
+    <!-- Header -->
+    <header class="bg-header-bg shadow-soft sticky top-0 z-50 transition-colors duration-500">
+        <nav class="container-custom">
+            <div class="flex items-center justify-between h-16 lg:h-20 flex-wrap">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 mb-2 lg:mb-0">
+                    <div class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+                        <img src="logo.png" alt="Medan Toba Logo" class="w-full h-full object-contain p-2"/>
+                    </div>
+                    <div>
+                        <h1 class="font-accent font-semibold text-lg lg:text-xl text-primary">Medan Toba</h1>
+                        <p class="text-xs text-text-secondary hidden sm:block">Sumatera Tour</p>
+                    </div>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="desktop-menu hidden lg:flex items-center space-x-2 sm:space-x-4 flex-wrap justify-center sm:justify-end">
+                    <div class="flex items-center space-x-2 sm:space-x-4 flex-wrap">
+                        <a href="index.html#home" class="text-text-secondary hover:text-primary transition-colors duration-300" data-i18n="nav-home">Beranda</a>
+                        <a href="packages.html" class="text-text-secondary hover:text-primary transition-colors duration-300" data-i18n="nav-packages">Paket Wisata</a>
+                        <a href="gallery.html" class="text-text-secondary hover:text-primary transition-colors duration-300" data-i18n="nav-gallery">Galeri</a>
+                        <a href="destinations.html" class="text-text-secondary hover:text-primary transition-colors duration-300" data-i18n="nav-destinations">Destinasi</a>
+                        <a href="about.html" class="text-primary hover:text-primary transition-colors duration-300" data-i18n="nav-about">Tentang Kami</a>
+                        <a href="contact.html" class="text-text-secondary hover:text-primary transition-colors duration-300" data-i18n="nav-contact">Kontak</a>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <a href="https://instagram.com/sujailaketoba" target="_blank" class="text-text-secondary hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/6281397606622" target="_blank" class="text-text-secondary hover:text-secondary"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/ariel.azhura" target="_blank" class="text-text-secondary hover:text-blue-600"><i class="fab fa-facebook"></i></a>
+                        <a href="https://youtube.com/@medantobasumatera" target="_blank" class="text-text-secondary hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                        <button id="lang-toggle" class="bg-primary-50 text-primary px-3 py-1 rounded-full text-xs font-semibold hover:bg-primary-100 transition-smooth">
+                            EN
+                        </button>
+                        <button id="theme-toggle" class="text-text-primary">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="mobile-menu lg:hidden flex items-center space-x-2">
+                    <button id="lang-toggle-mobile" class="bg-primary-50 text-primary px-3 py-1 rounded-full text-xs font-semibold hover:bg-primary-100 transition-smooth">
+                        EN
+                    </button>
+                    <button id="theme-toggle-mobile" class="text-text-primary">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="mobile-menu-toggle" class="text-text-primary">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <h2 class="font-semibold text-lg" data-i18n="menu">Menu</h2>
+                <button id="mobile-menu-close" class="mobile-menu-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-nav">
+                <a href="index.html#home" data-i18n="nav-home">Beranda</a>
+                <a href="packages.html" data-i18n="nav-packages">Paket Wisata</a>
+                <a href="gallery.html" data-i18n="nav-gallery">Galeri</a>
+                <a href="destinations.html" data-i18n="nav-destinations">Destinasi</a>
+                <a href="about.html" class="text-primary" data-i18n="nav-about">Tentang Kami</a>
+                <a href="contact.html" data-i18n="nav-contact">Kontak</a>
+            </div>
+            <div class="mobile-menu-social">
+                <a href="https://instagram.com/sujailaketoba" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6281397606622" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://facebook.com/ariel.azhura" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://youtube.com/@medantobasumatera" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <main>
+        <section class="section-padding bg-surface pt-28">
+            <div class="container-custom">
+                <div class="text-center mb-12">
+                    <h2 class="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4" data-i18n="about-us-title">
+                        <span class="text-primary">Tentang</span> Kami
+                    </h2>
+                    <p class="text-lg text-text-secondary max-w-2xl mx-auto" data-i18n="about-us-tagline">
+                        Tim lokal dengan pengalaman 6 tahun melayani wisatawan Muslim ke Danau Toba.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <img
+                            src="/assets/about.jpg"
+                            alt="Supir Lokal"
+                            class="rounded-3xl shadow-2xl w-full object-cover h-96"
+                        />
+                    </div>
+                    <div class="space-y-6">
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-primary" data-i18n="about-us-heading">Tentang Kami</h2>
+                        <p class="text-lg text-text-secondary leading-relaxed" data-i18n="about-us-p1">
+                            TOBA SUMATERA TOUR & TRAVEL adalah tim lokal yang berdedikasi melayani wisatawan dari Medan ke Danau Toba sejak 2018. Kami memahami pentingnya perjalanan yang nyaman, aman, dan sesuai dengan nilai-nilai keagamaan.
+                        </p>
+                        <p class="text-lg text-text-secondary leading-relaxed" data-i18n="about-us-p2">
+                            Dengan pengalaman lebih dari 6 tahun, kami telah melayani ratusan keluarga Muslim dari berbagai daerah, memberikan pengalaman wisata halal yang tak terlupakan di kawasan Danau Toba, Berastagi, dan sekitarnya.
+                        </p>
+                        <div id="about-features" class="space-y-3">
+                            <!-- Features rendered by JS -->
+                        </div>
+                        <a href="contact.html" class="inline-block mt-4 text-primary font-semibold hover:underline" data-i18n="about-contact-link">
+                            Hubungi Kami →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team Section -->
+        <section class="section-padding bg-white">
+            <div class="container-custom">
+                <div class="text-center mb-12">
+                    <h2 class="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4" data-i18n="our-team-title">
+                        Tim <span class="text-primary">Kami</span>
+                    </h2>
+                    <p class="text-lg text-text-secondary max-w-2xl mx-auto" data-i18n="our-team-tagline">
+                        Kenali tim profesional yang siap memberikan pelayanan terbaik untuk perjalanan Anda.
+                    </p>
+                </div>
+                <div id="team-members-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Team members rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="section-padding bg-surface">
+            <div class="container-custom">
+                <div class="text-center mb-12">
+                    <h2 class="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4" data-i18n="why-choose-us-title">
+                        Mengapa Pilih <span class="text-primary">Kami</span>?
+                    </h2>
+                    <p class="text-lg text-text-secondary max-w-2xl mx-auto" data-i18n="why-choose-us-tagline">
+                        Kepercayaan 6+ tahun melayani wisata halal dengan standar kualitas terbaik
+                    </p>
+                </div>
+                <div id="why-choose-us-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Why choose us items rendered by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section class="section-padding bg-gradient-to-r from-primary to-accent text-white">
+        <div class="container-custom text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="font-accent text-3xl lg:text-4xl font-semibold mb-4" data-i18n="contact-cta-title">
+                    Mulai Perjalanan Berkah Anda
+                </h2>
+                <p class="text-lg mb-8 opacity-90" data-i18n="contact-cta-desc">
+                    Konsultasi gratis dengan tim ahli kami untuk merencanakan wisata halal yang tak terlupakan
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/6281397606622?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR%20%26%20TRAVEL!" target="_blank" class="btn-secondary bg-white text-primary hover:bg-slate-100 text-lg px-8 py-4 inline-flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-3 text-xl"></i>
+                        <span data-i18n="consult-now-btn">Konsultasi Sekarang</span>
+                    </a>
+                    <a href="tel:+6281397606622" class="btn-outline border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4 inline-flex items-center justify-center">
+                        <i class="fas fa-phone mr-3"></i>
+                        <span data-i18n="contact-directly-btn">Hubungi Langsung</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white section-padding">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+                            <i class="fas fa-mountain text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-accent font-semibold text-lg text-primary">Medan Toba</h3>
+                            <p class="text-sm text-slate-300">Sumatera Tour</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 mb-4" data-i18n="footer-desc">
+                        Wisata Berkah dengan pengalaman 6+ tahun melayani keluarga Muslim.
+                        Terpercaya, aman, dan nyaman.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/ariel.azhura" target="_blank" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-smooth">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://instagram.com/sujailaketoba" target="_blank" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-smooth">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://youtube.com/@medantobasumatera" target="_blank" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-smooth">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4" data-i18n="footer-menu-title">Menu Utama</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#home" class="text-slate-300 hover:text-primary transition-smooth" data-i18n="nav-home">Beranda</a></li>
+                        <li><a href="packages.html" class="text-slate-300 hover:text-primary transition-smooth" data-i18n="nav-packages">Paket Wisata</a></li>
+                        <li><a href="gallery.html" class="text-slate-300 hover:text-primary transition-smooth" data-i18n="nav-gallery">Galeri</a></li>
+                        <li><a href="destinations.html" class="text-slate-300 hover:text-primary transition-smooth" data-i18n="nav-destinations">Destinasi</a></li>
+                        <li><a href="about.html" class="text-primary hover:text-primary transition-smooth" data-i18n="nav-about">Tentang Kami</a></li>
+                        <li><a href="contact.html" class="text-slate-300 hover:text-primary transition-smooth" data-i18n="nav-contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4" data-i18n="footer-services-title">Layanan Kami</h4>
+                    <ul class="space-y-2 text-slate-300" id="footer-services-list">
+                        <li><i class="fas fa-check text-secondary mr-2"></i>Tour Halal Terpercaya</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i>Driver Berpengalaman</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i>Kendaraan Nyaman</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i>Panduan Wisata Lokal</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i>Konsultasi Gratis</li>
+                        <li><i class="fas fa-check text-secondary mr-2"></i>Harga Transparan</li>
+                    </ul>
+                </div>
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4" data-i18n="footer-contact-title">Hubungi Kami</h4>
+                    <div class="space-y-3 text-slate-300">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <p data-i18n="footer-address">Jalan Trimurti, Tambak Lau Mulgap I<br />Kabupaten Karo, Sumatera Utara</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fab fa-whatsapp text-secondary"></i>
+                            <p data-i18n="footer-whatsapp">+62 813-9760-6622</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <p data-i18n="footer-email">info@medantobasumatera.com</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-accent"></i>
+                            <p data-i18n="footer-support">24/7 Customer Service</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Footer -->
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-slate-400">
+                    <span data-i18n="footer-rights">© 2025 Medan Toba Sumatera Tour. All Rights Reserved.</span> |
+                    <span class="text-secondary">Wisata Berkah</span> - Your Trusted Travel Companion
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281397606622?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR%20%26%20TRAVEL!" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-secondary text-white rounded-full flex items-center justify-center shadow-warm hover:scale-110 transition-all duration-300 z-50 animate-gentle-bounce">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamMembersData = [{
+                name: "Ariel Azhura",
+                role: "Founder & CEO",
+                description: {
+                    id: "Pendiri sekaligus pemimpin operasional, memastikan setiap detail perjalanan berjalan lancar dan sesuai dengan prinsip halal.",
+                    en: "Founder and operational leader, ensuring every travel detail runs smoothly and adheres to halal principles."
+                },
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
+                social: {
+                    facebook: "https://facebook.com/ariel.azhura",
+                    instagram: "https://instagram.com/sujailaketoba",
+                    whatsapp: "https://wa.me/6281397606622"
+                }
+            }, {
+                name: "Budi Santoso",
+                role: "Driver Senior",
+                description: {
+                    id: "Driver berpengalaman dengan pengetahuan mendalam tentang rute dan destinasi wisata di Sumatera Utara.",
+                    en: "An experienced driver with deep knowledge of routes and travel destinations in North Sumatra."
+                },
+                image: "https://images.unsplash.com/photo-1494790108755-2616c0763c5b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
+                social: {
+                    facebook: "#",
+                    instagram: "#",
+                    whatsapp: "#"
+                }
+            }, {
+                name: "Rina Fitriani",
+                role: "Customer Service",
+                description: {
+                    id: "Tim CS yang ramah dan responsif, siap membantu Anda merencanakan perjalanan wisata halal yang sempurna.",
+                    en: "A friendly and responsive customer service team, ready to help you plan the perfect halal tour."
+                },
+                image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3",
+                social: {
+                    facebook: "#",
+                    instagram: "#",
+                    whatsapp: "#"
+                }
+            }, ];
+
+            const whyChooseUsData = [{
+                title: "Halal Terjamin",
+                description: {
+                    id: "Semua makanan, hotel, dan aktivitas telah tersertifikasi halal",
+                    en: "All food, hotels, and activities are certified halal"
+                },
+                icon: "fas fa-certificate",
+                color: "bg-gradient-to-br from-secondary to-secondary-600"
+            }, {
+                title: "Driver Berpengalaman",
+                description: {
+                    id: "Tim driver profesional dengan pengalaman 5+ tahun",
+                    en: "Professional driver team with 5+ years of experience"
+                },
+                icon: "fas fa-user-tie",
+                color: "bg-gradient-to-br from-primary to-primary-600"
+            }, {
+                title: "Harga Transparan",
+                description: {
+                    id: "Tidak ada biaya tersembunyi, semua sudah termasuk",
+                    en: "No hidden fees, everything is included"
+                },
+                icon: "fas fa-dollar-sign",
+                color: "bg-gradient-to-br from-accent to-accent-600"
+            }, {
+                title: "24/7 Support",
+                description: {
+                    id: "Customer service siap membantu kapan saja",
+                    en: "Customer service is ready to help anytime"
+                },
+                icon: "fas fa-headset",
+                color: "bg-gradient-to-br from-warning to-warning-600"
+            }, ];
+
+            const aboutFeaturesData = [{
+                icon: "fas fa-check-circle",
+                text: {
+                    id: "Supir Muslim & Amanah",
+                    en: "Muslim & Trustworthy Driver"
+                },
+                color: "text-secondary"
+            }, {
+                icon: "fas fa-check-circle",
+                text: {
+                    id: "Panduan Lokal",
+                    en: "Local Guide"
+                },
+                color: "text-secondary"
+            }, {
+                icon: "fas fa-check-circle",
+                text: {
+                    id: "Wisata Halal",
+                    en: "Halal Tour"
+                },
+                color: "text-secondary"
+            }];
+
+            const translations = {
+                id: {
+                    "about-title-long": "Tentang Kami | Medan Toba Sumatera Tour",
+                    "about-us-title": "<span class='text-primary'>Tentang</span> Kami",
+                    "about-us-heading": "Tentang Kami",
+                    "about-us-tagline": "Tim lokal dengan pengalaman 6 tahun melayani wisatawan Muslim ke Danau Toba.",
+                    "about-us-p1": "TOBA SUMATERA TOUR & TRAVEL adalah tim lokal yang berdedikasi melayani wisatawan dari Medan ke Danau Toba sejak 2018. Kami memahami pentingnya perjalanan yang nyaman, aman, dan sesuai dengan nilai-nilai keagamaan.",
+                    "about-us-p2": "Dengan pengalaman lebih dari 6 tahun, kami telah melayani ratusan keluarga Muslim dari berbagai daerah, memberikan pengalaman wisata halal yang tak terlupakan di kawasan Danau Toba, Berastagi, dan sekitarnya.",
+                    "about-contact-link": "Hubungi Kami →",
+                    "our-team-title": "Tim <span class='text-primary'>Kami</span>",
+                    "our-team-tagline": "Kenali tim profesional yang siap memberikan pelayanan terbaik untuk perjalanan Anda.",
+                    "why-choose-us-title": "Mengapa Pilih <span class='text-primary'>Kami</span>?",
+                    "why-choose-us-tagline": "Kepercayaan 6+ tahun melayani wisata halal dengan standar kualitas terbaik",
+                    "contact-cta-title": "Mulai Perjalanan Berkah Anda",
+                    "contact-cta-desc": "Konsultasi gratis dengan tim ahli kami untuk merencanakan wisata halal yang tak terlupakan",
+                    "consult-now-btn": "Konsultasi Sekarang",
+                    "contact-directly-btn": "Hubungi Langsung",
+                    "footer-desc": "Wisata Berkah dengan pengalaman 6+ tahun melayani keluarga Muslim. Terpercaya, aman, dan nyaman.",
+                    "footer-menu-title": "Menu Utama",
+                    "footer-services-title": "Layanan Kami",
+                    "footer-address": "Jalan Trimurti, Tambak Lau Mulgap I<br />Kabupaten Karo, Sumatera Utara",
+                    "footer-whatsapp": "+62 813-9760-6622",
+                    "footer-email": "info@medantobasumatera.com",
+                    "footer-support": "24/7 Customer Service",
+                    "footer-rights": "© 2025 Medan Toba Sumatera Tour. All Rights Reserved.",
+                    "nav-home": "Beranda",
+                    "nav-packages": "Paket Wisata",
+                    "nav-gallery": "Galeri",
+                    "nav-destinations": "Destinasi",
+                    "nav-about": "Tentang Kami",
+                    "nav-contact": "Kontak",
+                    "menu": "Menu",
+                    "lang-toggle": "EN",
+                    "theme-toggle": "Mode Gelap",
+                },
+                en: {
+                    "about-title-long": "About Us | Medan Toba Sumatera Tour",
+                    "about-us-title": "<span class='text-primary'>About</span> Us",
+                    "about-us-heading": "About Us",
+                    "about-us-tagline": "Local team with 6 years of experience serving Muslim tourists to Lake Toba.",
+                    "about-us-p1": "TOBA SUMATERA TOUR & TRAVEL is a local team dedicated to serving tourists from Medan to Lake Toba since 2018. We understand the importance of a comfortable, safe, and faith-compliant journey.",
+                    "about-us-p2": "With over 6 years of experience, we have served hundreds of Muslim families from various regions, providing an unforgettable halal tourism experience in the Lake Toba, Berastagi, and surrounding areas.",
+                    "about-contact-link": "Contact Us →",
+                    "our-team-title": "Our <span class='text-primary'>Team</span>",
+                    "our-team-tagline": "Meet our professional team ready to provide the best service for your journey.",
+                    "why-choose-us-title": "Why Choose <span class='text-primary'>Us</span>?",
+                    "why-choose-us-tagline": "6+ years of trust serving halal tourism with the highest quality standards",
+                    "contact-cta-title": "Start Your Blessed Journey",
+                    "contact-cta-desc": "Free consultation with our expert team to plan an unforgettable halal tour",
+                    "consult-now-btn": "Consult Now",
+                    "contact-directly-btn": "Contact Directly",
+                    "footer-desc": "Blessed Tourism with 6+ years of experience serving Muslim families. Trusted, safe, and comfortable.",
+                    "footer-menu-title": "Main Menu",
+                    "footer-services-title": "Our Services",
+                    "footer-address": "Jalan Trimurti, Tambak Lau Mulgap I<br />Kabupaten Karo, Sumatera Utara",
+                    "footer-whatsapp": "+62 813-9760-6622",
+                    "footer-email": "info@medantobasumatera.com",
+                    "footer-support": "24/7 Customer Service",
+                    "footer-rights": "© 2025 Medan Toba Sumatera Tour. All Rights Reserved.",
+                    "nav-home": "Home",
+                    "nav-packages": "Tour Packages",
+                    "nav-gallery": "Gallery",
+                    "nav-destinations": "Destinations",
+                    "nav-about": "About Us",
+                    "nav-contact": "Contact",
+                    "menu": "Menu",
+                    "lang-toggle": "ID",
+                    "theme-toggle": "Light Mode",
+                }
+            };
+            
+            let currentLang = localStorage.getItem('toba-lang') || 'id';
+            let currentTheme = localStorage.getItem('toba-theme') || 'dark';
+
+            const updateTextContent = (lang) => {
+                const t = translations[lang];
+                if (!t) return;
+
+                document.querySelectorAll("[data-i18n]").forEach(el => {
+                    const key = el.getAttribute("data-i18n");
+                    if (t[key]) {
+                        el.innerHTML = t[key];
+                    }
+                });
+            };
+
+            const renderAboutFeatures = (lang) => {
+                const container = document.getElementById('about-features');
+                container.innerHTML = aboutFeaturesData.map(item => `
+                    <div class="flex items-center space-x-3">
+                        <i class="${item.icon} ${item.color}"></i>
+                        <span>${item.text[lang]}</span>
+                    </div>
+                `).join('');
+            };
+
+            const renderTeamMembers = (lang) => {
+                const container = document.getElementById('team-members-grid');
+                container.innerHTML = teamMembersData.map(member => `
+                    <div class="card text-center p-6">
+                        <img src="${member.image}" alt="${member.name}" class="w-24 h-24 rounded-full mx-auto object-cover mb-4" />
+                        <h3 class="font-semibold text-xl text-text-primary">${member.name}</h3>
+                        <p class="text-secondary mb-2">${member.role}</p>
+                        <p class="text-sm text-text-secondary mb-4">
+                            ${member.description[lang]}
+                        </p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="${member.social.facebook}" target="_blank" class="text-text-secondary hover:text-blue-600"><i class="fab fa-facebook"></i></a>
+                            <a href="${member.social.instagram}" target="_blank" class="text-text-secondary hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                            <a href="${member.social.whatsapp}" target="_blank" class="text-text-secondary hover:text-secondary"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                `).join('');
+            };
+
+            const renderWhyChooseUs = (lang) => {
+                const container = document.getElementById('why-choose-us-grid');
+                container.innerHTML = whyChooseUsData.map(item => `
+                    <div class="text-center">
+                        <div class="w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="${item.icon} text-white text-2xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-lg text-text-primary mb-2">${item.title}</h3>
+                        <p class="text-text-secondary text-sm">${item.description[lang]}</p>
+                    </div>
+                `).join('');
+            };
+
+            const applyLanguage = (lang) => {
+                updateTextContent(lang);
+                renderAboutFeatures(lang);
+                renderTeamMembers(lang);
+                renderWhyChooseUs(lang);
+                document.documentElement.lang = lang;
+                document.title = translations[lang]['about-title-long'];
+                
+                document.getElementById('lang-toggle').textContent = translations[lang === 'id' ? 'en' : 'id']['lang-toggle'];
+                document.getElementById('lang-toggle-mobile').textContent = translations[lang === 'id' ? 'en' : 'id']['lang-toggle'];
+            };
+            
+            const toggleMobileMenu = () => {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const overlay = document.getElementById('mobile-menu-overlay');
+                mobileMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            };
+
+            const toggleTheme = () => {
+                const htmlElement = document.documentElement;
+                htmlElement.classList.toggle('dark');
+                currentTheme = htmlElement.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('toba-theme', currentTheme);
+
+                const themeToggle = document.getElementById('theme-toggle');
+                const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+                const icon = currentTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                themeToggle.innerHTML = icon;
+                themeToggleMobile.innerHTML = icon;
+
+                applyLanguage(currentLang);
+            };
+
+            document.getElementById('mobile-menu-toggle').addEventListener('click', toggleMobileMenu);
+            document.getElementById('mobile-menu-close').addEventListener('click', toggleMobileMenu);
+            document.getElementById('mobile-menu-overlay').addEventListener('click', toggleMobileMenu);
+            
+            document.getElementById('lang-toggle').addEventListener('click', () => {
+                currentLang = currentLang === 'id' ? 'en' : 'id';
+                localStorage.setItem('toba-lang', currentLang);
+                applyLanguage(currentLang);
+            });
+            document.getElementById('lang-toggle-mobile').addEventListener('click', () => {
+                currentLang = currentLang === 'id' ? 'en' : 'id';
+                localStorage.setItem('toba-lang', currentLang);
+                applyLanguage(currentLang);
+            });
+            
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+            document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+
+            const savedTheme = localStorage.getItem('toba-theme') || 'dark';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            applyLanguage(currentLang);
+            
+            const themeToggleIcon = document.getElementById('theme-toggle');
+            const themeToggleIconMobile = document.getElementById('theme-toggle-mobile');
+            const icon = savedTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            themeToggleIcon.innerHTML = icon;
+            themeToggleIconMobile.innerHTML = icon;
+        });
+    </script>
+</body>
+</html>

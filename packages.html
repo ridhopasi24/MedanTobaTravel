@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-92KYRCTBLE"></script>
+    <script>
+     window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-92KYRCTBLE');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medan Toba Sumatera Tour</title>
+    <!-- Muat React, ReactDOM, Babel, Tailwind CSS, dan Font Awesome dari CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/20GNY+vD6q2t5O9u+h6n5yF9lE+I/0b9B50/XJ5O9J+G5A+E5YJ+D5B6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- In-line CSS styles -->
+    <style>
+        :root {
+            /* Skema Warna Mode Terang yang Disesuaikan */
+            --color-primary: #0ea5e9; /* sky-500 */
+            --color-primary-50: #f0f9ff;
+            --color-primary-100: #e0f2fe;
+            --color-primary-200: #bae6fd;
+            --color-primary-300: #7dd3fc;
+            --color-primary-400: #38bdf8;
+            --color-primary-500: #0ea5e9;
+            --color-primary-600: #0284c7;
+            --color-primary-700: #0369a1;
+            --color-primary-800: #075985;
+            --color-primary-900: #0c4a6e;
+            --color-secondary: #10b981; /* emerald-500 */
+            --color-secondary-50: #ecfdf5;
+            --color-secondary-100: #d1fae5;
+            --color-secondary-200: #a7f3d0;
+            --color-secondary-300: #6ee7b7;
+            --color-secondary-400: #34d399;
+            --color-secondary-500: #10b981;
+            --color-secondary-600: #059669;
+            --color-secondary-700: #047857;
+            --color-secondary-800: #065f46;
+            --color-secondary-900: #064e3b;
+            --color-accent: #8b5cf6; /* violet-500 */
+            --color-accent-50: #f5f3ff;
+            --color-accent-100: #ede9fe;
+            --color-accent-200: #ddd6fe;
+            --color-accent-300: #c4b5fd;
+            --color-accent-400: #a78bfa;
+            --color-accent-500: #8b5cf6;
+            --color-accent-600: #7c3aed;
+            --color-accent-700: #6d28d9;
+            --color-accent-800: #5b21b6;
+            --color-accent-900: #322b64;
+            --color-background: #f8fafc; /* slate-50 */
+            --color-surface: #ffffff; /* white */
+            --color-text-primary: #0f172a; /* slate-900 */
+            --color-text-secondary: #475569; /* slate-600 */
+            --color-success: #059669; /* emerald-600 */
+            --color-warning: #d97706; /* amber-600 */
+            --color-error: #dc2626; /* red-600 */
+            --color-border: #e2e8f0; /* slate-200 */
+            --color-border-light: #f1f5f9; /* slate-100 */
+            --color-card-bg: white;
+            --color-header-bg: white;
+        }
+
+        .dark {
+            /* Skema Warna Mode Gelap yang Disesuaikan */
+            --color-primary: #38bdf8;
+            --color-primary-50: #08121d;
+            --color-primary-100: #0f2b3e;
+            --color-primary-200: #173b54;
+            --color-primary-300: #235478;
+            --color-primary-400: #3373a3;
+            --color-primary-500: #38bdf8;
+            --color-primary-600: #25a4d3;
+            --color-primary-700: #1a7fa2;
+            --color-primary-800: #105c75;
+            --color-primary-900: #0a3a49;
+            --color-secondary: #34d399;
+            --color-secondary-50: #081d13;
+            --color-secondary-100: #0f3d23;
+            --color-secondary-200: #175431;
+            --color-secondary-300: #237847;
+            --color-secondary-400: #33a364;
+            --color-secondary-500: #34d399;
+            --color-secondary-600: #25a47e;
+            --color-secondary-700: #1a7f5a;
+            --color-secondary-800: #105c42;
+            --color-secondary-900: #0a3a2d;
+            --color-accent: #a78bfa;
+            --color-accent-50: #130e1f;
+            --color-accent-100: #231d3f;
+            --color-accent-200: #382d61;
+            --color-accent-300: #514087;
+            --color-accent-400: #7361ab;
+            --color-accent-500: #a78bfa;
+            --color-accent-600: #8970e5;
+            --color-accent-700: #6c58c2;
+            --color-accent-800: #4e4099;
+            --color-accent-900: #322b64;
+            --color-background: #0f172a;
+            --color-surface: #1e293b;
+            --color-text-primary: #f8fafc;
+            --color-text-secondary: #94a3b8;
+            --color-success: #34d399;
+            --color-warning: #f59e0b;
+            --color-error: #f87171;
+            --color-border: #334155;
+            --color-border-light: #1e293b;
+            --color-card-bg: #1e293b;
+            --color-header-bg: #1e293b;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-600);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-secondary-600);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .card {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-elevated {
+            background-color: var(--color-card-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-elevated:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-border);
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .input-field:focus {
+            border-color: var(--color-primary);
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+        }
+
+        .text-gradient {
+            background-image: linear-gradient(to right, var(--color-secondary), var(--color-primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-padding {
+            padding: 3rem 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .section-padding {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 4rem 2rem;
+            }
+        }
+
+        .container-custom {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container-custom {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container-custom {
+                padding: 0 2rem;
+            }
+        }
+
+        .shadow-soft {
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+
+        .shadow-warm {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .animate-gentle-bounce {
+            animation: gentleBounce 2s infinite;
+        }
+
+        @keyframes gentleBounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-5px);
+            }
+
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .font-accent {
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .mobile-menu.active .mobile-menu-content {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-content {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 75%;
+                height: 100%;
+                background-color: var(--color-header-bg);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 1000;
+                padding: 2rem;
+                overflow-y: auto;
+            }
+
+            .mobile-menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                display: none;
+            }
+
+            .mobile-menu-overlay.active {
+                display: block;
+            }
+
+            .mobile-menu-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+
+            .mobile-menu-close {
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            .mobile-menu-nav a {
+                display: block;
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--color-border);
+                text-decoration: none;
+            }
+
+            .mobile-menu-nav a:hover {
+                color: var(--color-primary);
+            }
+
+            .mobile-menu-social {
+                display: flex;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+
+            .mobile-menu-social a:hover {
+                color: var(--color-primary);
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-text-primary font-sans">
+    <!-- Root div for React -->
+    <div id="root"></div>
+    <!-- In-line JavaScript with Babel for JSX -->
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const App = () => {
+            const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+            const [currentLang, setCurrentLang] = useState('id');
+            const [currentTheme, setCurrentTheme] = useState('dark');
+            const [activeFilter, setActiveFilter] = useState('all');
+            const [lightboxOpen, setLightboxOpen] = useState(false);
+            const [lightboxIndex, setLightboxIndex] = useState(0);
+
+            // Effect to handle theme changes and persist them
+            useEffect(() => {
+                document.documentElement.classList.remove('dark');
+                if (currentTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+                localStorage.setItem('theme', currentTheme);
+            }, [currentTheme]);
+
+            // Effect to load theme and language from local storage on initial render
+            useEffect(() => {
+                const savedTheme = localStorage.getItem('theme') || 'dark';
+                const savedLang = localStorage.getItem('lang') || 'id';
+                setCurrentTheme(savedTheme);
+                setCurrentLang(savedLang);
+            }, []);
+
+            const toggleMobileMenu = () => {
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+            };
+
+            const toggleTheme = () => {
+                setCurrentTheme(currentTheme === 'light' ? 'dark' : 'light');
+            };
+
+            const toggleLanguage = () => {
+                const newLang = currentLang === 'id' ? 'en' : 'id';
+                setCurrentLang(newLang);
+                localStorage.setItem('lang', newLang);
+            };
+
+            const openLightbox = (index) => {
+                setLightboxIndex(index);
+                setLightboxOpen(true);
+            };
+            const closeLightbox = () => {
+                setLightboxOpen(false);
+            };
+            const nextImage = () => {
+                setLightboxIndex((prevIndex) => (prevIndex + 1) % galleryImages.length);
+            };
+            const prevImage = () => {
+                setLightboxIndex((prevIndex) => (prevIndex - 1 + galleryImages.length) % galleryImages.length);
+            };
+            const filterDestinations = (category) => {
+                setActiveFilter(category);
+            };
+            const filteredDestinations = activeFilter === 'all' ?
+                destinations :
+                destinations.filter(dest => dest.category === activeFilter);
+
+            useEffect(() => {
+                const handleKeyDown = (e) => {
+                    if (!lightboxOpen) return;
+                    if (e.key === 'Escape') closeLightbox();
+                    if (e.key === 'ArrowLeft') prevImage();
+                    if (e.key === 'ArrowRight') nextImage();
+                };
+                window.addEventListener('keydown', handleKeyDown);
+                return () => window.removeEventListener('keydown', handleKeyDown);
+            }, [lightboxOpen]);
+
+            /* Dihapus: heroImage dan data terkait */
+            const packages = [{
+                id: 1,
+                title: {id: "Paket 6 Hari 5 Malam", en: "6 Days 5 Nights Package"},
+                imageSrc: "/assets/6d5n.png",
+                itinerary: {
+                    id: [
+                        "Day 1: Pick up Kualanamu Airport → Paten Jaya & Air Bah Manik → Kebun Teh Sidamanik → Simarjarunjung View → Ferry in Samosir → Batu Passa → Check in Hotel Samosir",
+                        "Day 2: Batu Siallagan → Tomok Palace → Pantai Batu Hoda → Jembatan Tano Ponggol → Holbung Hills → Bukit Sibea-bea → Efrata Waterfall → Stay Hotel Samosir",
+                        "Day 3: Geosite Sipinsur → Huta Ginjang → Pantai Bul Bul → Khairos Cafe → Bukit Senyum → Pantai Bebas Parapat → Check in Hotel Parapat",
+                        "Day 4: Sipiso-piso Waterfall → Loken Barn → Paropo – Silalahi → Pasar Buah Berastagi → Gundaling Hill → Check in Hotel Berastagi",
+                        "Day 5: 04.00 Hiking Sibayak (optional) → Sarune Cafe → Savana Sinabung → Danau Lau Kawar → Sikulikap Waterfall → Sibolang Durian → Check in Hotel Medan",
+                        "Day 6: Istana Maimoon → Tjong A Fie Mansion → Vihara Medan → Oleh-oleh Medan & Shopping Batik → Drop off Airport → Tour Finish 🙏"
+                    ],
+                    en: [
+                        "Day 1: Pick up Kualanamu Airport → Paten Jaya & Air Bah Manik → Sidamanik Tea Plantation → Simarjarunjung View → Ferry in Samosir → Batu Passa → Check in Hotel Samosir",
+                        "Day 2: Batu Siallagan → Tomok Palace → Batu Hoda Beach → Tano Ponggol Bridge → Holbung Hills → Sibea-bea Hill → Efrata Waterfall → Stay at Hotel Samosir",
+                        "Day 3: Geosite Sipinsur → Huta Ginjang → Bul Bul Beach → Khairos Cafe → Bukit Senyum → Parapat Free Beach → Check in at Hotel Parapat",
+                        "Day 4: Sipiso-piso Waterfall → Loken Barn → Paropo – Silalahi → Berastagi Fruit Market → Gundaling Hill → Check in at Hotel Berastagi",
+                        "Day 5: 04.00 Sibayak Hiking (optional) → Sarune Cafe → Sinabung Savana → Lau Kawar Lake → Sikulikap Waterfall → Sibolang Durian → Check in at Hotel Medan",
+                        "Day 6: Maimoon Palace → Tjong A Fie Mansion → Medan Vihara → Medan Souvenirs & Batik Shopping → Drop off Airport → Tour Finish 🙏"
+                    ]
+                },
+                whatsapp: "https://wa.me/6282277848855?text=Halo!%20Saya%20minat%20Paket%206H5M."
+            }, {
+                id: 2,
+                title: {id: "Paket 5 Hari 4 Malam – Paket 2", en: "5 Days 4 Nights Package – Package 2"},
+                imageSrc: "/assets/5d4n2.png",
+                itinerary: {
+                    id: [
+                        "Day 1: Pick up Kualanamu Airport → Paten Jaya & Mbah Damanik → Kebun Teh Sidamanik → Simarjarunjung View → Ferry in Samosir → Pantai Batu Hoda → Makan malam → Check in Hotel Samosir",
+                        "Day 2: Batu Siallagan → Bukit Burung View → Holbung Hills → Bukit Sibea-bea → Efrata Waterfall → Jembatan Tano Ponggol → Tomok Palace → Makan malam → Check in Hotel Samosir",
+                        "Day 3: Tele Tower → Loken Barn → Sipiso-piso Waterfall → Sarune Cafe → Gundaling Hill → Pasar Buah Berastagi → Makan malam → Check in Hotel Berastagi",
+                        "Day 4: 04.00 Hiking Sibayak (optional) → Savana Sinabung → Lau Kawar Lake → Hot Spring Sidebuk-debuk → Bukit Gundaling → Lumbini Park → Makan malam → Stay Hotel Berastagi",
+                        "Day 5: Sikulikap Waterfall → Istana Maimoon → Tjong A Fie Mansion → Vihara Medan → Oleh-oleh Medan → Shopping Mall / Batik → Drop off Airport → Tour Finish 🙏"
+                    ],
+                    en: [
+                        "Day 1: Pick up Kualanamu Airport → Paten Jaya & Mbah Damanik → Sidamanik Tea Plantation → Simarjarunjung View → Ferry in Samosir → Batu Hoda Beach → Dinner → Check in at Hotel Samosir",
+                        "Day 2: Batu Siallagan → Bird Hill View → Holbung Hills → Sibea-bea Hill → Efrata Waterfall → Tano Ponggol Bridge → Tomok Palace → Dinner → Check in at Hotel Samosir",
+                        "Day 3: Tele Tower → Loken Barn → Sipiso-piso Waterfall → Sarune Cafe → Gundaling Hill → Berastagi Fruit Market → Dinner → Check in at Hotel Berastagi",
+                        "Day 4: 04.00 Sibayak Hiking (optional) → Sinabung Savana → Lau Kawar Lake → Sidebuk-debuk Hot Spring → Gundaling Hill → Lumbini Park → Dinner → Stay at Hotel Berastagi",
+                        "Day 5: Sikulikap Waterfall → Maimoon Palace → Tjong A Fie Mansion → Medan Vihara → Medan Souvenirs → Shopping Mall / Batik → Drop off Airport → Tour Finish 🙏"
+                    ]
+                },
+                whatsapp: "https://wa.me/6282277848855?text=Halo!%20Saya%20minat%20Paket%205H4M%20(Paket%202)."
+            }, {
+                id: 3,
+                title: {id: "Paket 5 Hari 4 Malam – Paket 1", en: "5 Days 4 Nights Package – Package 1"},
+                imageSrc: "/assets/5d4n1.png",
+                itinerary: {
+                    id: [
+                        "Day 1: Pick up Airport → Sukulikap Waterfall → Hot Spring Sidebuk-debuk → Makan malam → Check in Hotel Berastagi",
+                        "Day 2: 04.00 Hiking Sibayak (optional) → Sarune Cafe → Savana Sinabung → Danau Lau Kawar → Pasar Buah Berastagi → Bukit Gundaling → Lumbini Park / Tangke Tabu → Makan malam → Stay Hotel Berastagi",
+                        "Day 3: Sipiso-piso Waterfall → Loken Barn → Tele Tower → Efrata Waterfall → Holbung Hills → Bukit Cinta → Bukit Burung → Pantai Batu Hoda → Makan malam → Check in Hotel Samosir",
+                        "Day 4: Batu Siallagan → Ferry out Samosir → Simarjarunjung View → Kebun Teh Sidamanik → Air Bah Manik → On the way Medan → Makan malam → Check in Hotel Medan",
+                        "Day 5: Istana Maimoon → Masjid Raya → Oleh-oleh Medan → Shopping Batik / Mall → Drop off Kualanamu Airport → Tour Finish 🙏"
+                    ],
+                    en: [
+                        "Day 1: Pick up Airport → Sukulikap Waterfall → Sidebuk-debuk Hot Spring → Dinner → Check in at Hotel Berastagi",
+                        "Day 2: 04.00 Sibayak Hiking (optional) → Sarune Cafe → Sinabung Savana → Lau Kawar Lake → Berastagi Fruit Market → Gundaling Hill → Lumbini Park / Tangke Tabu → Dinner → Stay at Hotel Berastagi",
+                        "Day 3: Sipiso-piso Waterfall → Loken Barn → Tele Tower → Efrata Waterfall → Holbung Hills → Bukit Cinta → Bukit Burung → Batu Hoda Beach → Dinner → Check in at Hotel Samosir",
+                        "Day 4: Batu Siallagan → Ferry out Samosir → Simarjarunjung View → Sidamanik Tea Plantation → Air Bah Manik → On the way to Medan → Dinner → Check in at Hotel Medan",
+                        "Day 5: Maimoon Palace → Grand Mosque → Medan Souvenirs → Batik Shopping / Mall → Drop off Airport → Tour Finish 🙏"
+                    ]
+                },
+                whatsapp: "https://wa.me/6282277848855?text=Halo!%20Saya%20minat%20Paket%205H4M%20(Paket%201)."
+            }, {
+                id: 4,
+                title: {id: "Paket 4 Hari 3 Malam", en: "4 Days 3 Nights Package"},
+                imageSrc: "/assets/4d3n.png",
+                itinerary: {
+                    id: [
+                        "Day 1: Pick up Airport → Mbah Damanik → Kebun Teh Sidamanik → Simarjarunjung View → Panorama Parapat → Pantai I Love Toba → Ferry in Samosir → Makan malam → Check in Hotel Samosir",
+                        "Day 2: Batu Siallagan → Tomok Village / Palace → Pantai Batu Hoda → Jembatan Tano Ponggol → Tulas View / Bukit Burung → Holbung Hills → Bukit Sibea-bea → Efrata Waterfall → Aek Natonang / Danau Sidohoni → Makan malam → Stay Hotel Samosir",
+                        "Day 3: Sarapan, check out → Tele Tower → Loken Barn → Sipiso-piso Waterfall → Sarune Cafe → Gundaling Hill → Pasar Buah Berastagi → Hot Spring Sidebuk-debuk → Makan malam → Check in Hotel Berastagi",
+                        "Day 4: 04.00 Hiking Sibayak (optional) → Sikulikap Waterfall → Istana Maimoon → Tjong A Fie Mansion → Vihara Medan → Oleh-oleh Medan → Drop off Airport / Hotel Medan → Tour Finish 🙏"
+                    ],
+                    en: [
+                        "Day 1: Pick up Airport → Mbah Damanik → Sidamanik Tea Plantation → Simarjarunjung View → Panorama Parapat → I Love Toba Beach → Ferry in Samosir → Dinner → Check in at Hotel Samosir",
+                        "Day 2: Batu Siallagan → Tomok Village / Palace → Batu Hoda Beach → Tano Ponggol Bridge → Tulas View / Bird Hill → Holbung Hills → Sibea-bea Hill → Efrata Waterfall → Aek Natonang / Sidohoni Lake → Dinner → Stay at Hotel Samosir",
+                        "Day 3: Breakfast, check out → Tele Tower → Loken Barn → Sipiso-piso Waterfall → Sarune Cafe → Gundaling Hill → Berastagi Fruit Market → Sidebuk-debuk Hot Spring → Dinner → Check in at Hotel Berastagi",
+                        "Day 4: 04.00 Sibayak Hiking (optional) → Sikulikap Waterfall → Maimoon Palace → Tjong A Fie Mansion → Medan Vihara → Medan Souvenirs → Drop off Airport / Hotel Medan → Tour Finish 🙏"
+                    ]
+                },
+                whatsapp: "https://wa.me/6282277848855?text=Halo!%20Saya%20minat%20Paket%204H3M."
+            }, {
+                id: 5,
+                title: {id: "Paket 3 Hari 2 Malam", en: "3 Days 2 Nights Package"},
+                imageSrc: "/assets/3d2n.png",
+                itinerary: {
+                    id: [
+                        "Day 1: Pick up Kualanamu Airport → Paten Jaya / Mbah Damanik → Kebun Teh Sidamanik → Simarjarunjung View → Ferry via Tigaras → Pantai Batu Hoda → Makan malam → Check in Hotel Samosir",
+                        "Day 2: Sarapan, check out → Batu Siallagan → Bukit Burung View → Holbung Hills → Bukit Sibea-bea → Efrata Waterfall → Tele Tower → Loken Barn → Sipiso-piso Waterfall → Makan malam → Check in Hotel Berastagi",
+                        "Day 3: 04.00 Hiking Sibayak (optional) → Sarapan, check out → Sarune Cafe → Bukit Gundaling → Sikulikap Waterfall → Istana Maimoon → Tjong A Fie Mansion → Oleh-oleh Medan → Makan siang → Drop off Airport → Tour Finish 🙏"
+                    ],
+                    en: [
+                        "Day 1: Pick up Kualanamu Airport → Paten Jaya / Mbah Damanik → Sidamanik Tea Plantation → Simarjarunjung View → Ferry via Tigaras → Batu Hoda Beach → Dinner → Check in at Hotel Samosir",
+                        "Day 2: Breakfast, check out → Batu Siallagan → Bird Hill View → Holbung Hills → Sibea-bea Hill → Efrata Waterfall → Tele Tower → Loken Barn → Sipiso-piso Waterfall → Dinner → Check in at Hotel Berastagi",
+                        "Day 3: 04.00 Sibayak Hiking (optional) → Breakfast, check out → Sarune Cafe → Gundaling Hill → Sikulikap Waterfall → Maimoon Palace → Tjong A Fie Mansion → Medan Souvenirs → Lunch → Drop off Airport → Tour Finish 🙏"
+                    ]
+                },
+                whatsapp: "https://wa.me/6282277848855?text=Halo!%20Saya%20minat%20Paket%203H2M."
+            }];
+            const galleryImages = [
+                "https://placehold.co/1200x800/2188ff/ffffff?text=Danau+Toba+1",
+                "https://placehold.co/1200x800/34d399/ffffff?text=Berastagi+2",
+                "https://placehold.co/1200x800/8b5cf6/ffffff?text=Samosir+3",
+                "https://placehold.co/1200x800/f59e0b/ffffff?text=Sibayak+4",
+                "https://placehold.co/1200x800/ef4444/ffffff?text=Medan+5",
+                "https://placehold.co/1200x800/0ea5e9/ffffff?text=Tour+6",
+                "https://placehold.co/1200x800/10b981/ffffff?text=Danau+Toba+7",
+                "/assets/berastagi.jpg"
+            ];
+            const destinations = [{
+                id: 1,
+                title: {id: "Danau Toba", en: "Lake Toba"},
+                category: "danau-toba",
+                image: "https://placehold.co/600x400/0ea5e9/ffffff?text=Danau+Toba",
+                description: {id: "Keajaiban alam danau vulkanik dengan pemandangan menakjubkan dan budaya Batak yang kaya.", en: "A natural wonder of a volcanic lake with stunning views and rich Batak culture."},
+                included: {id: "Termasuk di semua paket", en: "Included in all packages"}
+            }, {
+                id: 2,
+                title: {id: "Pulau Samosir", en: "Samosir Island"},
+                category: "danau-toba",
+                image: "https://placehold.co/600x400/2188ff/ffffff?text=Pulau+Samosir",
+                description: {id: "Pulau di tengah Danau Toba dengan warisan budaya Batak yang autentik dan pemandangan menawan.", en: "An island in the middle of Lake Toba with authentic Batak cultural heritage and charming views."},
+                included: {id: "Termasuk di 3H+ paket", en: "Included in 3D+ packages"}
+            }, {
+                id: 3,
+                title: {id: "Berastagi", en: "Berastagi"},
+                category: "berastagi-sibayak",
+                image: "https://placehold.co/600x400/10b981/ffffff?text=Berastagi",
+                description: {id: "Udara sejuk pegunungan dengan buah-buahan segar dan pemandangan Gunung Sinabung yang memukau.", en: "Cool mountain air with fresh fruits and spectacular views of Mount Sinabung."},
+                included: {id: "Termasuk di 4H+ paket", en: "Included in 4D+ packages"}
+            }, {
+                id: 4,
+                title: {id: "Gunung Sibayak", en: "Mount Sibayak"},
+                category: "berastagi-sibayak",
+                image: "https://placehold.co/600x400/34d399/ffffff?text=Gunung+Sibayak",
+                description: {id: "Gunung aktif dengan trek hiking populer, fumarol, dan pemandian air panas alami.", en: "An active volcano with popular hiking trails, fumaroles, and natural hot springs."},
+                included: {id: "Hiking opsional (tambahan RM 100)", en: "Optional hiking (additional fee)"}
+            }, {
+                id: 5,
+                title: {id: "Medan City Tour", en: "Medan City Tour"},
+                category: "medan",
+                image: "https://placehold.co/600x400/8b5cf6/ffffff?text=Medan+City+Tour",
+                description: {id: "Jelajahi kuliner halal terbaik dan warisan budaya Melayu di ibu kota Sumatera Utara.", en: "Explore the best halal cuisine and Malay cultural heritage in the capital of North Sumatra."},
+                included: {id: "Termasuk di akhir perjalanan", en: "Included at the end of the trip"}
+            }];
+            const testimonials = [{
+                id: 1,
+                name: "Ahmad & Keluarga",
+                location: "Jakarta",
+                image: "https://placehold.co/80x80/f59e0b/ffffff?text=Ahmad",
+                text: {id: "Pengalaman luar biasa! Supirnya ramah, mobilnya bersih, dan itinerary-nya sangat teratur. Kami sekeluarga sangat puas.", en: "An amazing experience! The driver was friendly, the car was clean, and the itinerary was very well-organized. Our family was very satisfied."}
+            }, {
+                id: 2,
+                name: "Sarah",
+                location: "Bandung",
+                image: "https://placehold.co/80x80/ef4444/ffffff?text=Sarah",
+                text: {id: "MEDAN TOBA SUMATERA memang amanah. Mereka sangat memperhatikan kebutuhan kami, bahkan soal makanan halal. Highly recommended!", en: "MEDAN TOBA SUMATERA is truly trustworthy. They paid great attention to our needs, even regarding halal food. Highly recommended!"}
+            }, {
+                id: 3,
+                name: "Ali & Teman-teman",
+                location: "Surabaya",
+                image: "https://placehold.co/80x80/0ea5e9/ffffff?text=Ali",
+                text: {id: "Galeri foto mereka di website ini sesuai dengan kenyataan. Pemandangannya jauh lebih indah aslinya. Terima kasih!", en: "Their photo gallery on this website is true to reality. The scenery is much more beautiful in person. Thank you!"}
+            }];
+            const socialLinks = {
+                instagram: "https://instagram.com/sujailaketoba",
+                whatsapp: "https://wa.me/6282277848855",
+                facebook: "https://facebook.com/ariel.azhura",
+                youtube: "https://youtube.com/@medantobasumatera",
+                whatsappFloating: "https://wa.me/6282277848855?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR%20%26%20TRAVEL!",
+                consultation: "https://wa.me/6282277848855?text=Halo%20MEDAN%20TOBA%20SUMATERA%20TOUR%20%26%20TRAVEL!",
+                portfolio: "https://www.medantobasumatera.com"
+            };
+            const translations = {
+                id: {
+                    /* Dihapus: heroTitle, heroDesc, trustedCompanionTitle, trustedCompanionDesc, experienceYears, experienceText, halalAssured, halalStatus, driver, driverExperience */
+                    packagesTitle: "Paket Wisata Unggulan",
+                    packagesDesc: "Pilihan paket wisata halal terbaik dengan pelayanan terpercaya",
+                    packageFacilitiesTitle: "Fasilitas Paket (Semua Paket)",
+                    packageFacilitiesIncluded: "✅ Termasuk:",
+                    packageFacilitiesExcluded: "❌ Tidak Termasuk:",
+                    packageFacilitiesNote: "📌 Catatan:",
+                    packageFacilitiesNoteText: "Kami juga menyediakan paket termasuk hotel. Harga berbeda, bisa dibahas via chat pribadi.",
+                    galleryTitle: "Galeri Perjalanan Kami",
+                    galleryDesc: "Momen indah pelanggan kami di Danau Toba.",
+                    destinationsTitle: "Destinasi Wisata Kami",
+                    destinationsDesc: "Nikmati keindahan alam, budaya Batak, dan pemandangan spektakuler di Medan, Danau Toba, Berastagi & Sibayak.",
+                    aboutTitle: "Tentang Kami",
+                    aboutDesc: "TOBA SUMATERA TOUR & TRAVEL adalah tim lokal yang berdedikasi melayani wisatawan dari Medan ke Danau Toba sejak 2018.",
+                    navHome: "Beranda",
+                    navPackages: "Paket Wisata",
+                    navGallery: "Galeri",
+                    navDestinations: "Destinasi",
+                    navAbout: "Tentang Kami",
+                    navContact: "Kontak",
+                    bookNow: "Pesan Sekarang",
+                    seePackages: "Lihat Paket",
+                    consultCustom: "Konsultasi via WhatsApp",
+                    viewAll: "Lihat Semua",
+                    facilities: "Fasilitas Paket",
+                    included: "✅ Termasuk:",
+                    notIncluded: "❌ Tidak Termasuk:",
+                    note: "📌 Catatan:",
+                    noteText: "Kami juga menyediakan paket termasuk hotel. Harga berbeda, bisa dibahas via chat pribadi.",
+                    filterAll: "Semua",
+                    filterLake: "Danau Toba",
+                    filterMountains: "Berastagi & Sibayak",
+                    filterCity: "Medan",
+                    categoryLake: "Danau Toba",
+                    categoryMountains: "Berastagi & Sibayak",
+                    categoryCity: "Medan",
+                    readyToExplore: "Siap Jelajahi Destinasi Ini?",
+                    joinCustomers: "Gabung bersama ratusan pelanggan puas kami.",
+                    ourValues: "Nilai Kami",
+                    trust: "Kepercayaan",
+                    trustDesc: "Kami menjunjung tinggi kejujuran dan keterbukaan dalam setiap layanan.",
+                    service: "Pelayanan",
+                    serviceDesc: "Kami selalu siap melayani dengan ramah, cepat, dan profesional.",
+                    halal: "Halal",
+                    halalDesc: "Semua makanan, transportasi, dan aktivitas kami sesuai prinsip halal.",
+                    contactUs: "Hubungi Kami",
+                    sendWhatsApp: "Kirim ke WhatsApp",
+                    footerDesc: "Travel lokal terpercaya dengan supir Muslim. Kami menghadirkan pengalaman wisata Danau Toba yang nyaman, halal, dan berkesan.",
+                    footerServices: "Layanan",
+                    footerContact: "Kontak",
+                    followUs: "Ikuti Kami",
+                    footerPortfolio: "Portofolio",
+                    trustedCompanionTitle: "Partner Wisata Sumatera Utara Terpercaya Anda",
+                    trustedCompanionDesc: "Jelajahi keindahan Sumatera Utara dengan panduan wisata halal terpercaya. Pengalaman 6+ tahun melayani keluarga Muslim dengan kenyamanan dan keamanan terjamin.",
+                    experienceYears: "6+ Tahun",
+                    experienceText: "Pengalaman",
+                    halalAssured: "Wisata Halal",
+                    halalStatus: "Terjamin",
+                    driver: "Supir",
+                    driverExperience: "Berpengalaman",
+                    day: "Hari",
+                    moreInfo: "Pelajari Lebih Lanjut",
+                    reviews: "Ulasan",
+                    activities: "aktivitas",
+                    footerInfo: "Wisata Berkah dengan 6+ tahun pengalaman melayani keluarga Muslim. Terpercaya, aman, dan nyaman.",
+                    allRightsReserved: "Hak Cipta © 2025 Medan Toba Sumatera Tour. Semua Hak Dilindungi.",
+                    trustedCompanionPhrase: "Wisata Berkah - Your Trusted Travel Companion",
+                    supirAmanah: "Supir Muslim & Amanah",
+                    localGuide: "Panduan Lokal",
+                    tourHalal: "Tour Halal Terpercaya",
+                    comfortableVehicle: "Kendaraan Nyaman",
+                    freeConsultation: "Konsultasi Gratis",
+                    transparentPricing: "Harga Transparan",
+                    whyChooseUs: "Mengapa Pilih Kami?",
+                    halalAssuredTitle: "Halal Terjamin",
+                    driverExperienceTitle: "Driver Berpengalaman",
+                    transparentPricingTitle: "Harga Transparan",
+                    supportTitle: "Dukungan 24/7",
+                    supportDesc: "Customer service siap membantu kapan saja",
+                    startJourneyTitle: "Mulai Perjalanan Berkah Anda",
+                    contactText: "Hubungi Langsung"
+                },
+                en: {
+                    /* Dihapus: heroTitle, heroDesc, trustedCompanionTitle, trustedCompanionDesc, experienceYears, experienceText, halalAssured, halalStatus, driver, driverExperience */
+                    packagesTitle: "Featured Tour Packages",
+                    packagesDesc: "A selection of the best halal tour packages with reliable service.",
+                    packageFacilitiesTitle: "Package Facilities (All Packages)",
+                    packageFacilitiesIncluded: "✅ Included:",
+                    packageFacilitiesExcluded: "❌ Not Included:",
+                    packageFacilitiesNote: "📌 Note:",
+                    packageFacilitiesNoteText: "We also provide packages that include hotels. Prices vary and can be discussed via private chat.",
+                    galleryTitle: "Our Journey Gallery",
+                    galleryDesc: "Beautiful moments from our customers at Lake Toba.",
+                    destinationsTitle: "Our Travel Destinations",
+                    destinationsDesc: "Enjoy the beauty of nature, Batak culture, and spectacular views in Medan, Lake Toba, Berastagi & Sibayak.",
+                    aboutTitle: "About Us",
+                    aboutDesc: "TOBA SUMATERA TOUR & TRAVEL is a local team dedicated to serving travelers from Medan to Lake Toba since 2018.",
+                    navHome: "Home",
+                    navPackages: "Tour Packages",
+                    navGallery: "Gallery",
+                    navDestinations: "Destinations",
+                    navAbout: "About Us",
+                    navContact: "Contact",
+                    bookNow: "Book Now",
+                    seePackages: "View Packages",
+                    consultCustom: "Consultation via WhatsApp",
+                    viewAll: "View All",
+                    facilities: "Package Facilities",
+                    included: "✅ Included:",
+                    notIncluded: "❌ Not Included:",
+                    note: "📌 Note:",
+                    noteText: "We also provide packages that include hotels. Prices vary and can be discussed via private chat.",
+                    filterAll: "All",
+                    filterLake: "Lake Toba",
+                    filterMountains: "Berastagi & Sibayak",
+                    filterCity: "Medan",
+                    categoryLake: "Lake Toba",
+                    categoryMountains: "Berastagi & Sibayak",
+                    categoryCity: "Medan",
+                    readyToExplore: "Ready to Explore These Destinations?",
+                    joinCustomers: "Join hundreds of satisfied customers.",
+                    ourValues: "Our Values",
+                    trust: "Trust",
+                    trustDesc: "We uphold honesty and transparency in every service.",
+                    service: "Service",
+                    serviceDesc: "We are always ready to serve with friendliness, speed, and professionalism.",
+                    halal: "Halal",
+                    halalDesc: "All our food, transportation, and activities comply with halal principles.",
+                    contactUs: "Contact Us",
+                    sendWhatsApp: "Send to WhatsApp",
+                    footerDesc: "Trusted local travel with Muslim drivers. We bring you a comfortable, halal, and memorable Lake Toba experience.",
+                    footerServices: "Services",
+                    footerContact: "Contact",
+                    followUs: "Follow Us",
+                    footerPortfolio: "Portfolio",
+                    trustedCompanionTitle: "Your Trusted North Sumatra Travel Companion",
+                    trustedCompanionDesc: "Explore the beauty of North Sumatra with a trusted halal travel guide. 6+ years of experience serving Muslim families with guaranteed comfort and safety.",
+                    experienceYears: "6+ Years",
+                    experienceText: "Experience",
+                    halalAssured: "Halal Travel",
+                    halalStatus: "Guaranteed",
+                    driver: "Driver",
+                    driverExperience: "Experienced",
+                    day: "Day",
+                    moreInfo: "Learn More",
+                    reviews: "Reviews",
+                    activities: "activities",
+                    footerInfo: "Wisata Berkah with 6+ years of experience serving Muslim families. Trusted, safe, and comfortable.",
+                    allRightsReserved: "Copyright © 2025 Medan Toba Sumatera Tour. All Rights Reserved.",
+                    trustedCompanionPhrase: "Wisata Berkah - Your Trusted Travel Companion",
+                    supirAmanah: "Muslim & Trustworthy Driver",
+                    localGuide: "Local Guide",
+                    tourHalal: "Trusted Halal Tour",
+                    comfortableVehicle: "Comfortable Vehicle",
+                    freeConsultation: "Free Consultation",
+                    transparentPricing: "Transparent Pricing",
+                    whyChooseUs: "Why Choose Us?",
+                    halalAssuredTitle: "Halal Guaranteed",
+                    driverExperienceTitle: "Experienced Driver",
+                    transparentPricingTitle: "Transparent Pricing",
+                    supportTitle: "24/7 Support",
+                    supportDesc: "Customer service is ready to help anytime",
+                    startJourneyTitle: "Start Your Blessed Journey",
+                    contactText: "Contact Directly"
+                }
+            };
+
+            const renderPackages = () => {
+                return packages.map((pkg) => (
+                    <div key={pkg.id} className="card-elevated group hover:scale-105 transition-all duration-300">
+                        <div className="relative overflow-hidden rounded-t-xl">
+                            {/* Gambar sekarang mengambil dari properti imageSrc */}
+                            <img src={pkg.imageSrc} alt={pkg.title[currentLang]} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div className="absolute top-4 left-4">
+                                <span className="bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                    {translations[currentLang].halal}
+                                </span>
+                            </div>
+                        </div>
+                        <div className="p-6">
+                            <h3 className="font-semibold text-xl mb-4">{pkg.title[currentLang]}</h3>
+                            <div className="space-y-4 text-sm text-text-secondary">
+                                {pkg.itinerary[currentLang].map((day, index) => (
+                                    <div key={index} className="flex items-start">
+                                        <span className="font-bold text-primary mr-2 flex-shrink-0">{translations[currentLang].day} {index + 1}:</span>
+                                        <span>{day.split('→').join(' → ')}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="mt-6 text-center">
+                                <a href={pkg.whatsapp} target="_blank" className="btn-primary w-full text-center inline-flex items-center justify-center">
+                                    <i className="fab fa-whatsapp mr-2"></i>{translations[currentLang].bookNow}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                ));
+            };
+            const renderTestimonials = () => {
+                return testimonials.map((testimonial) => (
+                    <div key={testimonial.id} className="card p-6 text-center">
+                        <div className="mb-6">
+                            <img src={testimonial.image} alt={`${testimonial.name} Family`} className="w-20 h-20 rounded-full mx-auto object-cover mb-4" />
+                            <div className="flex justify-center mb-3">
+                                <i className="fas fa-star text-warning"></i>
+                                <i className="fas fa-star text-warning"></i>
+                                <i className="fas fa-star text-warning"></i>
+                                <i className="fas fa-star text-warning"></i>
+                                <i className="fas fa-star text-warning"></i>
+                            </div>
+                        </div>
+                        <blockquote className="text-text-secondary italic mb-4">
+                            "{testimonial.text[currentLang]}"
+                        </blockquote>
+                        <div>
+                            <p className="font-semibold text-text-primary">{testimonial.name}</p>
+                            <p className="text-sm text-text-secondary">{testimonial.location}</p>
+                        </div>
+                    </div>
+                ));
+            };
+            const renderDestinations = () => {
+                const filtered = activeFilter === 'all'
+                    ? destinations
+                    : destinations.filter(dest => dest.category === activeFilter);
+                return filtered.map((dest) => (
+                    <div key={dest.id} className="card group hover:scale-105 transition-all duration-300 overflow-hidden">
+                        <div className="relative">
+                            <img src={dest.image} alt={dest.title[currentLang]} className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <div className="absolute bottom-4 left-4 text-white">
+                                <h3 className="font-semibold text-lg">{dest.title[currentLang]}</h3>
+                                <p className="text-sm opacity-90">{dest.category === 'danau-toba' ? translations[currentLang].categoryLake : dest.category === 'berastagi-sibayak' ? translations[currentLang].categoryMountains : translations[currentLang].categoryCity}</p>
+                            </div>
+                            <div className="absolute top-4 right-4">
+                                <span className="bg-secondary text-white px-2 py-1 rounded-lg text-xs font-semibold">
+                                    <i className="fas fa-mosque mr-1"></i>{translations[currentLang].halal}
+                                </span>
+                            </div>
+                        </div>
+                        <div className="p-4">
+                            <div className="flex items-center justify-between mb-2">
+                                <div className="flex items-center text-warning">
+                                    <i className="fas fa-star text-sm"></i>
+                                    <span className="ml-1 text-sm font-semibold">4.8</span>
+                                </div>
+                                <span className="text-sm text-text-secondary">15 {translations[currentLang].activities}</span>
+                            </div>
+                            <p className="text-sm text-text-secondary mb-3">
+                                {dest.description[currentLang]}
+                            </p>
+                            <a href="destinasi.html" className="text-primary font-semibold text-sm hover:text-primary-600 transition-smooth">
+                                {translations[currentLang].moreInfo} <i className="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                ));
+            };
+            const renderGallery = () => {
+                return galleryImages.slice(0, 6).map((image, index) => (
+                    <div key={index} className="relative group overflow-hidden rounded-xl aspect-square cursor-pointer" onClick={() => openLightbox(index)}>
+                        <img src={image} alt={`${translations[currentLang].navGallery} ${index + 1}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
+                        <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <i className="fas fa-heart text-white text-sm"></i>
+                        </div>
+                    </div>
+                ));
+            };
+            
+            const t = translations[currentLang];
+
+            return (
+                <div className="bg-background text-text-primary font-sans">
+                    {/* Header */}
+                    <header className={`bg-header-bg shadow-soft sticky top-0 z-50 transition-colors duration-500`}>
+                        <nav className="container-custom">
+                            <div className="flex items-center justify-between h-16 lg:h-20 flex-wrap">
+                                {/* Logo */}
+                                <div className="flex items-center space-x-3 mb-2 lg:mb-0">
+                                    <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+                                        <i className="fas fa-mountain text-white text-lg lg:text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h1 className="font-accent font-semibold text-lg lg:text-xl text-primary">Medan Toba</h1>
+                                        <p className="text-xs text-text-secondary hidden sm:block">Sumatera Tour</p>
+                                    </div>
+                                </div>
+                                {/* Desktop Navigation */}
+                                <div className="desktop-menu hidden lg:flex items-center space-x-4">
+                                    <a href="index.html" className="text-text-secondary hover:text-primary transition-colors duration-300">{t.navHome}</a>
+                                    <a href="packages.html" className="text-text-secondary hover:text-primary transition-colors duration-300">{t.navPackages}</a>
+                                    <a href="gallery.html" className="text-text-secondary hover:text-primary transition-colors duration-300">{t.navGallery}</a>
+                                    <a href="destinations.html" className="text-text-secondary hover:text-primary transition-colors duration-300">{t.navDestinations}</a>
+                                    <a href="about.html" className="text-text-secondary hover:text-primary transition-colors duration-300">{t.navAbout}</a>
+                                    <div className="flex items-center space-x-2">
+                                        <a href={socialLinks.instagram} target="_blank" className="text-text-secondary hover:text-pink-500"><i className="fab fa-instagram"></i></a>
+                                        <a href={socialLinks.whatsapp} target="_blank" className="text-text-secondary hover:text-secondary"><i className="fab fa-whatsapp"></i></a>
+                                        <a href={socialLinks.facebook} target="_blank" className="text-text-secondary hover:text-blue-600"><i className="fab fa-facebook"></i></a>
+                                        <a href={socialLinks.youtube} target="_blank" className="text-text-secondary hover:text-red-600"><i className="fab fa-youtube"></i></a>
+                                        <button onClick={toggleLanguage} className="bg-primary-50 text-primary px-3 py-1 rounded-full text-xs font-semibold hover:bg-primary-100 transition-smooth">
+                                            {currentLang === 'id' ? 'EN' : 'ID'}
+                                        </button>
+                                        <button onClick={toggleTheme} className="text-text-primary">
+                                            {currentTheme === 'light' ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>}
+                                        </button>
+                                    </div>
+                                </div>
+                                {/* Mobile Menu Button */}
+                                <div className="mobile-menu lg:hidden flex items-center space-x-2">
+                                    <button onClick={toggleLanguage} className="bg-primary-50 text-primary px-3 py-1 rounded-full text-xs font-semibold hover:bg-primary-100 transition-smooth">
+                                        {currentLang === 'id' ? 'EN' : 'ID'}
+                                    </button>
+                                    <button onClick={toggleTheme} className="text-text-primary">
+                                        {currentTheme === 'light' ? <i className="fas fa-moon"></i> : <i className="fas fa-sun"></i>}
+                                    </button>
+                                    <button onClick={toggleMobileMenu} className="text-text-primary">
+                                        <i className="fas fa-bars text-xl"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </nav>
+                    </header>
+                    {/* Mobile Menu */}
+                    <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+                        <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`} onClick={toggleMobileMenu}></div>
+                        <div className="mobile-menu-content">
+                            <div className="mobile-menu-header">
+                                <h2 className="font-semibold text-lg">Menu</h2>
+                                <button onClick={toggleMobileMenu} className="mobile-menu-close">
+                                    <i className="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div className="mobile-menu-nav">
+                                <a href="index.html" onClick={toggleMobileMenu}>{t.navHome}</a>
+                                <a href="packages.html" onClick={toggleMobileMenu}>{t.navPackages}</a>
+                                <a href="gallery.html" onClick={toggleMobileMenu}>{t.navGallery}</a>
+                                <a href="destinations.html" onClick={toggleMobileMenu}>{t.navDestinations}</a>
+                                <a href="about.html" onClick={toggleMobileMenu}>{t.navAbout}</a>
+                                <a href="contact.html" onClick={toggleMobileMenu}>{t.navContact}</a>
+                            </div>
+                            <div className="mobile-menu-social">
+                                <a href={socialLinks.instagram} target="_blank"><i className="fab fa-instagram"></i></a>
+                                <a href={socialLinks.whatsapp} target="_blank"><i className="fab fa-whatsapp"></i></a>
+                                <a href={socialLinks.facebook} target="_blank"><i className="fab fa-facebook"></i></a>
+                                <a href={socialLinks.youtube} target="_blank"><i className="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Featured Packages Section */}
+                    <section id="packages" className="section-padding pt-24 lg:pt-32" style={{
+                        backgroundColor: 'var(--color-background)'
+                    }}>
+                        <div className="container-custom">
+                            <div className="text-center mb-12">
+                                <h2 className="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4">
+                                    {t.packagesTitle}
+                                </h2>
+                                <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+                                    {t.packagesDesc}
+                                </p>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {renderPackages()}
+                            </div>
+                        </div>
+                    </section>
+                    {/* Package Information Section */}
+                    <section className="section-padding" style={{
+                        backgroundColor: 'var(--color-surface)'
+                    }}>
+                        <div className="container-custom">
+                            <div className="text-center mb-12">
+                                <h2 className="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4">
+                                    {t.packageFacilitiesTitle}
+                                </h2>
+                                <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+                                    {t.packageFacilitiesNoteText}
+                                </p>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="card p-6">
+                                    <h3 className="text-xl font-semibold mb-4 text-primary">{t.packageFacilitiesIncluded}</h3>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-check-circle text-secondary mr-3"></i>
+                                            <span>{t.driver} {t.driverExperience}</span>
+                                        </li>
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-check-circle text-secondary mr-3"></i>
+                                            <span>{t.comfortableVehicle}</span>
+                                        </li>
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-check-circle text-secondary mr-3"></i>
+                                            <span>BBM & Tol</span>
+                                        </li>
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-check-circle text-secondary mr-3"></i>
+                                            <span>Tiket Masuk & Ferry</span>
+                                        </li>
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-check-circle text-secondary mr-3"></i>
+                                            <span>Air Mineral</span>
+                                        </li>
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-check-circle text-secondary mr-3"></i>
+                                            <span>Makan {t.driver}</span>
+                                        </li>
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-check-circle text-secondary mr-3"></i>
+                                            <span>Penginapan {t.driver}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="card p-6">
+                                    <h3 className="text-xl font-semibold mb-4 text-primary">{t.packageFacilitiesExcluded}</h3>
+                                    <ul className="space-y-3">
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-times-circle text-error mr-3"></i>
+                                            <span>Hotel Penginapan</span>
+                                        </li>
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-times-circle text-error mr-3"></i>
+                                            <span>Makan Siang & Malam</span>
+                                        </li>
+                                        <li className="flex items-center text-text-secondary">
+                                            <i className="fas fa-times-circle text-error mr-3"></i>
+                                            <span>Guide Hiking Sibayak</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Customer Testimonials */}
+                    <section className="section-padding" style={{
+                        backgroundColor: 'var(--color-background)'
+                    }}>
+                        <div className="container-custom">
+                            <div className="text-center mb-12">
+                                <h2 className="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4">
+                                    {t.reviews}
+                                </h2>
+                                <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+                                    {t.joinCustomers}
+                                </p>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {renderTestimonials()}
+                            </div>
+                        </div>
+                    </section>
+                    {/* Destinations Preview */}
+                    <section id="destinations" className="section-padding" style={{
+                        backgroundColor: 'var(--color-surface)'
+                    }}>
+                        <div className="container-custom">
+                            <div className="text-center mb-12">
+                                <h2 className="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4">
+                                    {t.destinationsTitle}
+                                </h2>
+                                <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+                                    {t.destinationsDesc}
+                                </p>
+                            </div>
+                            {/* Filter Options */}
+                            <div className="flex flex-wrap justify-center gap-4 mb-8">
+                                <button onClick={() => filterDestinations('all')} className={`px-6 py-2 rounded-full font-semibold transition-smooth ${activeFilter === 'all'
+                                ? 'bg-primary text-white'
+                                : 'bg-white text-text-secondary hover:bg-primary hover:text-white'
+                            }`}>
+                                    <i className="fas fa-map mr-2"></i>{t.filterAll}
+                                </button>
+                                <button onClick={() => filterDestinations('danau-toba')} className={`px-6 py-2 rounded-full font-semibold transition-smooth ${activeFilter === 'danau-toba'
+                                ? 'bg-primary text-white'
+                                : 'bg-white text-text-secondary hover:bg-primary hover:text-white'
+                            }`}>
+                                    <i className="fas fa-water mr-2"></i>{t.filterLake}
+                                </button>
+                                <button onClick={() => filterDestinations('berastagi-sibayak')} className={`px-6 py-2 rounded-full font-semibold transition-smooth ${activeFilter === 'berastagi-sibayak'
+                                ? 'bg-primary text-white'
+                                : 'bg-white text-text-secondary hover:bg-primary hover:text-white'
+                            }`}>
+                                    <i className="fas fa-mountain mr-2"></i>{t.filterMountains}
+                                </button>
+                                <button onClick={() => filterDestinations('medan')} className={`px-6 py-2 rounded-full font-semibold transition-smooth ${activeFilter === 'medan'
+                                ? 'bg-primary text-white'
+                                : 'bg-white text-text-secondary hover:bg-primary hover:text-white'
+                            }`}>
+                                    <i className="fas fa-city mr-2"></i>{t.filterCity}
+                                </button>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                                {renderDestinations()}
+                            </div>
+                            <div className="text-center mt-12">
+                                <a href="destinasi.html" className="btn-outline text-lg px-8 py-4 inline-flex items-center">
+                                    <i className="fas fa-compass mr-3"></i>
+                                    {t.viewAll}
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Gallery Section */}
+                    <section id="gallery" className="section-padding" style={{
+                        backgroundColor: 'var(--color-background)'
+                    }}>
+                        <div className="container-custom">
+                            <div className="text-center mb-12">
+                                <h2 className="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4">
+                                    {t.galleryTitle}
+                                </h2>
+                                <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+                                    {t.galleryDesc}
+                                </p>
+                            </div>
+                            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                                {renderGallery()}
+                            </div>
+                            <div className="text-center mt-8">
+                                <a href="gallery.html" className="btn-outline text-lg px-8 py-4 inline-flex items-center">
+                                    <i className="fas fa-images mr-3"></i>
+                                    {t.viewAll}
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    {/* About Us Section */}
+                    <section id="about" className="section-padding" style={{
+                        backgroundColor: 'var(--color-surface)'
+                    }}>
+                        <div className="container-custom">
+                            <div className="text-center mb-12">
+                                <h2 className="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4" dangerouslySetInnerHTML={{ __html: `<span class="text-primary">${t.navAbout}</span>` }}></h2>
+                                <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+                                    {t.aboutDesc}
+                                </p>
+                            </div>
+                            <div className="grid md:grid-cols-2 gap-10 items-center">
+                                <div>
+                                    <img src="https://placehold.co/800x600/f59e0b/ffffff?text=About+Us" alt={t.navAbout} className="rounded-3xl shadow-2xl w-full object-cover h-96" />
+                                </div>
+                                <div className="space-y-6">
+                                    <h2 className="text-3xl md:text-4xl font-bold text-text-primary">{t.aboutTitle}</h2>
+                                    <p className="text-lg text-text-secondary leading-relaxed">
+                                        TOBA SUMATERA TOUR & TRAVEL adalah tim lokal yang berdedikasi melayani wisatawan dari Medan ke Danau Toba sejak 2018. Kami memahami pentingnya perjalanan yang nyaman, aman, dan sesuai dengan nilai-nilai keagamaan.
+                                    </p>
+                                    <p className="text-lg text-text-secondary leading-relaxed">
+                                        Dengan pengalaman lebih dari 6 tahun, kami telah melayani ratusan keluarga Muslim dari berbagai daerah, memberikan pengalaman wisata halal yang tak terlupakan di kawasan Danau Toba, Berastagi, dan sekitarnya.
+                                    </p>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center space-x-3"><i className="fas fa-check-circle text-secondary"></i> <span>{t.supirAmanah}</span></div>
+                                        <div className="flex items-center space-x-3"><i className="fas fa-check-circle text-secondary"></i> <span>{t.localGuide}</span></div>
+                                        <div className="flex items-center space-x-3"><i className="fas fa-check-circle text-secondary"></i> <span>{t.halal}</span></div>
+                                    </div>
+                                    <a href="contact.html" className="inline-block mt-4 text-primary font-semibold hover:underline">
+                                        {t.navContact} →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Why Choose Us Section */}
+                    <section className="section-padding" style={{
+                        backgroundColor: 'var(--color-background)'
+                    }}>
+                        <div className="container-custom">
+                            <div className="text-center mb-12">
+                                <h2 className="font-accent text-3xl lg:text-4xl font-semibold text-text-primary mb-4">
+                                    {t.whyChooseUs}
+                                </h2>
+                                <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+                                    {t.joinCustomers}
+                                </p>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-secondary to-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                        <i className="fas fa-certificate text-white text-2xl"></i>
+                                    </div>
+                                    <h3 className="font-semibold text-lg text-text-primary mb-2">{t.halalAssuredTitle}</h3>
+                                    <p className="text-text-secondary text-sm">{t.halalDesc}</p>
+                                </div>
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                        <i className="fas fa-user-tie text-white text-2xl"></i>
+                                    </div>
+                                    <h3 className="font-semibold text-lg text-text-primary mb-2">{t.driverExperienceTitle}</h3>
+                                    <p className="text-text-secondary text-sm">{t.driverExperience}</p>
+                                </div>
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-accent to-accent-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                        <i className="fas fa-dollar-sign text-white text-2xl"></i>
+                                    </div>
+                                    <h3 className="font-semibold text-lg text-text-primary mb-2">{t.transparentPricingTitle}</h3>
+                                    <p className="text-text-secondary text-sm">Tidak ada biaya tersembunyi, semua sudah termasuk</p>
+                                </div>
+                                <div className="text-center">
+                                    <div className="w-16 h-16 bg-gradient-to-br from-warning to-warning-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                        <i className="fas fa-headset text-white text-2xl"></i>
+                                    </div>
+                                    <h3 className="font-semibold text-lg text-text-primary mb-2">{t.supportTitle}</h3>
+                                    <p className="text-text-secondary text-sm">{t.supportDesc}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Contact Section */}
+                    <section id="contact" className="section-padding bg-gradient-to-r from-primary to-accent text-white">
+                        <div className="container-custom text-center">
+                            <div className="max-w-3xl mx-auto">
+                                <h2 className="font-accent text-3xl lg:text-4xl font-semibold mb-4">
+                                    {t.startJourneyTitle}
+                                </h2>
+                                <p className="text-lg mb-8 opacity-90">
+                                    {t.joinCustomers}
+                                </p>
+                                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <a href={socialLinks.consultation} target="_blank" className="btn-secondary bg-white text-primary hover:bg-slate-100 text-lg px-8 py-4 inline-flex items-center justify-center">
+                                        <i className="fab fa-whatsapp mr-3 text-xl"></i>
+                                        {t.consultCustom}
+                                    </a>
+                                    <a href="#packages" className="btn-outline border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4 inline-flex items-center justify-center">
+                                        <i className="fas fa-phone mr-3"></i>
+                                        {t.contactText}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/* Footer */}
+                    <footer className="bg-slate-900 text-white section-padding">
+                        <div className="container-custom">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                                {/* Company Info */}
+                                <div>
+                                    <div className="flex items-center space-x-3 mb-4">
+                                        <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center">
+                                            <i className="fas fa-mountain text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h3 className="font-accent font-semibold text-lg text-primary">Medan Toba</h3>
+                                            <p className="text-sm text-slate-300">Sumatera Tour</p>
+                                        </div>
+                                    </div>
+                                    <p className="text-slate-300 mb-4">
+                                        {t.footerDesc}
+                                    </p>
+                                    <div className="flex space-x-4">
+                                        <a href={socialLinks.facebook} target="_blank" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-smooth">
+                                            <i className="fab fa-facebook"></i>
+                                        </a>
+                                        <a href={socialLinks.instagram} target="_blank" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-smooth">
+                                            <i className="fab fa-instagram"></i>
+                                        </a>
+                                        <a href={socialLinks.youtube} target="_blank" className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-primary transition-smooth">
+                                            <i className="fab fa-youtube"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                {/* Quick Links */}
+                                <div>
+                                    <h4 className="font-semibold text-lg mb-4">Navigasi</h4>
+                                    <ul className="space-y-2">
+                                        <li><a href="index.html" className="text-slate-300 hover:text-primary transition-smooth">{t.navHome}</a></li>
+                                        <li><a href="packages.html" className="text-slate-300 hover:text-primary transition-smooth">{t.navPackages}</a></li>
+                                        <li><a href="gallery.html" className="text-slate-300 hover:text-primary transition-smooth">{t.navGallery}</a></li>
+                                        <li><a href="destinations.html" className="text-slate-300 hover:text-primary transition-smooth">{t.navDestinations}</a></li>
+                                        <li><a href="about.html" className="text-slate-300 hover:text-primary transition-smooth">{t.navAbout}</a></li>
+                                        <li><a href="contact.html" className="text-slate-300 hover:text-primary transition-smooth">{t.navContact}</a></li>
+                                    </ul>
+                                </div>
+                                {/* Services */}
+                                <div>
+                                    <h4 className="font-semibold text-lg mb-4">{t.footerServices}</h4>
+                                    <ul className="space-y-2 text-slate-300">
+                                        <li><i className="fas fa-check text-secondary mr-2"></i>{t.tourHalal}</li>
+                                        <li><i className="fas fa-check text-secondary mr-2"></i>{t.driverExperienceTitle}</li>
+                                        <li><i className="fas fa-check text-secondary mr-2"></i>{t.comfortableVehicle}</li>
+                                        <li><i className="fas fa-check text-secondary mr-2"></i>{t.localGuide}</li>
+                                        <li><i className="fas fa-check text-secondary mr-2"></i>{t.freeConsultation}</li>
+                                        <li><i className="fas fa-check text-secondary mr-2"></i>{t.transparentPricingTitle}</li>
+                                    </ul>
+                                </div>
+                                {/* Contact Info */}
+                                <div>
+                                    <h4 className="font-semibold text-lg mb-4">{t.footerContact}</h4>
+                                    <div className="space-y-3 text-slate-300">
+                                        <div className="flex items-start space-x-3">
+                                            <i className="fas fa-map-marker-alt text-primary mt-1"></i>
+                                            <p>Jalan Trimurti, Tambak Lau Mulgap I<br />Kabupaten Karo, Sumatera Utara</p>
+                                        </div>
+                                        <div className="flex items-center space-x-3">
+                                            <i className="fab fa-whatsapp text-secondary"></i>
+                                            <p>+62 822-7784-8855</p>
+                                        </div>
+                                        <div className="flex items-center space-x-3">
+                                            <i className="fas fa-envelope text-primary"></i>
+                                            <p>info@medantobasumatera.com</p>
+                                        </div>
+                                        <div className="flex items-center space-x-3">
+                                            <i className="fas fa-clock text-accent"></i>
+                                            <p>{t.supportTitle}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Bottom Footer */}
+                            <div className="border-t border-slate-800 pt-8 flex flex-wrap justify-between items-center text-center md:text-left">
+                                <p className="text-slate-400 mb-2 md:mb-0">
+                                    {t.allRightsReserved}
+                                    <span className="text-secondary">{t.trustedCompanionPhrase}</span>
+                                </p>
+                                <a href={socialLinks.portfolio} target="_blank" className="text-slate-400 hover:text-primary transition-smooth">
+                                    {t.footerPortfolio}
+                                </a>
+                            </div>
+                        </div>
+                    </footer>
+                    {/* Floating WhatsApp Button */}
+                    <a href={socialLinks.whatsappFloating} target="_blank" className="fixed bottom-6 right-6 w-14 h-14 bg-secondary text-white rounded-full flex items-center justify-center shadow-warm hover:scale-110 transition-all duration-300 z-50 animate-gentle-bounce">
+                        <i className="fab fa-whatsapp text-2xl"></i>
+                    </a>
+                    {/* Lightbox Modal */}
+                    {lightboxOpen && ReactDOM.createPortal(
+                        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4" onClick={closeLightbox}>
+                            <button onClick={closeLightbox} className="absolute top-4 right-4 text-white text-4xl z-10 hover:text-gray-300">
+                                &times;
+                            </button>
+                            <button onClick={(e) => {
+                                e.stopPropagation();
+                                prevImage();
+                            }} className="absolute left-4 text-white text-3xl z-10 hover:text-gray-300">
+                                &lt;
+                            </button>
+                            <button onClick={(e) => {
+                                e.stopPropagation();
+                                nextImage();
+                            }} className="absolute right-12 text-white text-3xl z-10 hover:text-gray-300">
+                                &gt;
+                            </button>
+                            <img src={galleryImages[lightboxIndex]} alt={`${t.navGallery} ${lightboxIndex + 1}`} className="max-h-full max-w-full object-contain" />
+                        </div>,
+                        document.body
+                    )}
+                </div>
+            );
+        };
+        // Render the App component to the root div
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
